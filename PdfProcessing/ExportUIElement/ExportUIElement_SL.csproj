@@ -72,31 +72,31 @@
     <Reference Include="System.Xml" />
     <Reference Include="System.Windows.Browser" />
     <Reference Include="Telerik.Windows.Controls">
-      <HintPath>..\..\..\..\Binaries\Silverlight\Telerik.Windows.Controls.dll</HintPath>
+      <HintPath>..\..\..\..\..\Binaries\Silverlight\Telerik.Windows.Controls.dll</HintPath>
     </Reference>
     <Reference Include="Telerik.Windows.Controls.Chart">
-      <HintPath>..\..\..\..\Binaries\Silverlight\Telerik.Windows.Controls.Chart.dll</HintPath>
+      <HintPath>..\..\..\..\..\Binaries\Silverlight\Telerik.Windows.Controls.Chart.dll</HintPath>
     </Reference>
     <Reference Include="Telerik.Windows.Controls.DataVisualization">
-      <HintPath>..\..\..\..\Binaries\Silverlight\Telerik.Windows.Controls.DataVisualization.dll</HintPath>
+      <HintPath>..\..\..\..\..\Binaries\Silverlight\Telerik.Windows.Controls.DataVisualization.dll</HintPath>
     </Reference>
     <Reference Include="Telerik.Windows.Controls.Input">
-      <HintPath>..\..\..\..\Binaries\Silverlight\Telerik.Windows.Controls.Input.dll</HintPath>
+      <HintPath>..\..\..\..\..\Binaries\Silverlight\Telerik.Windows.Controls.Input.dll</HintPath>
     </Reference>
     <Reference Include="Telerik.Windows.Controls.GanttView">
-      <HintPath>..\..\..\..\Binaries\Silverlight\Telerik.Windows.Controls.GanttView.dll</HintPath>
+      <HintPath>..\..\..\..\..\Binaries\Silverlight\Telerik.Windows.Controls.GanttView.dll</HintPath>
     </Reference>
     <Reference Include="Telerik.Windows.Scheduling.Core">
-      <HintPath>..\..\..\..\Binaries\Silverlight\Telerik.Windows.Scheduling.Core.dll</HintPath>
+      <HintPath>..\..\..\..\..\Binaries\Silverlight\Telerik.Windows.Scheduling.Core.dll</HintPath>
     </Reference>
     <Reference Include="Telerik.Windows.Data">
-      <HintPath>..\..\..\..\Binaries\Silverlight\Telerik.Windows.Data.dll</HintPath>
+      <HintPath>..\..\..\..\..\Binaries\Silverlight\Telerik.Windows.Data.dll</HintPath>
     </Reference>
     <Reference Include="Telerik.Windows.Documents.Core">
-      <HintPath>..\..\..\..\Binaries\Silverlight\Telerik.Windows.Documents.Core.dll</HintPath>
+      <HintPath>..\..\..\..\..\Binaries\Silverlight\Telerik.Windows.Documents.Core.dll</HintPath>
     </Reference>
     <Reference Include="Telerik.Windows.Documents.Fixed">
-      <HintPath>..\..\..\..\Binaries\Silverlight\Telerik.Windows.Documents.Fixed.dll</HintPath>
+      <HintPath>..\..\..\..\..\Binaries\Silverlight\Telerik.Windows.Documents.Fixed.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

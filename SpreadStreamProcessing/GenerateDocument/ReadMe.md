@@ -1,4 +1,4 @@
-﻿##Generate Document##
+﻿## Generate Document ##
 This project demonstrates how to use RadSpreadStreamProcessing to generate document from scratch and export it to a file.
 
-<keywords: create,report,save,export,stream,console,xlsx,csv>
+<keywords: create,report,save,export,stream,xlsx,csv>

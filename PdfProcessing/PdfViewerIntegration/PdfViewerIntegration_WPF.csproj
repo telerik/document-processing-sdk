@@ -53,19 +53,19 @@
       <RequiredTargetFramework>4.0</RequiredTargetFramework>
     </Reference>
     <Reference Include="Telerik.Windows.Controls">
-      <HintPath>..\..\..\..\Binaries\WPF\Telerik.Windows.Controls.dll</HintPath>
+      <HintPath>..\..\..\..\..\Binaries\WPF\Telerik.Windows.Controls.dll</HintPath>
     </Reference>
     <Reference Include="Telerik.Windows.Controls.FixedDocumentViewers">
-      <HintPath>..\..\..\..\Binaries\WPF\Telerik.Windows.Controls.FixedDocumentViewers.dll</HintPath>
+      <HintPath>..\..\..\..\..\Binaries\WPF\Telerik.Windows.Controls.FixedDocumentViewers.dll</HintPath>
     </Reference>
     <Reference Include="Telerik.Windows.Documents.Core">
-      <HintPath>..\..\..\..\Binaries\WPF\Telerik.Windows.Documents.Core.dll</HintPath>
+      <HintPath>..\..\..\..\..\Binaries\WPF\Telerik.Windows.Documents.Core.dll</HintPath>
     </Reference>
     <Reference Include="Telerik.Windows.Documents.Fixed">
-      <HintPath>..\..\..\..\Binaries\WPF\Telerik.Windows.Documents.Fixed.dll</HintPath>
+      <HintPath>..\..\..\..\..\Binaries\WPF\Telerik.Windows.Documents.Fixed.dll</HintPath>
     </Reference>
     <Reference Include="Telerik.Windows.Zip">
-      <HintPath>..\..\..\..\Binaries\WPF\Telerik.Windows.Zip.dll</HintPath>
+      <HintPath>..\..\..\..\..\Binaries\WPF\Telerik.Windows.Zip.dll</HintPath>
     </Reference>
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />
