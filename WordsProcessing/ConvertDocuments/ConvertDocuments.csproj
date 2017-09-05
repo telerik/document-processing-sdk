@@ -48,7 +48,7 @@
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Telerik.Windows.Documents.Core">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\Binaries\WPF\Telerik.Windows.Documents.Core.dll</HintPath>
+      <HintPath>..\..\..\..\..\Binaries\WPF\Telerik.Windows.Documents.Core.dll</HintPath>
     </Reference>
     <Reference Include="Telerik.Windows.Documents.Fixed">
       <SpecificVersion>False</SpecificVersion>

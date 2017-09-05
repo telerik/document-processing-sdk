@@ -44,7 +44,7 @@
     <Reference Include="System" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Telerik.Windows.Documents.Core">
-      <HintPath>..\..\..\..\Binaries\WPF\Telerik.Windows.Documents.Core.dll</HintPath>
+      <HintPath>..\..\..\..\..\Binaries\WPF\Telerik.Windows.Documents.Core.dll</HintPath>
     </Reference>
     <Reference Include="Telerik.Windows.Documents.Fixed">
       <SpecificVersion>False</SpecificVersion>

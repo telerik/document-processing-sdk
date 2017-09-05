@@ -82,28 +82,28 @@
       <HintPath>..\..\..\..\..\Binaries\Silverlight\Telerik.Windows.Controls.Input.dll</HintPath>
     </Reference>
     <Reference Include="Telerik.Windows.Data">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\Binaries\Silverlight\Telerik.Windows.Data.dll</HintPath>
+	  <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Binaries\Silverlight\Telerik.Windows.Data.dll</HintPath>
     </Reference>
     <Reference Include="Telerik.Windows.Documents.Core">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\Binaries\Silverlight\Telerik.Windows.Documents.Core.dll</HintPath>
+      <HintPath>..\..\..\..\..\Binaries\Silverlight\Telerik.Windows.Documents.Core.dll</HintPath>
     </Reference>
     <Reference Include="Telerik.Windows.Documents.Spreadsheet">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\Binaries\Silverlight\Telerik.Windows.Documents.Spreadsheet.dll</HintPath>
+      <HintPath>..\..\..\..\..\Binaries\Silverlight\Telerik.Windows.Documents.Spreadsheet.dll</HintPath>
     </Reference>
     <Reference Include="Telerik.Windows.Documents.Spreadsheet.FormatProviders.OpenXml">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\Binaries\Silverlight\Telerik.Windows.Documents.Spreadsheet.FormatProviders.OpenXml.dll</HintPath>
+      <HintPath>..\..\..\..\..\Binaries\Silverlight\Telerik.Windows.Documents.Spreadsheet.FormatProviders.OpenXml.dll</HintPath>
     </Reference>
     <Reference Include="Telerik.Windows.Documents.Spreadsheet.FormatProviders.Pdf">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\Binaries\Silverlight\Telerik.Windows.Documents.Spreadsheet.FormatProviders.Pdf.dll</HintPath>
+      <HintPath>..\..\..\..\..\Binaries\Silverlight\Telerik.Windows.Documents.Spreadsheet.FormatProviders.Pdf.dll</HintPath>
     </Reference>
     <Reference Include="Telerik.Windows.Zip">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\Binaries\Silverlight\Telerik.Windows.Zip.dll</HintPath>
+	  <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Binaries\Silverlight\Telerik.Windows.Zip.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
