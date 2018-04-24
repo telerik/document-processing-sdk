@@ -1,4 +1,6 @@
-﻿using System.IO;
+﻿using System;
+using System.Diagnostics;
+using System.IO;
 using System.Windows;
 using System.Windows.Media;
 using Telerik.Windows.Documents.Flow.FormatProviders.Html;
@@ -65,10 +67,14 @@ namespace HtmlGenerator
         {
             HtmlFormatProvider formatProvider = new HtmlFormatProvider();
 
-            using (var stream = File.OpenWrite("Sample Document.html"))
+            string path = "Sample Document.html";
+            using (var stream = File.OpenWrite(path))
             {
                 formatProvider.Export(document, stream);
             }
+
+            Console.Write("Document generated.");
+            Process.Start(path);
         }
     }
 }

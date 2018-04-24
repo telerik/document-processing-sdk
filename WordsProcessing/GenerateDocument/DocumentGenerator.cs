@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Windows;
@@ -170,17 +171,18 @@ namespace GenerateDocument
 
             if (formatProvider == null)
             {
-                Console.WriteLine("Uknown or not supported format!");
+                Console.WriteLine("Uknown or not supported format.");
                 return;
             }
 
-            using (var stream = File.OpenWrite("Sample document." + selectedFormat))
+            string path = "Sample document." + selectedFormat;
+            using (var stream = File.OpenWrite(path))
             {
-                Console.WriteLine("Exporting to {0}...", selectedFormat);
                 formatProvider.Export(document, stream);
-                Console.WriteLine("Done.");
-
             }
+
+            Console.Write("Document generated.");
+            Process.Start(path);
         }
     }
 }

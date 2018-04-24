@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using Telerik.Documents.SpreadsheetStreaming;
@@ -9,12 +10,12 @@ namespace AppendWorksheetToExistingWorkbook
     {
         static void Main(string[] args)
         {
-            Console.Write("Enter existing .xlsx file name: ");
+            Console.Write("Enter path to an existing .xlsx file: ");
 
             string fileName = Console.ReadLine();
             if (!File.Exists(fileName))
             {
-                Console.WriteLine("Such file does not exists. Press any key to exit.");
+                Console.WriteLine("Such file does not exist. Press any key to exit.");
                 Console.ReadKey();
                 return;
             }
@@ -23,12 +24,7 @@ namespace AppendWorksheetToExistingWorkbook
 
             AddWorksheetToExistingDocument(fileName);
 
-            Console.Write("Want to open the document? (Y/N)");
-            var readKey = Console.ReadKey();
-            if (readKey.KeyChar == 'Y' || readKey.KeyChar == 'y')
-            {
-                System.Diagnostics.Process.Start(fileName);
-            }
+            Console.ReadKey();
         }
 
         private static void AddWorksheetToExistingDocument(string filePath)
@@ -61,6 +57,9 @@ namespace AppendWorksheetToExistingWorkbook
                     }
                 }
             }
+
+            Console.WriteLine("Document modified.");
+            Process.Start(filePath);
         }
     }
 }

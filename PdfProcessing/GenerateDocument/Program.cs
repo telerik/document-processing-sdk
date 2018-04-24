@@ -11,10 +11,6 @@ namespace GenerateDocument
         {
             DocumentGenerator generator = new DocumentGenerator();
             generator.Export(ResultDirName);
-
-            Console.WriteLine("The document is saved.");
-            Process.Start(ResultDirName);
-            Console.Read();
         }
     }
 }

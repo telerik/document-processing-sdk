@@ -1,5 +1,7 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using Telerik.Windows.Documents.Flow.FormatProviders.Docx;
 using Telerik.Windows.Documents.Flow.Model;
@@ -34,11 +36,15 @@ namespace MailMerge
 
         private void SaveFile(RadFlowDocument document)
         {
-            using (Stream stream = File.OpenWrite("Mail Merge Sample.docx"))
+            string path = "Mail Merge Sample.docx";
+            using (Stream stream = File.OpenWrite(path))
             {
                 DocxFormatProvider formatProvder = new DocxFormatProvider();
                 formatProvder.Export(document, stream);
             }
+
+            Process.Start(path);
+            Console.Write("Mail merge finished - the document is saved.");
         }
 
         private RadFlowDocument CreateMailMergeDocumentTemplate()

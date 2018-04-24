@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.IO;
 using Telerik.Documents.SpreadsheetStreaming;
 
@@ -8,36 +9,16 @@ namespace GenerateDocuments
     {
         static void Main(string[] args)
         {
-            Console.Write("Enter file name: ");
-            string fileName = Console.ReadLine();
-            if (String.IsNullOrEmpty(fileName))
-            {
-                Console.WriteLine("Invalid file name (empty or null). Press any key to exit.");
-                Console.ReadKey();
-                return;
-            }
             Console.WriteLine("Generating and saving document...");
 
-            string filePath = String.Format("../../Files/{0}.xlsx", fileName);
+            string filePath = "generated.xlsx";
             GenerateDocument(filePath);
 
-            Console.Write("Want to open the document? (Y/N)");
-            var readKey = Console.ReadKey();
-            if (readKey.KeyChar == 'Y' || readKey.KeyChar == 'y')
-            {
-                string absoluteFilePath = Path.GetFullPath(filePath);
-                System.Diagnostics.Process.Start(absoluteFilePath);
-            }
+            Console.ReadKey();
         }
 
         private static void GenerateDocument(string filePath)
         {
-            string directoryName = Path.GetDirectoryName(filePath);
-            if (!Directory.Exists(directoryName))
-            {
-                Directory.CreateDirectory(directoryName);
-            }
-
             using (FileStream stream = File.OpenWrite(filePath))
             {
                 using (IWorkbookExporter workbook = SpreadExporter.CreateWorkbookExporter(SpreadDocumentFormat.Xlsx, stream))
@@ -105,6 +86,9 @@ namespace GenerateDocuments
                     }
                 }
             }
+
+            Console.WriteLine("Document generated.");
+            Process.Start(filePath);
         }
     }
 }

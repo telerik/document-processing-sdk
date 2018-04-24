@@ -1,6 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PdfViewerIntegration_SL", "PdfViewerIntegration\PdfViewerIntegration_SL.csproj", "{F747C0C0-D959-4875-BFC0-3ABC625EB588}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GenerateDocument_SL", "GenerateDocument\GenerateDocument_SL.csproj", "{9F53523F-5597-4AE9-B74E-3D4592AA0EA8}"
@@ -8,21 +10,6 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExportUIElement_SL", "ExportUIElement\ExportUIElement_SL.csproj", "{57034B21-1805-447E-8B71-1F64567C0060}"
 EndProject
 Global
-	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 4
-		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
-		SccTeamFoundationServer = http://tfs:8082/defaultcollection
-		SccLocalPath0 = .
-		SccProjectUniqueName1 = PdfViewerIntegration\\PdfViewerIntegration_SL.csproj
-		SccProjectName1 = PdfViewerIntegration
-		SccLocalPath1 = PdfViewerIntegration
-		SccProjectUniqueName2 = GenerateDocument\\GenerateDocument_SL.csproj
-		SccProjectName2 = GenerateDocument
-		SccLocalPath2 = GenerateDocument
-		SccProjectUniqueName3 = ExportUIElement\\ExportUIElement_SL.csproj
-		SccProjectName3 = ExportUIElement
-		SccLocalPath3 = ExportUIElement
-	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
@@ -44,4 +31,5 @@ Global
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
+	 
 EndGlobal

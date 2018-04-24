@@ -17,8 +17,6 @@ namespace GenerateDocuments
             }
 
             generator.Generate();
-
-            Console.Write("Done.");
             Console.Read();
         }
     }

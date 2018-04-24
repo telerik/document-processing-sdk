@@ -17,7 +17,6 @@ namespace CreateModifyExport
             }
 
             generator.ExportReports();
-            Console.WriteLine("Done.");
             Console.ReadKey();
         }
     }

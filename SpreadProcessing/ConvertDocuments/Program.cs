@@ -23,7 +23,6 @@ namespace ConvertDocuments
                 converter.ConvertCustomDocument(input, format);
             }
 
-            Console.WriteLine("Done.");
             Console.ReadKey();
         }
     }

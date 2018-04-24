@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using Telerik.Windows.Documents.Common.FormatProviders;
@@ -107,17 +108,21 @@ namespace ConvertDocuments
                     formatProvider = new PdfFormatProvider();
                     break;
             }
+
             if (formatProvider == null)
             {
                 Console.WriteLine("Not supported document format.");
                 return;
             }
 
-            using (var stream = File.OpenWrite("Converted." + format))
+            string path = "Converted." + format;
+            using (var stream = File.OpenWrite(path))
             {
                 formatProvider.Export(this.document, stream);
-                Console.WriteLine("The document is converted and saved.");
             }
+
+            Console.WriteLine("Document converted.");
+            Process.Start(path);
         }
     }
 }

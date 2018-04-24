@@ -75,6 +75,7 @@ namespace CreateModifyExport
 
             this.worksheet.Filter.FilterRange = null;
 
+            Console.WriteLine("Reports generated.");
             Process.Start(this.ExportDirectory);
         }
 

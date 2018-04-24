@@ -139,8 +139,8 @@ namespace ConvertDocuments
 
         private void Save()
         {
-            string selectedFromat = this.SelectedExportFormat;
-            FileHelper.SaveDocument(this.Workbook, selectedFromat);
+            string selectedFormat = this.SelectedExportFormat;
+            FileHelper.SaveDocument(this.Workbook, selectedFormat);
         }
     }
 }

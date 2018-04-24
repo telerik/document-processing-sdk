@@ -19,7 +19,6 @@ namespace GenerateDocument
 
             generator.Generate();
 
-            Console.Write("Generating finished. You can find the document in the application's folder.");
             Console.Read();
         }
     }

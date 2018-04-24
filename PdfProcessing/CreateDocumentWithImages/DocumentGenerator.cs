@@ -1,4 +1,6 @@
-﻿using System.IO;
+﻿using System;
+using System.Diagnostics;
+using System.IO;
 using System.Windows;
 using System.Windows.Media.Imaging;
 using Telerik.Windows.Documents.Fixed.FormatProviders.Pdf;
@@ -46,6 +48,9 @@ namespace CreateDocumentWithImages
                 provider.ExportSettings.ImageQuality = imageQuality;
                 provider.Export(this.document, stream);
             }
+
+            Console.WriteLine("Document created.");
+            Process.Start(resultFile);
         }
  
         private void PrepareDirectory(string filePath, string resultFile)

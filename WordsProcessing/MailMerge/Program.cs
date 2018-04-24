@@ -28,7 +28,6 @@ namespace MailMerge
 
             }
 
-            Console.Write("Mail merge finished - the document is saved. You can find the document in the application's folder.");
             Console.Read();
         }
     }

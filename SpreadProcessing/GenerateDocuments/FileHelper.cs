@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.IO;
 using Telerik.Windows.Documents.Spreadsheet.FormatProviders;
 using Telerik.Windows.Documents.Spreadsheet.FormatProviders.OpenXml.Xlsx;
@@ -22,14 +23,18 @@ namespace GenerateDocuments
 
             if (formatProvider == null)
             {
-                Console.WriteLine("Uknown or not supported format!");
+                Console.WriteLine("Uknown or not supported format.");
                 return;
             }
 
-            using (var stream = File.OpenWrite("Sample document." + selectedFormat))
+            string path = "Sample document." + selectedFormat;
+            using (var stream = File.OpenWrite(path))
             {
                 formatProvider.Export(workbook, stream);
             }
+
+            Console.WriteLine("Document generated.");
+            Process.Start(path);
         }
 
         private static IWorkbookFormatProvider GetFormatProvider(string extension)

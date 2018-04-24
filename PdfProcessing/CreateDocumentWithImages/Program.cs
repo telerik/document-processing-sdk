@@ -33,8 +33,6 @@ namespace CreateDocumentWithImages
             DocumentGenerator generator = new DocumentGenerator(imageQuality);
             generator.SaveFile(ResultDirName);
 
-            Console.WriteLine("The document is saved.");
-            Process.Start(ResultDirName);
             Console.Read();
         }
     }

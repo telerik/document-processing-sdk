@@ -1,4 +1,6 @@
-﻿using System.IO;
+﻿using System;
+using System.Diagnostics;
+using System.IO;
 using Telerik.Windows.Documents.Fixed.FormatProviders.Pdf;
 using Telerik.Windows.Documents.Fixed.FormatProviders.Pdf.Export;
 using Telerik.Windows.Documents.Fixed.Model;
@@ -47,6 +49,9 @@ namespace GenerateDocument
                 RadFixedDocument document = this.CreateDocument();
                 formatProvider.Export(document, stream);
             }
+
+            Console.WriteLine("The document is generated.");
+            Process.Start(resultFile);
         }
 
         private RadFixedDocument CreateDocument()

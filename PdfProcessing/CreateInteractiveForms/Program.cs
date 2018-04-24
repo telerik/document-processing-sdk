@@ -24,6 +24,8 @@ namespace CreateInteractiveForms
             }
 
             File.WriteAllBytes(fileName, new PdfFormatProvider().Export(document));
+
+            Console.WriteLine("Document created.");
             Process.Start(fileName);
         }
 
