@@ -3,10 +3,8 @@ using System.Windows;
 using System.Windows.Media.Imaging;
 using Telerik.Windows.Controls.Spreadsheet.Layers;
 using Telerik.Windows.Documents.Fixed.Model.Editing;
-using Telerik.Windows.Documents.Model.Drawing.Charts;
 using Telerik.Windows.Documents.Spreadsheet.FormatProviders.Pdf.Export;
 using Telerik.Windows.Documents.Spreadsheet.Model.Shapes;
-using Telerik.Windows.Documents.Spreadsheet.Theming;
 
 namespace ExportChart
 {
@@ -16,14 +14,14 @@ namespace ExportChart
 
         public WpfPdfChartImageRenderer()
         {
+            // The ChartModelToImageConverter object is readily available in the Telerik.Windows.Controls.Spreadsheet assembly and
+            // uses internally the RadChartView control to visualize the chart and create an image.
             this.chartToImageConverter = new ChartModelToImageConverter();
         }
 
         // This is the method which will be called when the internal logic of the PdfFormatProvider reaches a chart which has to be rendered.
         public void RenderChart(FixedContentEditor editor, FloatingChartShape chart)
         {
-            // The ChartModelToImageConverter object is readily available in the Telerik.Windows.Controls.Spreadsheet assembly and
-            // uses internally the RadChartView control to visualize the chart and create an image.
             BitmapSource source = this.chartToImageConverter.GetBitmapSourceFromFloatingChartShape(chart, 300d, 300d);
 
             // The editor draws the image in the PDF.
