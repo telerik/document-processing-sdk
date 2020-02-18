@@ -5,14 +5,14 @@ using Telerik.Windows.Documents.Fixed.FormatProviders.Pdf.Streaming;
 
 namespace PdfStreamWriterPerformance
 {
-    class Program
+    internal class Program
     {
         public static readonly string RootDirectory = AppDomain.CurrentDomain.BaseDirectory;
         public static readonly string InputFileName = RootDirectory + "InputFiles\\BarChart.pdf";
         public const string ResultFileName = "MergeResult.pdf";
         public const int MergedDocumentPagesCount = 10000;
 
-        static void Main()
+        private static void Main()
         {
             if (File.Exists(ResultFileName))
             {
@@ -36,7 +36,12 @@ namespace PdfStreamWriterPerformance
                 }
             }
 
-            Process.Start(ResultFileName);
+            ProcessStartInfo psi = new ProcessStartInfo()
+            {
+                FileName = ResultFileName,
+                UseShellExecute = true
+            };
+            Process.Start(psi);
         }
     }
 }

@@ -1,0 +1,31 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  
+  <PropertyGroup Label="Globals">
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+  
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputType>Exe</OutputType>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <ApplicationIcon />
+    <OutputType>Exe</OutputType>
+    <StartupObject />
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="CreateZipArchive_NetStandard.csproj.vspscc" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Telerik.Zip">
+      <HintPath>..\..\..\..\..\Binaries\netstandard\Telerik.Zip.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

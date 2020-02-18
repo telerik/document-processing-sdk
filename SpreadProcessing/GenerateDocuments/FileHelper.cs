@@ -28,13 +28,19 @@ namespace GenerateDocuments
             }
 
             string path = "Sample document." + selectedFormat;
-            using (var stream = File.OpenWrite(path))
+            using (FileStream stream = File.OpenWrite(path))
             {
                 formatProvider.Export(workbook, stream);
             }
 
             Console.WriteLine("Document generated.");
-            Process.Start(path);
+
+            ProcessStartInfo psi = new ProcessStartInfo()
+            {
+                FileName = path,
+                UseShellExecute = true
+            };
+            Process.Start(psi);
         }
 
         private static IWorkbookFormatProvider GetFormatProvider(string extension)

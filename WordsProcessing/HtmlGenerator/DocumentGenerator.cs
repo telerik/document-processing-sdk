@@ -1,13 +1,20 @@
 ﻿using System;
 using System.Diagnostics;
 using System.IO;
+#if NETCOREAPP
+using Telerik.Documents.Common.Model;
+using Telerik.Documents.Core.Fonts;
+using Telerik.Documents.Media;
+using Telerik.Documents.Primitives;
+#else
 using System.Windows;
 using System.Windows.Media;
+using Telerik.Windows.Documents.Spreadsheet.Model;
+#endif
 using Telerik.Windows.Documents.Flow.FormatProviders.Html;
 using Telerik.Windows.Documents.Flow.Model;
 using Telerik.Windows.Documents.Flow.Model.Editing;
 using Telerik.Windows.Documents.Flow.Model.Styles;
-using Telerik.Windows.Documents.Spreadsheet.Model;
 
 namespace HtmlGenerator
 {
@@ -55,10 +62,17 @@ namespace HtmlGenerator
             Paragraph paragraphWithImage = bodyTable.Rows[0].Cells[1].Blocks.AddParagraph();
             editor.MoveToParagraphStart(paragraphWithImage);
 
+#if NETCOREAPP
+            using (Stream stream = File.OpenRead(SampleDataFolder + "WordsProcessing.jpg"))
+            {
+                editor.InsertImageInline(stream, "jpg", new Size(470, 261));
+            }
+#else
             using (Stream stream = File.OpenRead(SampleDataFolder + "WordsProcessing.png"))
             {
                 editor.InsertImageInline(stream, "png", new Size(470, 261));
             }
+#endif
 
             return document;
         }
@@ -68,13 +82,19 @@ namespace HtmlGenerator
             HtmlFormatProvider formatProvider = new HtmlFormatProvider();
 
             string path = "Sample Document.html";
-            using (var stream = File.OpenWrite(path))
+            using (FileStream stream = File.OpenWrite(path))
             {
                 formatProvider.Export(document, stream);
             }
 
             Console.Write("Document generated.");
-            Process.Start(path);
+
+            ProcessStartInfo psi = new ProcessStartInfo()
+            {
+                FileName = path,
+                UseShellExecute = true
+            };
+            Process.Start(psi);
         }
     }
 }

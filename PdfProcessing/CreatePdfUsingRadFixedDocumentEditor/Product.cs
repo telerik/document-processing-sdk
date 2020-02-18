@@ -11,8 +11,14 @@ namespace CreatePdfUsingRadFixedDocumentEditor
             this.Q = q;
         }
 
-        public string Name { get; set; }
-        public double[] Q { get; set; }
+        public string Name
+        {
+            get; set;
+        }
+        public double[] Q
+        {
+            get; set;
+        }
 
         public static List<Product> GetProducts(int count)
         {

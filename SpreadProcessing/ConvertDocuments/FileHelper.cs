@@ -28,13 +28,19 @@ namespace ConvertDocuments
             }
 
             string path = "Sample document." + selectedFormat;
-            using (var stream = File.OpenWrite(path))
+            using (FileStream stream = File.OpenWrite(path))
             {
                 formatProvider.Export(workbook, stream);
             }
 
             Console.WriteLine("Document converted.");
-            Process.Start(path);
+
+            ProcessStartInfo psi = new ProcessStartInfo
+            {
+                FileName = path,
+                UseShellExecute = true
+            };
+            Process.Start(psi);
         }
 
         private static IWorkbookFormatProvider GetFormatProvider(string extension)
@@ -51,7 +57,6 @@ namespace ConvertDocuments
                     return new TxtFormatProvider();
                 case PdfFormat:
                     return new PdfFormatProvider();
-
                 default:
                     return null;
             }

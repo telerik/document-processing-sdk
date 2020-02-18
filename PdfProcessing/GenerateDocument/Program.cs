@@ -1,5 +1,7 @@
 ﻿using System;
-using System.Diagnostics;
+#if NETCOREAPP
+using Telerik.Windows.Documents.Extensibility;
+#endif
 
 namespace GenerateDocument
 {
@@ -9,6 +11,11 @@ namespace GenerateDocument
 
         public static void Main()
         {
+#if NETCOREAPP
+            FontsProviderBase fontsProvider = new FontsProvider();
+            FixedExtensibilityManager.FontsProvider = fontsProvider;
+#endif
+
             DocumentGenerator generator = new DocumentGenerator();
             generator.Export(ResultDirName);
         }

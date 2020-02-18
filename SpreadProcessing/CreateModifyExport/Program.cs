@@ -1,11 +1,22 @@
 ﻿using System;
-
+#if NETCOREAPP
+using Telerik.Windows.Documents.Extensibility;
+using Telerik.Windows.Documents.Spreadsheet.Extensibility;
+#endif
 namespace CreateModifyExport
 {
-    class Program
+    internal class Program
     {
-        static void Main()
+        private static void Main()
         {
+#if NETCOREAPP
+            ImagePropertiesResolverBase imagePropertiesResolver = new ImageInfo();
+            SpreadExtensibilityManager.ImagePropertiesResolver = imagePropertiesResolver;
+
+            FontsProviderBase fontsProvider = new FontsProvider();
+            FixedExtensibilityManager.FontsProvider = fontsProvider;
+#endif
+
             Console.Write("Choose destination for export or press Enter for the default one: ");
             string input = Console.ReadLine();
 

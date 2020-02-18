@@ -43,7 +43,13 @@ namespace MailMerge
                 formatProvder.Export(document, stream);
             }
 
-            Process.Start(path);
+            ProcessStartInfo psi = new ProcessStartInfo()
+            {
+                FileName = path,
+                UseShellExecute = true
+            };
+            Process.Start(psi);
+
             Console.Write("Mail merge finished - the document is saved.");
         }
 
@@ -145,7 +151,7 @@ namespace MailMerge
         private IEnumerable GetConcreteMailMergeDataSouce()
         {
             List<ConcreteDataObject> collection = new List<ConcreteDataObject>();
-            var data = new ConcreteDataObject()
+            ConcreteDataObject data = new ConcreteDataObject()
             {
                 FirstName = "Andrew",
                 LastName = "Fuller",

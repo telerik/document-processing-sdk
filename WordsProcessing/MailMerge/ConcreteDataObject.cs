@@ -1,7 +1,4 @@
-﻿using System;
-using System.Linq;
-
-namespace MailMerge
+﻿namespace MailMerge
 {
     public class ConcreteDataObject
     {

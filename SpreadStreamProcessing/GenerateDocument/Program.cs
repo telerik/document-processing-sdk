@@ -5,9 +5,9 @@ using Telerik.Documents.SpreadsheetStreaming;
 
 namespace GenerateDocuments
 {
-    class Program
+    internal class Program
     {
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
             Console.WriteLine("Generating and saving document...");
 
@@ -88,7 +88,13 @@ namespace GenerateDocuments
             }
 
             Console.WriteLine("Document generated.");
-            Process.Start(filePath);
+
+            ProcessStartInfo psi = new ProcessStartInfo()
+            {
+                FileName = filePath,
+                UseShellExecute = true
+            };
+            Process.Start(psi);
         }
     }
 }

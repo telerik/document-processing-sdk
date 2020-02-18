@@ -10,12 +10,12 @@ using Telerik.Windows.Documents.Fixed.Model.InteractiveForms;
 
 namespace ModifyFormValues
 {
-    class Program
+    internal class Program
     {
         public static readonly string RootDirectory = AppDomain.CurrentDomain.BaseDirectory;
-        public static readonly string InputFileWithInteractiveForms = RootDirectory + "InteractiveForms.pdf";
+        public static readonly string InputFileWithInteractiveForms = RootDirectory + "SampleData\\InteractiveForms.pdf";
 
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
             PdfFormatProvider provider = new PdfFormatProvider();
 
@@ -31,7 +31,13 @@ namespace ModifyFormValues
             }
 
             File.WriteAllBytes(modifiedFileName, provider.Export(document));
-            Process.Start(modifiedFileName);
+
+            ProcessStartInfo psi = new ProcessStartInfo()
+            {
+                FileName = modifiedFileName,
+                UseShellExecute = true
+            };
+            Process.Start(psi);
         }
 
         private static void ModifyFormFieldValues(RadFixedDocument document)

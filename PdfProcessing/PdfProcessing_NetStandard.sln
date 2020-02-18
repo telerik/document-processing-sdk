@@ -1,0 +1,97 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29709.97
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CreateDocumentWithImages_NetStandard", "CreateDocumentWithImages\CreateDocumentWithImages_NetStandard.csproj", "{D7CA01E8-E777-4D18-B960-AA0F62040F87}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CreateInteractiveForms_NetStandard", "CreateInteractiveForms\CreateInteractiveForms_NetStandard.csproj", "{30977758-4524-4C69-B85A-DFEFEAFB658C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CreatePdfUsingRadFixedDocumentEditor_NetStandard", "CreatePdfUsingRadFixedDocumentEditor\CreatePdfUsingRadFixedDocumentEditor_NetStandard.csproj", "{05B28AF6-C99D-427D-90D8-C04EC9066484}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GenerateDocument_NetStandard", "GenerateDocument\GenerateDocument_NetStandard.csproj", "{21157A5A-05F0-46AA-9EB5-E87F37B5C29F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ManipulatePages_NetStandard", "ManipulatePages\ManipulatePages_NetStandard.csproj", "{211A151C-F749-4732-8094-BF3C3822692E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ModifyFormValues_NetStandard", "ModifyForms\ModifyFormValues_NetStandard.csproj", "{B56E5A53-04DE-4EDC-9B34-9ED4B8E2D590}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PdfStreamWriterPerformance_NetStandard", "PdfStreamWriterPerformance\PdfStreamWriterPerformance_NetStandard.csproj", "{C1164D19-7D17-4C74-9D04-A66AC422E84D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DrawHeaderFooter_NetStandard", "DrawHeaderFooter\DrawHeaderFooter_NetStandard.csproj", "{29EDEE61-B54B-49FA-B1CE-98CC7533DC55}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D7CA01E8-E777-4D18-B960-AA0F62040F87}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D7CA01E8-E777-4D18-B960-AA0F62040F87}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D7CA01E8-E777-4D18-B960-AA0F62040F87}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D7CA01E8-E777-4D18-B960-AA0F62040F87}.Release|Any CPU.Build.0 = Release|Any CPU
+		{30977758-4524-4C69-B85A-DFEFEAFB658C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{30977758-4524-4C69-B85A-DFEFEAFB658C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{30977758-4524-4C69-B85A-DFEFEAFB658C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{30977758-4524-4C69-B85A-DFEFEAFB658C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{05B28AF6-C99D-427D-90D8-C04EC9066484}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{05B28AF6-C99D-427D-90D8-C04EC9066484}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{05B28AF6-C99D-427D-90D8-C04EC9066484}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{05B28AF6-C99D-427D-90D8-C04EC9066484}.Release|Any CPU.Build.0 = Release|Any CPU
+		{21157A5A-05F0-46AA-9EB5-E87F37B5C29F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{21157A5A-05F0-46AA-9EB5-E87F37B5C29F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{21157A5A-05F0-46AA-9EB5-E87F37B5C29F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{21157A5A-05F0-46AA-9EB5-E87F37B5C29F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{211A151C-F749-4732-8094-BF3C3822692E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{211A151C-F749-4732-8094-BF3C3822692E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{211A151C-F749-4732-8094-BF3C3822692E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{211A151C-F749-4732-8094-BF3C3822692E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B56E5A53-04DE-4EDC-9B34-9ED4B8E2D590}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B56E5A53-04DE-4EDC-9B34-9ED4B8E2D590}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B56E5A53-04DE-4EDC-9B34-9ED4B8E2D590}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B56E5A53-04DE-4EDC-9B34-9ED4B8E2D590}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C1164D19-7D17-4C74-9D04-A66AC422E84D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C1164D19-7D17-4C74-9D04-A66AC422E84D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C1164D19-7D17-4C74-9D04-A66AC422E84D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C1164D19-7D17-4C74-9D04-A66AC422E84D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{29EDEE61-B54B-49FA-B1CE-98CC7533DC55}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{29EDEE61-B54B-49FA-B1CE-98CC7533DC55}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{29EDEE61-B54B-49FA-B1CE-98CC7533DC55}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{29EDEE61-B54B-49FA-B1CE-98CC7533DC55}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1206FC65-2429-4003-B167-FD0198015602}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 9
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://tfs:8082/defaultcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = CreateDocumentWithImages\\CreateDocumentWithImages_NetStandard.csproj
+		SccProjectName1 = CreateDocumentWithImages
+		SccLocalPath1 = CreateDocumentWithImages
+		SccProjectUniqueName2 = CreateInteractiveForms\\CreateInteractiveForms_NetStandard.csproj
+		SccProjectName2 = CreateInteractiveForms
+		SccLocalPath2 = CreateInteractiveForms
+		SccProjectUniqueName3 = CreatePdfUsingRadFixedDocumentEditor\\CreatePdfUsingRadFixedDocumentEditor_NetStandard.csproj
+		SccProjectName3 = CreatePdfUsingRadFixedDocumentEditor
+		SccLocalPath3 = CreatePdfUsingRadFixedDocumentEditor
+		SccProjectUniqueName4 = GenerateDocument\\GenerateDocument_NetStandard.csproj
+		SccProjectName4 = GenerateDocument
+		SccLocalPath4 = GenerateDocument
+		SccProjectUniqueName5 = ManipulatePages\\ManipulatePages_NetStandard.csproj
+		SccProjectName5 = ManipulatePages
+		SccLocalPath5 = ManipulatePages
+		SccProjectUniqueName6 = ModifyForms\\ModifyFormValues_NetStandard.csproj
+		SccProjectName6 = ModifyForms
+		SccLocalPath6 = ModifyForms
+		SccProjectUniqueName7 = PdfStreamWriterPerformance\\PdfStreamWriterPerformance_NetStandard.csproj
+		SccProjectName7 = PdfStreamWriterPerformance
+		SccLocalPath7 = PdfStreamWriterPerformance
+		SccProjectUniqueName8 = DrawHeaderFooter\\DrawHeaderFooter_NetStandard.csproj
+		SccProjectName8 = DrawHeaderFooter
+		SccLocalPath8 = DrawHeaderFooter
+	EndGlobalSection
+EndGlobal

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
@@ -6,9 +7,9 @@ using Telerik.Documents.SpreadsheetStreaming;
 
 namespace AppendWorksheetToExistingWorkbook
 {
-    class Program
+    internal class Program
     {
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
             Console.Write("Enter path to an existing .xlsx file: ");
 
@@ -36,7 +37,7 @@ namespace AppendWorksheetToExistingWorkbook
                 {
                     string sheetName = "Sheet name here";
 
-                    var importedSheetsNames = workbook.GetSheetInfos().Select(sheetInfo => sheetInfo.Name);
+                    IEnumerable<string> importedSheetsNames = workbook.GetSheetInfos().Select(sheetInfo => sheetInfo.Name);
                     if (importedSheetsNames.Contains(sheetName))
                     {
                         Console.WriteLine("Sheet with that name already exists in the workbook.");
@@ -59,7 +60,13 @@ namespace AppendWorksheetToExistingWorkbook
             }
 
             Console.WriteLine("Document modified.");
-            Process.Start(filePath);
+
+            ProcessStartInfo psi = new ProcessStartInfo()
+            {
+                FileName = filePath,
+                UseShellExecute = true
+            };
+            Process.Start(psi);
         }
     }
 }

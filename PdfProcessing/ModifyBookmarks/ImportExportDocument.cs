@@ -1,4 +1,5 @@
-﻿using System.Diagnostics;
+﻿using System;
+using System.Diagnostics;
 using System.IO;
 using Telerik.Windows.Documents.Fixed.FormatProviders.Pdf;
 using Telerik.Windows.Documents.Fixed.Model;
@@ -7,7 +8,8 @@ namespace ModifyBookmarks
 {
     public static class ImportExportDocument
     {
-        public static readonly string InputFile ="Resources/SampleDocument.pdf";
+        public static readonly string RootDirectory = AppDomain.CurrentDomain.BaseDirectory;
+        public static readonly string InputFile = RootDirectory + "Resources\\SampleDocument.pdf";
         private static PdfFormatProvider provider = new PdfFormatProvider();
 
         public static RadFixedDocument ImportDocument()

@@ -13,7 +13,7 @@ using Telerik.Windows.Documents.Flow.Model;
 
 namespace ConvertDocuments
 {
-    class DocumentConverter
+    internal class DocumentConverter
     {
         private static readonly string sampleDocumentFilePath = "SampleData\\SampleDocument.docx";
 
@@ -116,13 +116,19 @@ namespace ConvertDocuments
             }
 
             string path = "Converted." + format;
-            using (var stream = File.OpenWrite(path))
+            using (FileStream stream = File.OpenWrite(path))
             {
                 formatProvider.Export(this.document, stream);
             }
 
             Console.WriteLine("Document converted.");
-            Process.Start(path);
+
+            ProcessStartInfo psi = new ProcessStartInfo()
+            {
+                FileName = path,
+                UseShellExecute = true
+            };
+            Process.Start(psi);
         }
     }
 }
