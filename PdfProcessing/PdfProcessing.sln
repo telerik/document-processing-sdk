@@ -25,6 +25,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModifyBookmarks", "ModifyBo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DrawHeaderFooter", "DrawHeaderFooter\DrawHeaderFooter.csproj", "{F6F73F62-B6DE-40E4-91AE-4E03F9C7811B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AddWatermark", "AddWatermark\AddWatermark.csproj", "{1273BAEB-EDBC-42B3-A73B-185485129BFF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -75,50 +77,15 @@ Global
 		{F6F73F62-B6DE-40E4-91AE-4E03F9C7811B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F6F73F62-B6DE-40E4-91AE-4E03F9C7811B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F6F73F62-B6DE-40E4-91AE-4E03F9C7811B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1273BAEB-EDBC-42B3-A73B-185485129BFF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1273BAEB-EDBC-42B3-A73B-185485129BFF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1273BAEB-EDBC-42B3-A73B-185485129BFF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1273BAEB-EDBC-42B3-A73B-185485129BFF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {8367CD01-3064-4D5D-A3B8-6E7CD36F5B8A}
-	EndGlobalSection
-	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 12
-		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
-		SccTeamFoundationServer = http://tfs:8082/defaultcollection
-		SccLocalPath0 = .
-		SccProjectUniqueName1 = PdfViewerIntegration\\PdfViewerIntegration_WPF.csproj
-		SccProjectName1 = PdfViewerIntegration
-		SccLocalPath1 = PdfViewerIntegration
-		SccProjectUniqueName2 = ExportUIElement\\ExportUIElement_WPF.csproj
-		SccProjectName2 = ExportUIElement
-		SccLocalPath2 = ExportUIElement
-		SccProjectUniqueName3 = ManipulatePages\\ManipulatePages.csproj
-		SccProjectName3 = ManipulatePages
-		SccLocalPath3 = ManipulatePages
-		SccProjectUniqueName4 = PdfStreamWriterPerformance\\PdfStreamWriterPerformance.csproj
-		SccProjectName4 = PdfStreamWriterPerformance
-		SccLocalPath4 = PdfStreamWriterPerformance
-		SccProjectUniqueName5 = CreateDocumentWithImages\\CreateDocumentWithImages.csproj
-		SccProjectName5 = CreateDocumentWithImages
-		SccLocalPath5 = CreateDocumentWithImages
-		SccProjectUniqueName6 = GenerateDocument\\GenerateDocument.csproj
-		SccProjectName6 = GenerateDocument
-		SccLocalPath6 = GenerateDocument
-		SccProjectUniqueName7 = CreateInteractiveForms\\CreateInteractiveForms.csproj
-		SccProjectName7 = CreateInteractiveForms
-		SccLocalPath7 = CreateInteractiveForms
-		SccProjectUniqueName8 = ModifyForms\\ModifyFormValues.csproj
-		SccProjectName8 = ModifyForms
-		SccLocalPath8 = ModifyForms
-		SccProjectUniqueName9 = CreatePdfUsingRadFixedDocumentEditor\\CreatePdfUsingRadFixedDocumentEditor.csproj
-		SccProjectName9 = CreatePdfUsingRadFixedDocumentEditor
-		SccLocalPath9 = CreatePdfUsingRadFixedDocumentEditor
-		SccProjectUniqueName10 = ModifyBookmarks\\ModifyBookmarks.csproj
-		SccProjectName10 = ModifyBookmarks
-		SccLocalPath10 = ModifyBookmarks
-		SccProjectUniqueName11 = DrawHeaderFooter\\DrawHeaderFooter.csproj
-		SccProjectName11 = DrawHeaderFooter
-		SccLocalPath11 = DrawHeaderFooter
 	EndGlobalSection
 EndGlobal
