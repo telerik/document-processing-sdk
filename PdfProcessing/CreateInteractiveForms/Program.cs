@@ -1,7 +1,11 @@
 ﻿using System;
 using System.Diagnostics;
 using System.IO;
+#if NETCOREAPP
+using Telerik.Documents.Primitives;
+#else
 using System.Windows;
+#endif
 using Telerik.Windows.Documents.Fixed.FormatProviders.Pdf;
 using Telerik.Windows.Documents.Fixed.Model;
 using Telerik.Windows.Documents.Fixed.Model.ColorSpaces;
@@ -10,9 +14,9 @@ using Telerik.Windows.Documents.Fixed.Model.InteractiveForms;
 
 namespace CreateInteractiveForms
 {
-    class Program
+    internal class Program
     {
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
             RadFixedDocument document = CreateDocument();
 
@@ -26,14 +30,20 @@ namespace CreateInteractiveForms
             File.WriteAllBytes(fileName, new PdfFormatProvider().Export(document));
 
             Console.WriteLine("Document created.");
-            Process.Start(fileName);
+
+            ProcessStartInfo psi = new ProcessStartInfo()
+            {
+                FileName = fileName,
+                UseShellExecute = true
+            };
+            Process.Start(psi);
         }
 
         private static RadFixedDocument CreateDocument()
         {
             RadFixedDocument document = new RadFixedDocument();
             CreateFields(document);
-            DrawPageWithWidgets(document.Pages.AddPage());
+            DrawPageWithWidgets(document);
 
             return document;
         }
@@ -87,8 +97,10 @@ namespace CreateInteractiveForms
             textBox.Value = "Sample text...";
         }
 
-        private static void DrawPageWithWidgets(RadFixedPage page)
+        private static void DrawPageWithWidgets(RadFixedDocument document)
         {
+            RadFixedPage page = document.Pages.AddPage();
+
             FixedContentEditor editor = new FixedContentEditor(page);
             using (editor.SaveGraphicProperties())
             {
@@ -102,7 +114,7 @@ namespace CreateInteractiveForms
             editor.Position.Translate(100, 100);
             Size widgetDimensions = new Size(200, 30);
 
-            foreach (FormField field in page.Document.AcroForm.FormFields)
+            foreach (FormField field in document.AcroForm.FormFields)
             {
                 switch (field.FieldType)
                 {

@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26730.0
+VisualStudioVersion = 15.0.26923.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GenerateDocument", "GenerateDocument\GenerateDocument.csproj", "{869DF5E6-3C96-4AAF-A34F-F292B4BB2C3F}"
 EndProject
@@ -28,16 +28,5 @@ Global
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D2F894A5-7CCA-48AB-BB49-E0BA45D9672C}
 	EndGlobalSection
-	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 3
-		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
-		SccTeamFoundationServer = http://tfsemea.progress.com:8080/
-		SccLocalPath0 = .
-		SccProjectUniqueName1 = GenerateDocument\\GenerateDocument.csproj
-		SccProjectName1 = GenerateDocument
-		SccLocalPath1 = GenerateDocument
-		SccProjectUniqueName2 = AppendWorksheetToExistingWorkbook\\AppendWorksheetToExistingWorkbook.csproj
-		SccProjectName2 = AppendWorksheetToExistingWorkbook
-		SccLocalPath2 = AppendWorksheetToExistingWorkbook
-	EndGlobalSection
+	 
 EndGlobal

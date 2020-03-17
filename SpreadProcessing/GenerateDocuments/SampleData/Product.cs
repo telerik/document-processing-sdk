@@ -68,7 +68,10 @@ namespace GenerateDocuments.SampleData
 
         public int Quantity
         {
-            get { return this.quantity; }
+            get
+            {
+                return this.quantity;
+            }
             set
             {
                 if (this.quantity != value)
@@ -95,7 +98,10 @@ namespace GenerateDocuments.SampleData
 
         public double SubTotal
         {
-            get { return this.subTotal; }
+            get
+            {
+                return this.subTotal;
+            }
             set
             {
                 if (this.subTotal != value)

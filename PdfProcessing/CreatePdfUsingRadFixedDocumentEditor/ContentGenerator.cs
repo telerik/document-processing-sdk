@@ -2,7 +2,11 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
+#if NETCOREAPP
+using Telerik.Documents.Primitives;
+#else
 using System.Windows;
+#endif
 using Telerik.Windows.Documents.Fixed.Model.ColorSpaces;
 using Telerik.Windows.Documents.Fixed.Model.Editing;
 using Telerik.Windows.Documents.Fixed.Model.Editing.Tables;
@@ -30,7 +34,7 @@ namespace CreatePdfUsingRadFixedDocumentEditor
 
         public static Table GetSimpleTable(int productRows)
         {
-            var table = new Table();
+            Table table = new Table();
 
             RgbColor headerColor = new RgbColor(79, 129, 189);
             RgbColor bordersColor = new RgbColor(149, 179, 215);
@@ -97,7 +101,7 @@ namespace CreatePdfUsingRadFixedDocumentEditor
 
         public static Table GetComplexTable(FontBase bigTextFont)
         {
-            var table = new Table();
+            Table table = new Table();
             table.Margin = new Thickness(0, 10, 0, 0);
             table.Borders = new TableBorders(new Border(10, RgbColors.Black));
             Border defaultBorder = new Border(3, RgbColors.Black);
@@ -198,7 +202,11 @@ namespace CreatePdfUsingRadFixedDocumentEditor
                 Point point = previousPoint + delta;
 
                 PathFigure rectanglePath = rectanglesGeometry.Figures.AddPathFigure();
-                Rect rect = new Rect(previousPoint, point);
+                double x = Math.Min(previousPoint.X, point.X);
+                double y = Math.Min(previousPoint.Y, point.Y);
+                double width = Math.Max(Math.Max(previousPoint.X, point.X) - x, 0);
+                double height = Math.Max(Math.Max(previousPoint.Y, point.Y) - y, 0);
+                Rect rect = new Rect(x, y, width, height);
                 rectanglePath.StartPoint = rect.TopLeft;
                 rectanglePath.Segments.AddLineSegment().Point = rect.TopRight;
                 rectanglePath.Segments.AddLineSegment().Point = rect.BottomRight;

@@ -2,8 +2,16 @@
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
+#if NETCOREAPP
+using Telerik.Documents.Common.Model;
+using Telerik.Documents.Primitives;
+using Telerik.Documents.Media;
+using Telerik.Documents.Core.Fonts;
+#else
 using System.Windows;
 using System.Windows.Media;
+using Telerik.Windows.Documents.Spreadsheet.Model;
+#endif
 using Telerik.Windows.Documents.Common.FormatProviders;
 using Telerik.Windows.Documents.Flow.FormatProviders.Docx;
 using Telerik.Windows.Documents.Flow.FormatProviders.Html;
@@ -13,7 +21,6 @@ using Telerik.Windows.Documents.Flow.FormatProviders.Txt;
 using Telerik.Windows.Documents.Flow.Model;
 using Telerik.Windows.Documents.Flow.Model.Editing;
 using Telerik.Windows.Documents.Flow.Model.Styles;
-using Telerik.Windows.Documents.Spreadsheet.Model;
 
 namespace GenerateDocument
 {
@@ -28,13 +35,13 @@ namespace GenerateDocument
         {
             get
             {
-                return selectedExportFormat;
+                return this.selectedExportFormat;
             }
             set
             {
-                if (!object.Equals(selectedExportFormat, value))
+                if (!object.Equals(this.selectedExportFormat, value))
                 {
-                    selectedExportFormat = value;
+                    this.selectedExportFormat = value;
                 }
             }
         }
@@ -109,10 +116,18 @@ namespace GenerateDocument
             Paragraph paragraphWithImage = signatureTable.Rows[0].Cells[0].Blocks.AddParagraph();
             paragraphWithImage.Spacing.SpacingAfter = 0;
             editor.MoveToParagraphStart(paragraphWithImage);
+
+#if NETCOREAPP
+            using (Stream stream = File.OpenRead(this.sampleDataFolder + "Telerik_logo.jpg"))
+            {
+                editor.InsertImageInline(stream, "jpg", new Size(118, 28));
+            }
+#else
             using (Stream stream = File.OpenRead(sampleDataFolder + "Telerik_logo.png"))
             {
                 editor.InsertImageInline(stream, "png", new Size(118, 28));
             }
+#endif
 
             // Create cell with name and position
             signatureTable.Rows[0].Cells[1].Padding = new Telerik.Windows.Documents.Primitives.Padding(12, 0, 0, 0);
@@ -139,10 +154,18 @@ namespace GenerateDocument
         {
             Header header = editor.Document.Sections.First().Headers.Add();
             editor.MoveToParagraphStart(header.Blocks.AddParagraph());
-            using (Stream stream = File.OpenRead(sampleDataFolder + "Telerik_develop_experiences.png"))
+
+#if NETCOREAPP
+            using (Stream stream = File.OpenRead(this.sampleDataFolder + "Telerik_develop_experiences.jpg"))
+            {
+                editor.InsertImageInline(stream, "jpg", new Size(660, 237));
+            }
+#else
+            using (Stream stream = File.OpenRead(this.sampleDataFolder + "Telerik_develop_experiences.png"))
             {
                 editor.InsertImageInline(stream, "png", new Size(660, 237));
             }
+#endif
         }
 
         private void SaveDocument(RadFlowDocument document, string selectedFormat)
@@ -176,13 +199,19 @@ namespace GenerateDocument
             }
 
             string path = "Sample document." + selectedFormat;
-            using (var stream = File.OpenWrite(path))
+            using (FileStream stream = File.OpenWrite(path))
             {
                 formatProvider.Export(document, stream);
             }
 
             Console.Write("Document generated.");
-            Process.Start(path);
+
+            ProcessStartInfo psi = new ProcessStartInfo()
+            {
+                FileName = path,
+                UseShellExecute = true
+            };
+            Process.Start(psi);
         }
     }
 }

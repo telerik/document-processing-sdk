@@ -1,8 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
+#if NETCOREAPP
+using Telerik.Documents.Common.Model;
+using Telerik.Documents.Media;
+#else
 using System.Windows.Media;
+#endif
 using GenerateDocuments.SampleData;
 using Telerik.Windows.Documents.Spreadsheet.Model;
 using Telerik.Windows.Documents.Spreadsheet.Utilities;
@@ -36,7 +40,10 @@ namespace GenerateDocuments
 
         public List<Product> Products
         {
-            get { return this.products; }
+            get
+            {
+                return this.products;
+            }
             set
             {
                 if (this.products != value)
@@ -66,7 +73,7 @@ namespace GenerateDocuments
             this.data = new Products();
             this.GenerateData();
 
-            this.SelectedExportFormat = defaultExportFormat;
+            this.SelectedExportFormat = this.defaultExportFormat;
         }
 
         private void GenerateData()
@@ -78,7 +85,7 @@ namespace GenerateDocuments
         {
             double totalAmount = 0;
 
-            foreach (var product in this.products)
+            foreach (Product product in this.products)
             {
                 totalAmount += product.SubTotal;
             }
@@ -130,14 +137,14 @@ namespace GenerateDocuments
             worksheet.Cells[firstUsedCellIndex].SetHorizontalAlignment(RadHorizontalAlignment.Center);
             worksheet.Cells[0, 0, 0, IndexColumnSubTotal].MergeAcross();
 
-            worksheet.Columns[IndexColumnUnitPrice].SetWidth(new ColumnWidth(120, true));
-            worksheet.Columns[IndexColumnSubTotal].SetWidth(new ColumnWidth(120, true));
+            worksheet.Columns[IndexColumnUnitPrice].SetWidth(new ColumnWidth(125, true));
+            worksheet.Columns[IndexColumnSubTotal].SetWidth(new ColumnWidth(125, true));
 
-            worksheet.Cells[IndexRowItemStart, 0, lastItemIndexRow, IndexColumnQuantity - 1].MergeAcross();
             worksheet.Cells[IndexRowItemStart, 0].SetValue("Item");
             worksheet.Cells[IndexRowItemStart, IndexColumnQuantity].SetValue("QTY");
             worksheet.Cells[IndexRowItemStart, IndexColumnUnitPrice].SetValue("Unit Price");
             worksheet.Cells[IndexRowItemStart, IndexColumnSubTotal].SetValue("SubTotal");
+            worksheet.Cells[IndexRowItemStart, 0, lastItemIndexRow, IndexColumnQuantity - 1].MergeAcross();
 
             worksheet.Cells[IndexRowItemStart, 0, IndexRowItemStart, IndexColumnSubTotal].SetFill
                 (new GradientFill(GradientType.Horizontal, InvoiceBackground, InvoiceBackground));

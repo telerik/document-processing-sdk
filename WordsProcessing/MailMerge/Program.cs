@@ -2,9 +2,9 @@
 
 namespace MailMerge
 {
-    class Program
+    internal class Program
     {
-        static void Main()
+        private static void Main()
         {
             Console.WriteLine("Choose the type of data object:");
             Console.WriteLine("1 - Save mail-merged document with dynamic data object");
@@ -25,7 +25,6 @@ namespace MailMerge
                 default:
                     Console.WriteLine("Invalid choice");
                     break;
-
             }
 
             Console.Read();

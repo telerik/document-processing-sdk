@@ -1,15 +1,19 @@
 ﻿using System;
 using System.Diagnostics;
 using System.IO;
-using System.Linq;
+#if NETCOREAPP
+using Telerik.Documents.Common.Model;
+using Telerik.Documents.Media;
+#else
 using System.Windows.Media;
+using Telerik.Windows.Documents.Spreadsheet.Theming;
+#endif
 using Telerik.Windows.Documents.Model;
 using Telerik.Windows.Documents.Spreadsheet.FormatProviders.Pdf;
 using Telerik.Windows.Documents.Spreadsheet.Model;
 using Telerik.Windows.Documents.Spreadsheet.Model.Filtering;
 using Telerik.Windows.Documents.Spreadsheet.Model.Shapes;
 using Telerik.Windows.Documents.Spreadsheet.PropertySystem;
-using Telerik.Windows.Documents.Spreadsheet.Theming;
 using Telerik.Windows.Documents.Spreadsheet.Utilities;
 
 namespace CreateModifyExport
@@ -26,7 +30,6 @@ namespace CreateModifyExport
             this.SetData();
             this.SetTotalsRows();
             this.SetDocumentTitle();
-            this.worksheet.Columns[worksheet.UsedCellRange].AutoFitWidth();
 
             this.SetWorkbookTheme();
             this.CreateWorkbookStyles();
@@ -76,7 +79,13 @@ namespace CreateModifyExport
             this.worksheet.Filter.FilterRange = null;
 
             Console.WriteLine("Reports generated.");
-            Process.Start(this.ExportDirectory);
+
+            ProcessStartInfo psi = new ProcessStartInfo
+            {
+                FileName = this.ExportDirectory,
+                UseShellExecute = true
+            };
+            Process.Start(psi);
         }
 
         public void ExportReport(string departmentName, Stream stream)
@@ -89,7 +98,7 @@ namespace CreateModifyExport
         private void CreateWorkbook()
         {
             this.workbook = new Workbook();
-            this.worksheet = workbook.Worksheets.Add();
+            this.worksheet = this.workbook.Worksheets.Add();
             this.worksheet.Name = "Expense Report 2014";
         }
 
@@ -131,20 +140,20 @@ namespace CreateModifyExport
 
         private void SetDocumentTitle()
         {
-            CellSelection companyNameCells = worksheet.Cells[1, 1, 1, 4];
-            companyNameCells.Merge();
+            CellSelection companyNameCells = this.worksheet.Cells[1, 1, 1, 4];
             companyNameCells.SetValue("My Company");
             companyNameCells.SetHorizontalAlignment(RadHorizontalAlignment.Left);
+            companyNameCells.Merge();
 
-            CellSelection expenseReportCells = worksheet.Cells[2, 1, 2, 4];
-            expenseReportCells.Merge();
+            CellSelection expenseReportCells = this.worksheet.Cells[2, 1, 2, 4];
             expenseReportCells.SetValue("Expense Report");
             expenseReportCells.SetHorizontalAlignment(RadHorizontalAlignment.Right);
+            expenseReportCells.Merge();
 
-            CellSelection periodCells = worksheet.Cells[3, 1, 3, 4];
-            periodCells.Merge();
+            CellSelection periodCells = this.worksheet.Cells[3, 1, 3, 4];
             periodCells.SetValue("1 Jan 2014 - 31 Mar 2014");
             periodCells.SetHorizontalAlignment(RadHorizontalAlignment.Right);
+            periodCells.Merge();
         }
 
         private void SetWorkbookTheme()
@@ -187,6 +196,7 @@ namespace CreateModifyExport
             expensePeriodStyle.HorizontalAlignment = RadHorizontalAlignment.Right;
 
             CellStyle columnHeadersStyle = this.workbook.Styles.Add("ColumnHeadersStyle");
+            columnHeadersStyle.FontFamily = new ThemableFontFamily(ThemeFontType.Major);
             columnHeadersStyle.BottomBorder = new CellBorder(CellBorderStyle.Thick, new ThemableColor(ThemeColorType.Accent2));
             columnHeadersStyle.FontSize = UnitHelper.PointToDip(14);
 
@@ -203,48 +213,45 @@ namespace CreateModifyExport
 
         private void ApplyStyles()
         {
-            worksheet.Cells[1, 1, 1, 4].SetStyleName("CompanyNameStyle");
-            worksheet.Cells[2, 1, 3, 4].SetStyleName("ExpensePeriodStyle");
-            worksheet.Cells[5, 1, 5, 4].SetStyleName("ColumnHeadersStyle");
-            worksheet.Cells[28, 1, 30, 4].SetStyleName("DepartmentTotalStyle");
-            worksheet.Cells[31, 1, 31, 4].SetStyleName("TotalStyle");
+            this.worksheet.Cells[1, 1, 1, 4].SetStyleName("CompanyNameStyle");
+            this.worksheet.Cells[2, 1, 3, 4].SetStyleName("ExpensePeriodStyle");
+            this.worksheet.Cells[5, 1, 5, 4].SetStyleName("ColumnHeadersStyle");
+            this.worksheet.Cells[28, 1, 30, 4].SetStyleName("DepartmentTotalStyle");
+            this.worksheet.Cells[31, 1, 31, 4].SetStyleName("TotalStyle");
         }
 
         private void ApplyNumberFormats()
         {
             string shortDateFormat = "d MMM yyyy";
-            worksheet.Cells[6, 3, 31, 3].SetFormat(new CellValueFormat(shortDateFormat));
+            this.worksheet.Cells[6, 3, 31, 3].SetFormat(new CellValueFormat(shortDateFormat));
 
             string currencyFormat = "$#,##0.00";
-            worksheet.Cells[6, 4, 31, 4].SetFormat(new CellValueFormat(currencyFormat));
+            this.worksheet.Cells[6, 4, 31, 4].SetFormat(new CellValueFormat(currencyFormat));
 
-            worksheet.Cells[5, 3, 5, 4].SetHorizontalAlignment(RadHorizontalAlignment.Right);
+            this.worksheet.Cells[5, 3, 5, 4].SetHorizontalAlignment(RadHorizontalAlignment.Right);
         }
 
         private void ApplyColumnWidths()
         {
-            worksheet.Columns[0].SetWidth(new ColumnWidth(25, true));
-            worksheet.Columns[1, 4].AutoFitWidth();
+            this.worksheet.Columns[0].SetWidth(new ColumnWidth(25, true));
+            this.worksheet.Columns[1, 4].AutoFitWidth();
         }
 
         private void InsertCompanyLogo()
         {
-            FloatingImage image = new FloatingImage(worksheet, new CellIndex(1, 4), 25, 10);
+            FloatingImage image = new FloatingImage(this.worksheet, new CellIndex(1, 4), 25, 10);
 
             using (Stream stream = File.OpenRead("Resources/MyCompanyLogo.jpg"))
             {
                 image.ImageSource = new Telerik.Windows.Documents.Media.ImageSource(stream, "jpg");
             }
 
-            image.Width = 65;
-            image.Height = 65;
-
-            worksheet.Shapes.Add(image);
+            this.worksheet.Shapes.Add(image);
         }
 
         private void FilterByDepartment(string departmentName)
         {
-            worksheet.Filter.FilterRange = new CellRange(5, 1, 31, 4);
+            this.worksheet.Filter.FilterRange = new CellRange(5, 1, 31, 4);
 
             string[] valuesToShow = new string[]
             {
@@ -255,7 +262,7 @@ namespace CreateModifyExport
 
             IFilter departmentFilter = new ValuesCollectionFilter(0, valuesToShow, true);
 
-            worksheet.Filter.SetFilter(departmentFilter);
+            this.worksheet.Filter.SetFilter(departmentFilter);
         }
 
         private void ExportToPdf(string fileName)
@@ -263,7 +270,7 @@ namespace CreateModifyExport
             using (Stream fileStream = this.GetFileStream(fileName))
             {
                 PdfFormatProvider provider = new PdfFormatProvider();
-                provider.Export(workbook, fileStream);
+                provider.Export(this.workbook, fileStream);
             }
         }
 
@@ -272,13 +279,13 @@ namespace CreateModifyExport
             using (fileStream)
             {
                 PdfFormatProvider provider = new PdfFormatProvider();
-                provider.Export(workbook, fileStream);
+                provider.Export(this.workbook, fileStream);
             }
         }
 
         private Stream GetFileStream(string fileName)
         {
-            PrepareDirectory(this.ExportDirectory, fileName);
+            this.PrepareDirectory(this.ExportDirectory, fileName);
             string filePath = string.Format("{0}\\{1}", this.ExportDirectory, fileName);
 
             return new FileStream(filePath, FileMode.OpenOrCreate);

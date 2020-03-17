@@ -50,19 +50,19 @@ namespace ConvertDocuments
             }
         }
 
-        string selectedExportFormat;
+        private string selectedExportFormat;
         public string SelectedExportFormat
         {
             get
             {
-                return selectedExportFormat;
+                return this.selectedExportFormat;
             }
             set
             {
                 value = value.ToLower();
-                if (!object.Equals(selectedExportFormat, value))
+                if (!object.Equals(this.selectedExportFormat, value))
                 {
-                    selectedExportFormat = value;
+                    this.selectedExportFormat = value;
                 }
             }
         }
@@ -118,7 +118,7 @@ namespace ConvertDocuments
                     }
                     catch (Exception)
                     {
-                       Console.WriteLine("Could not open file.");
+                        Console.WriteLine("Could not open file.");
                         this.Workbook = null;
                     }
                 }

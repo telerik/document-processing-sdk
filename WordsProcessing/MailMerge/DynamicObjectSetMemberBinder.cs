@@ -1,6 +1,4 @@
-﻿using System;
-using System.Dynamic;
-using System.Linq;
+﻿using System.Dynamic;
 
 namespace MailMerge
 {

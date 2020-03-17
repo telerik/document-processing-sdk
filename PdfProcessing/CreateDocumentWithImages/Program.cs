@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Diagnostics;
 using Telerik.Windows.Documents.Fixed.FormatProviders.Pdf.Export;
 
 namespace CreateDocumentWithImages
@@ -8,10 +7,15 @@ namespace CreateDocumentWithImages
     {
         private static readonly string ResultDirName = AppDomain.CurrentDomain.BaseDirectory + "Demo results/";
 
-        static void Main()
+        private static void Main()
         {
+#if NETCOREAPP
+            Console.Write("Libraries built against .Net Standard can not export ImageQuality different than High. Exporting an image with high quality. ");
+            string inputQuality = "1";
+#else
             Console.Write("Choose a value for image quality (1 - High, 2 - Medium, 3 - Low): ");
             string inputQuality = Console.ReadLine();
+#endif
 
             ImageQuality imageQuality;
 
@@ -26,7 +30,8 @@ namespace CreateDocumentWithImages
                 case "3":
                     imageQuality = ImageQuality.Low;
                     break;
-                default: imageQuality = ImageQuality.High;
+                default:
+                    imageQuality = ImageQuality.High;
                     break;
             }
 

@@ -8,11 +8,16 @@ using Telerik.Windows.Documents.Fixed.Model.ColorSpaces;
 using Telerik.Windows.Documents.Fixed.Model.Editing;
 using Telerik.Windows.Documents.Fixed.Model.Editing.Flow;
 using Telerik.Windows.Documents.Fixed.Model.Graphics;
+#if NETCOREAPP
+using Telerik.Documents.Core.Fonts;
+using Telerik.Documents.Primitives;
+#else
 using FontFamily = System.Windows.Media.FontFamily;
 using FontStyles = System.Windows.FontStyles;
 using FontWeights = System.Windows.FontWeights;
 using Point = System.Windows.Point;
 using Size = System.Windows.Size;
+#endif
 
 namespace GenerateDocument
 {
@@ -20,7 +25,8 @@ namespace GenerateDocument
     {
         private static readonly double defaultLeftIndent = 50;
         private static readonly double defaultLineHeight = 16;
-        private static readonly string sampleDataPath = "../../SampleData/";
+        public static readonly string RootDirectory = AppDomain.CurrentDomain.BaseDirectory;
+        private static readonly string sampleDataPath = RootDirectory + "/SampleData/";
         private readonly string defaultDocumentName = "Sample Document.pdf";
 
         private static void CenterText(FixedContentEditor editor, string text)
@@ -40,18 +46,24 @@ namespace GenerateDocument
             PdfFormatProvider formatProvider = new PdfFormatProvider();
             formatProvider.ExportSettings.ImageQuality = ImageQuality.High;
 
-            string resultFile = System.IO.Path.Combine(filePath, defaultDocumentName);
+            string resultFile = System.IO.Path.Combine(filePath, this.defaultDocumentName);
 
             this.PrepareDirectory(filePath, resultFile);
 
-            using (var stream = File.OpenWrite(resultFile))
+            using (FileStream stream = File.OpenWrite(resultFile))
             {
                 RadFixedDocument document = this.CreateDocument();
                 formatProvider.Export(document, stream);
             }
 
             Console.WriteLine("The document is generated.");
-            Process.Start(resultFile);
+
+            ProcessStartInfo psi = new ProcessStartInfo()
+            {
+                FileName = resultFile,
+                UseShellExecute = true
+            };
+            Process.Start(psi);
         }
 
         private RadFixedDocument CreateDocument()
@@ -99,7 +111,7 @@ namespace GenerateDocument
             block.TextProperties.FontSize = 14;
             block.TextProperties.TrySetFont(new FontFamily("Calibri"), FontStyles.Italic, FontWeights.Bold);
             block.InsertText("RadPdfProcessing");
-            block.TextProperties.TrySetFont(new System.Windows.Media.FontFamily("Calibri"));
+            block.TextProperties.TrySetFont(new FontFamily("Calibri"));
             block.InsertText(" is a document processing library that enables your application to import and export files to and from PDF format. The document model is entirely independent from UI and allows you to generate sleek documents with differently formatted text, images, shapes and more.");
 
             editor.DrawBlock(block, new Size(maxWidth, double.PositiveInfinity));

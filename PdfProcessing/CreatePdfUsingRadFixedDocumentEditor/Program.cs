@@ -1,7 +1,13 @@
 ﻿using System.Diagnostics;
 using System.IO;
-using System.Windows;
+#if NETCOREAPP
+using Telerik.Documents.Core.Fonts;
+using Telerik.Documents.Primitives;
+using Telerik.Windows.Documents.Extensibility;
+#else
 using System.Windows.Media;
+using System.Windows;
+#endif
 using Telerik.Windows.Documents.Fixed.FormatProviders.Pdf;
 using Telerik.Windows.Documents.Fixed.Model;
 using Telerik.Windows.Documents.Fixed.Model.Editing;
@@ -11,10 +17,15 @@ using Editing = Telerik.Windows.Documents.Fixed.Model.Editing;
 
 namespace CreatePdfUsingRadFixedDocumentEditor
 {
-    class Program
+    internal class Program
     {
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
+#if NETCOREAPP
+            FontsProviderBase fontsProvider = new FontsProvider();
+            FixedExtensibilityManager.FontsProvider = fontsProvider;
+#endif
+
             GenerateExportAndViewDocument(true, "resultWithStandardFonts.pdf");
             GenerateExportAndViewDocument(false, "resultWithEmbeddedFonts.pdf");
         }
@@ -30,7 +41,13 @@ namespace CreatePdfUsingRadFixedDocumentEditor
 
             PdfFormatProvider provider = new PdfFormatProvider();
             File.WriteAllBytes(resultFileName, provider.Export(document));
-            Process.Start(resultFileName);
+
+            ProcessStartInfo psi = new ProcessStartInfo()
+            {
+                FileName = resultFileName,
+                UseShellExecute = true
+            };
+            Process.Start(psi);
         }
 
         private static RadFixedDocument GenerateSampleDocument(bool useOnlyStandardFonts)
@@ -85,7 +102,7 @@ namespace CreatePdfUsingRadFixedDocumentEditor
                     editor.InsertImageInline(imageSource, new Size(100, 60));
                     editor.InsertRun(ContentGenerator.GetParagraphText(2));
                 }
-                
+
                 editor.InsertParagraph();
                 editor.CharacterProperties.Font = boldItalicFont;
                 editor.CharacterProperties.FontSize = 20;
@@ -93,7 +110,7 @@ namespace CreatePdfUsingRadFixedDocumentEditor
                 Table simpleTable = ContentGenerator.GetSimpleTable(40);
                 simpleTable.LayoutType = Editing.Flow.TableLayoutType.FixedWidth;
                 editor.InsertTable(simpleTable);
-                
+
                 editor.InsertParagraph();
                 editor.InsertRun("Complex table with images, geometries and merged cells.");
                 Table complexTable = ContentGenerator.GetComplexTable(serifBoldItalic);

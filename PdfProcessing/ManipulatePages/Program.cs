@@ -1,7 +1,11 @@
 ﻿using System;
 using System.Diagnostics;
 using System.IO;
+#if NETCOREAPP
+using Telerik.Documents.Primitives;
+#else
 using System.Windows;
+#endif
 using Telerik.Windows.Documents.Fixed.Model;
 using Telerik.Windows.Documents.Fixed.Model.ColorSpaces;
 using Telerik.Windows.Documents.Fixed.Model.Editing;
@@ -10,7 +14,7 @@ using Telerik.Windows.Documents.Fixed.FormatProviders.Pdf.Streaming;
 
 namespace ManipulatePages
 {
-    class Program
+    internal class Program
     {
         public static readonly string RootDirectory = AppDomain.CurrentDomain.BaseDirectory;
         public static readonly string InputFileBarChart = RootDirectory + "InputFiles\\BarChart.pdf";
@@ -20,7 +24,7 @@ namespace ManipulatePages
         public static readonly string InputFileSoundVideoAnd3D = RootDirectory + "InputFiles\\Sound Video and 3D.pdf";
         public const string ResultDirName = "Demo results";
 
-        static void Main()
+        private static void Main()
         {
             EnsureEmptyResultDirectory();
 
@@ -29,7 +33,12 @@ namespace ManipulatePages
             FitAndPositionMultiplePagesOnSinglePage("Fit four pages on one page demo result.pdf");
             PrependAndAppendPageContent("Prepend and append page content demo result.pdf");
 
-            Process.Start(ResultDirName);
+            ProcessStartInfo psi = new ProcessStartInfo()
+            {
+                FileName = ResultDirName,
+                UseShellExecute = true
+            };
+            Process.Start(psi);
         }
 
         private static void MergeDifferentDocumentsPages(string resultFileName)
@@ -193,7 +202,7 @@ namespace ManipulatePages
         {
             if (Directory.Exists(ResultDirName))
             {
-                foreach(string fileName in Directory.EnumerateFiles(ResultDirName))
+                foreach (string fileName in Directory.EnumerateFiles(ResultDirName))
                 {
                     File.Delete(fileName);
                 }

@@ -1,11 +1,19 @@
 ﻿using System;
+#if NETCOREAPP
+using Telerik.Windows.Documents.Extensibility;
+#endif
 
 namespace GenerateDocuments
 {
-    class Program
+    internal class Program
     {
-        static void Main()
+        private static void Main()
         {
+#if NETCOREAPP
+            FontsProviderBase fontsProvider = new FontsProvider();
+            FixedExtensibilityManager.FontsProvider = fontsProvider;
+#endif
+
             Console.Write("Choose the format you would like to export to (xlsx/csv/txt/pdf): ");
 
             string input = Console.ReadLine();
