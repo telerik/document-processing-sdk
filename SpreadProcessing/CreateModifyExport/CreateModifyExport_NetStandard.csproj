@@ -1,0 +1,77 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup Label="Globals">
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputType>Exe</OutputType>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <ApplicationIcon />
+    <OutputType>Exe</OutputType>
+    <StartupObject />
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="App_SL.xaml.cs" />
+    <Compile Remove="ExpenseViewModel.cs" />
+    <Compile Remove="MainPage.xaml.cs" />
+    <Compile Remove="Properties\AssemblyInfo.cs" />
+    <Compile Remove="ToolBarControl_SL.xaml.cs" />
+    <Compile Remove="ToolBarViewModel_SL.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="App_SL.xaml" />
+    <None Remove="CreateModifyExport.csproj.vspscc" />
+    <None Remove="CreateModifyExport_NetStandard.csproj.vspscc" />
+    <None Remove="CreateModifyExport_SL.csproj.vspscc" />
+    <None Remove="CreateModifyExport_WPF.csproj.vspscc" />
+    <None Remove="MainPage.xaml" />
+    <None Remove="Properties\AppManifest.xml" />
+    <None Remove="Resources\MyCompanyLogo.jpg" />
+    <None Remove="ToolBarControl_SL.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Resources\MyCompanyLogo.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Properties\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.Drawing.Common" Version="4.7.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Telerik.Documents.Core">
+      <HintPath>..\..\..\..\..\Binaries\netstandard\Telerik.Documents.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Documents.Fixed">
+      <HintPath>..\..\..\..\..\Binaries\netstandard\Telerik.Documents.Fixed.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Documents.Spreadsheet">
+      <HintPath>..\..\..\..\..\Binaries\netstandard\Telerik.Documents.Spreadsheet.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Documents.Spreadsheet.FormatProviders.OpenXml">
+      <HintPath>..\..\..\..\..\Binaries\netstandard\Telerik.Documents.Spreadsheet.FormatProviders.OpenXml.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Documents.Spreadsheet.FormatProviders.Pdf">
+      <HintPath>..\..\..\..\..\Binaries\netstandard\Telerik.Documents.Spreadsheet.FormatProviders.Pdf.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Zip">
+      <HintPath>..\..\..\..\..\Binaries\netstandard\Telerik.Zip.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

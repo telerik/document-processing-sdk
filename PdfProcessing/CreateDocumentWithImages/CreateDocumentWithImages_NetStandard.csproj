@@ -1,0 +1,76 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup Label="Globals">
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputType>Exe</OutputType>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <ApplicationIcon />
+    <OutputType>Exe</OutputType>
+    <StartupObject />
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="CreateDocumentWithImages.csproj.vspscc" />
+    <None Remove="CreateDocumentWithImages_NetStandard.csproj.vspscc" />
+    <None Remove="Properties\AppManifest.xml" />
+    <None Remove="Resources\cmyk.jpg" />
+    <None Remove="Resources\dualtone.png" />
+    <None Remove="Resources\GRAYSCALE.jp2" />
+    <None Remove="Resources\GRAYSCALE.jpg" />
+    <None Remove="Resources\rgb.jp2" />
+    <None Remove="Resources\rgb.jpg" />
+    <None Remove="Resources\transparent.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Resources\cmyk.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\GRAYSCALE.jp2">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\GRAYSCALE.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\rgb.jp2">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\rgb.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Properties\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.Drawing.Common" Version="4.7.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Telerik.Documents.Core">
+      <HintPath>..\..\..\..\..\Binaries\netstandard\Telerik.Documents.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Documents.Fixed">
+      <HintPath>..\..\..\..\..\Binaries\netstandard\Telerik.Documents.Fixed.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Zip">
+      <HintPath>..\..\..\..\..\Binaries\netstandard\Telerik.Zip.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>
