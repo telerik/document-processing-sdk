@@ -40,22 +40,4 @@ Global
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {58DF9564-045D-4E13-BB04-5EF62FD3414C}
 	EndGlobalSection
-	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 5
-		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
-		SccTeamFoundationServer = http://tfs.telerik.com:8082/defaultcollection
-		SccLocalPath0 = .
-		SccProjectUniqueName1 = ConvertDocuments\\ConvertDocuments.csproj
-		SccProjectName1 = ConvertDocuments
-		SccLocalPath1 = ConvertDocuments
-		SccProjectUniqueName2 = CreateModifyExport\\CreateModifyExport.csproj
-		SccProjectName2 = CreateModifyExport
-		SccLocalPath2 = CreateModifyExport
-		SccProjectUniqueName3 = GenerateDocuments\\GenerateDocuments.csproj
-		SccProjectName3 = GenerateDocuments
-		SccLocalPath3 = GenerateDocuments
-		SccProjectUniqueName4 = ExportChart\\ExportChart.csproj
-		SccProjectName4 = ExportChart
-		SccLocalPath4 = ExportChart
-	EndGlobalSection
 EndGlobal

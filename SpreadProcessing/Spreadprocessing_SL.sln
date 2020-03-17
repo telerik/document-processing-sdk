@@ -46,25 +46,4 @@ Global
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
-	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 6
-		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
-		SccTeamFoundationServer = https://tfsemea.progress.com/defaultcollection
-		SccLocalPath0 = .
-		SccProjectUniqueName1 = ConvertDocuments\\ConvertDocuments_SL.csproj
-		SccProjectName1 = ConvertDocuments
-		SccLocalPath1 = ConvertDocuments
-		SccProjectUniqueName2 = GenerateDocuments\\GenerateDocuments_SL.csproj
-		SccProjectName2 = GenerateDocuments
-		SccLocalPath2 = GenerateDocuments
-		SccProjectUniqueName3 = CreateModifyExport\\CreateModifyExport_SL.csproj
-		SccProjectName3 = CreateModifyExport
-		SccLocalPath3 = CreateModifyExport
-		SccProjectUniqueName4 = RegisterAndExportPdfFonts\\RegisterAndExportPdfFonts.csproj
-		SccProjectName4 = RegisterAndExportPdfFonts
-		SccLocalPath4 = RegisterAndExportPdfFonts
-		SccProjectUniqueName5 = RegisterAndExportPdfFonts.Web\\RegisterAndExportPdfFonts.Web.csproj
-		SccProjectName5 = RegisterAndExportPdfFonts.Web
-		SccLocalPath5 = RegisterAndExportPdfFonts.Web
-	EndGlobalSection
 EndGlobal

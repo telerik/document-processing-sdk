@@ -19,10 +19,10 @@
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
-    <SccProjectName>SAK</SccProjectName>
-    <SccLocalPath>SAK</SccLocalPath>
-    <SccAuxPath>SAK</SccAuxPath>
-    <SccProvider>SAK</SccProvider>
+     
+     
+     
+     
     <SilverlightApplicationList>{3EABF3C2-5C91-4AFE-AE8E-EC3EDE942A8D}|..\RegisterAndExportPdfFonts\RegisterAndExportPdfFonts.csproj|ClientBin|False</SilverlightApplicationList>
     <WcfConfigValidationEnabled>True</WcfConfigValidationEnabled>
   </PropertyGroup>

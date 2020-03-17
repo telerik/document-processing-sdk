@@ -31,10 +31,10 @@
     <ThrowErrorsInValidation>true</ThrowErrorsInValidation>
     <LinkedServerProject>
     </LinkedServerProject>
-    <SccProjectName>SAK</SccProjectName>
-    <SccLocalPath>SAK</SccLocalPath>
-    <SccAuxPath>SAK</SccAuxPath>
-    <SccProvider>SAK</SccProvider>
+     
+     
+     
+     
   </PropertyGroup>
   <!-- This property group is only here to support building this project using the 
        MSBuild 3.5 toolset. In order to work correctly with this older toolset, it needs 
@@ -75,54 +75,54 @@
     <Reference Include="System.Windows.Browser" />
     <Reference Include="Telerik.Windows.Controls">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\Binaries\Silverlight\Telerik.Windows.Controls.dll</HintPath>
+      <HintPath>$(TELERIKSLDIR)\Binaries\Silverlight\Telerik.Windows.Controls.dll</HintPath>
     </Reference>
     <Reference Include="Telerik.Windows.Controls.GridView">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\Binaries\Silverlight\Telerik.Windows.Controls.GridView.dll</HintPath>
+      <HintPath>$(TELERIKSLDIR)\Binaries\Silverlight\Telerik.Windows.Controls.GridView.dll</HintPath>
     </Reference>
     <Reference Include="Telerik.Windows.Controls.Input">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\Binaries\Silverlight\Telerik.Windows.Controls.Input.dll</HintPath>
+      <HintPath>$(TELERIKSLDIR)\Binaries\Silverlight\Telerik.Windows.Controls.Input.dll</HintPath>
     </Reference>
     <Reference Include="Telerik.Windows.Controls.Navigation">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\Binaries\Silverlight\Telerik.Windows.Controls.Navigation.dll</HintPath>
+      <HintPath>$(TELERIKSLDIR)\Binaries\Silverlight\Telerik.Windows.Controls.Navigation.dll</HintPath>
     </Reference>
     <Reference Include="Telerik.Windows.Controls.RibbonView">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\Binaries\Silverlight\Telerik.Windows.Controls.RibbonView.dll</HintPath>
+      <HintPath>$(TELERIKSLDIR)\Binaries\Silverlight\Telerik.Windows.Controls.RibbonView.dll</HintPath>
     </Reference>
     <Reference Include="Telerik.Windows.Controls.Spreadsheet">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\Binaries\Silverlight\Telerik.Windows.Controls.Spreadsheet.dll</HintPath>
+      <HintPath>$(TELERIKSLDIR)\Binaries\Silverlight\Telerik.Windows.Controls.Spreadsheet.dll</HintPath>
     </Reference>
     <Reference Include="Telerik.Windows.Data">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\Binaries\Silverlight\Telerik.Windows.Data.dll</HintPath>
+      <HintPath>$(TELERIKSLDIR)\Binaries\Silverlight\Telerik.Windows.Data.dll</HintPath>
     </Reference>
     <Reference Include="Telerik.Windows.Documents.Core">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\Binaries\Silverlight\Telerik.Windows.Documents.Core.dll</HintPath>
+      <HintPath>$(TELERIKSLDIR)\Binaries\Silverlight\Telerik.Windows.Documents.Core.dll</HintPath>
     </Reference>
     <Reference Include="Telerik.Windows.Documents.Spreadsheet">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\Binaries\Silverlight\Telerik.Windows.Documents.Spreadsheet.dll</HintPath>
+      <HintPath>$(TELERIKSLDIR)\Binaries\Silverlight\Telerik.Windows.Documents.Spreadsheet.dll</HintPath>
     </Reference>
     <Reference Include="Telerik.Windows.Documents.Spreadsheet.FormatProviders.OpenXml">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\Binaries\Silverlight\Telerik.Windows.Documents.Spreadsheet.FormatProviders.OpenXml.dll</HintPath>
+      <HintPath>$(TELERIKSLDIR)\Binaries\Silverlight\Telerik.Windows.Documents.Spreadsheet.FormatProviders.OpenXml.dll</HintPath>
     </Reference>
     <Reference Include="Telerik.Windows.Documents.Spreadsheet.FormatProviders.Pdf">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\Binaries\Silverlight\Telerik.Windows.Documents.Spreadsheet.FormatProviders.Pdf.dll</HintPath>
+      <HintPath>$(TELERIKSLDIR)\Binaries\Silverlight\Telerik.Windows.Documents.Spreadsheet.FormatProviders.Pdf.dll</HintPath>
     </Reference>
     <Reference Include="Telerik.Windows.Themes.Windows8">
-      <HintPath>..\..\..\..\..\Binaries\Silverlight\Telerik.Windows.Themes.Windows8.dll</HintPath>
+      <HintPath>$(TELERIKSLDIR)\Binaries\Silverlight\Telerik.Windows.Themes.Windows8.dll</HintPath>
     </Reference>
     <Reference Include="Telerik.Windows.Zip">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\Binaries\Silverlight\Telerik.Windows.Zip.dll</HintPath>
+      <HintPath>$(TELERIKSLDIR)\Binaries\Silverlight\Telerik.Windows.Zip.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
