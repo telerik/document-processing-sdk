@@ -1,6 +1,6 @@
 ﻿using System.IO;
 using Telerik.Documents.Primitives;
-using Telerik.Windows.Documents.Spreadsheet.Extensibility;
+using Telerik.Windows.Documents.Core.Imaging;
 
 namespace CreateModifyExport
 {
