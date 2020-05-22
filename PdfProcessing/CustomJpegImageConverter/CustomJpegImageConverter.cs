@@ -7,7 +7,7 @@ using System.Linq;
 using Telerik.Windows.Documents.Extensibility;
 using Telerik.Windows.Documents.Fixed.FormatProviders.Pdf.Export;
 
-namespace CustomJpegImageConverter_NetStandard
+namespace CustomJpegImageConverter
 {
     internal class CustomJpegImageConverter : JpegImageConverterBase
     {

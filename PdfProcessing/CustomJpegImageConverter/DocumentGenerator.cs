@@ -10,7 +10,7 @@ using Telerik.Windows.Documents.Fixed.Model.Editing;
 using Telerik.Windows.Documents.Fixed.Model.Editing.Flow;
 using Telerik.Windows.Documents.Fixed.Model.Resources;
 
-namespace CustomJpegImageConverter_NetStandard
+namespace CustomJpegImageConverter
 {
     internal class DocumentGenerator
     {
