@@ -4,27 +4,23 @@
     <SccProvider>SAK</SccProvider>
     <SccAuxPath>SAK</SccAuxPath>
     <SccLocalPath>SAK</SccLocalPath>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <OutputType>Exe</OutputType>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon />
     <OutputType>Exe</OutputType>
-    <StartupObject />
+    <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
   <ItemGroup>
     <Compile Remove="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Remove="ConvertDocuments.csproj.vspscc" />
-    <None Remove="ConvertDocuments_NetStandard.csproj.vspscc" />
-    <None Remove="SampleData\SampleDocument.docx" />
+    <None Remove="AddWatermark.csproj.vspscc" />
+    <None Remove="AddWatermark_NetStandart.csproj.vspscc" />
+    <None Remove="app.config" />
+    <None Remove="BlueTemplate.pdf" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="SampleData\SampleDocument.docx">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <Content Include="BlueTemplate.pdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
   <ItemGroup>
@@ -35,8 +31,6 @@
   <ItemGroup Label="Telerik NuGet Packages References">
     <PackageReference Include="Telerik.Documents.Core" Version="2020.2.615" />
     <PackageReference Include="Telerik.Documents.Fixed" Version="2020.2.615" />
-    <PackageReference Include="Telerik.Documents.Flow" Version="2020.2.615" />
-    <PackageReference Include="Telerik.Documents.Flow.FormatProviders.Pdf" Version="2020.2.615" />
     <PackageReference Include="Telerik.Zip" Version="2020.2.615" />
   </ItemGroup>
 </Project>
