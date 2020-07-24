@@ -19,6 +19,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PdfStreamWriterPerformance_
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DrawHeaderFooter_NetStandard", "DrawHeaderFooter\DrawHeaderFooter_NetStandard.csproj", "{29EDEE61-B54B-49FA-B1CE-98CC7533DC55}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CustomJpegImageConverter_NetStandard", "CustomJpegImageConverter\CustomJpegImageConverter_NetStandard.csproj", "{D581F103-E267-40E7-87E8-2D6FCD6D883B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AddWatermark_NetStandard", "AddWatermark\AddWatermark_NetStandard.csproj", "{5E7AB5A2-E716-4FEE-A30B-5E7167C94013}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -57,6 +61,14 @@ Global
 		{29EDEE61-B54B-49FA-B1CE-98CC7533DC55}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{29EDEE61-B54B-49FA-B1CE-98CC7533DC55}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{29EDEE61-B54B-49FA-B1CE-98CC7533DC55}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D581F103-E267-40E7-87E8-2D6FCD6D883B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D581F103-E267-40E7-87E8-2D6FCD6D883B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D581F103-E267-40E7-87E8-2D6FCD6D883B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D581F103-E267-40E7-87E8-2D6FCD6D883B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5E7AB5A2-E716-4FEE-A30B-5E7167C94013}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5E7AB5A2-E716-4FEE-A30B-5E7167C94013}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5E7AB5A2-E716-4FEE-A30B-5E7167C94013}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5E7AB5A2-E716-4FEE-A30B-5E7167C94013}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -65,9 +77,9 @@ Global
 		SolutionGuid = {1206FC65-2429-4003-B167-FD0198015602}
 	EndGlobalSection
 	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 9
+		SccNumberOfProjects = 11
 		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
-		SccTeamFoundationServer = http://tfs:8082/defaultcollection
+		SccTeamFoundationServer = https://tfsemea.progress.com/defaultcollection
 		SccLocalPath0 = .
 		SccProjectUniqueName1 = CreateDocumentWithImages\\CreateDocumentWithImages_NetStandard.csproj
 		SccProjectName1 = CreateDocumentWithImages
@@ -93,5 +105,11 @@ Global
 		SccProjectUniqueName8 = DrawHeaderFooter\\DrawHeaderFooter_NetStandard.csproj
 		SccProjectName8 = DrawHeaderFooter
 		SccLocalPath8 = DrawHeaderFooter
+		SccProjectUniqueName9 = CustomJpegImageConverter\\CustomJpegImageConverter_NetStandard.csproj
+		SccProjectName9 = CustomJpegImageConverter
+		SccLocalPath9 = CustomJpegImageConverter
+		SccProjectUniqueName10 = AddWatermark\\AddWatermark_NetStandard.csproj
+		SccProjectName10 = AddWatermark
+		SccLocalPath10 = AddWatermark
 	EndGlobalSection
 EndGlobal

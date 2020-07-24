@@ -1,5 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
-
+<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup Label="Globals">
     <SccProjectName>SAK</SccProjectName>
     <SccProvider>SAK</SccProvider>
@@ -7,35 +6,28 @@
     <SccLocalPath>SAK</SccLocalPath>
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
-
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <OutputType>Exe</OutputType>
   </PropertyGroup>
-
   <PropertyGroup>
     <ApplicationIcon />
     <OutputType>Exe</OutputType>
     <StartupObject />
   </PropertyGroup>
-
   <ItemGroup>
     <Compile Remove="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-
   <ItemGroup>
     <None Remove="App.config" />
     <None Remove="AppendWorksheetToExistingWorkbook.csproj.vspscc" />
     <None Remove="AppendWorksheetToExistingWorkbook_NetStandard.csproj.vspscc" />
   </ItemGroup>
-
   <ItemGroup>
     <Folder Include="Properties\" />
   </ItemGroup>
-
   <ItemGroup>
-    <Reference Include="Telerik.Documents.SpreadsheetStreaming">
-      <HintPath>..\..\..\..\..\Binaries\netstandard\Telerik.Documents.SpreadsheetStreaming.dll</HintPath>
-    </Reference>
   </ItemGroup>
-
+  <ItemGroup Label="Telerik NuGet Packages References">
+    <PackageReference Include="Telerik.Documents.SpreadsheetStreaming" Version="2020.2.615" />
+  </ItemGroup>
 </Project>

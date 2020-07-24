@@ -1,5 +1,4 @@
 <Project Sdk="Microsoft.NET.Sdk">
-
   <PropertyGroup Label="Globals">
     <SccProjectName>SAK</SccProjectName>
     <SccProvider>SAK</SccProvider>
@@ -7,21 +6,17 @@
     <SccLocalPath>SAK</SccLocalPath>
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
-
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <OutputType>Exe</OutputType>
   </PropertyGroup>
-
   <PropertyGroup>
     <ApplicationIcon />
     <OutputType>Exe</OutputType>
     <StartupObject />
   </PropertyGroup>
-
   <ItemGroup>
     <Compile Remove="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-
   <ItemGroup>
     <None Remove="InputFiles\BarChart.pdf" />
     <None Remove="InputFiles\CentaurFeatures2014Q3.pdf" />
@@ -31,7 +26,6 @@
     <None Remove="ManipulatePages.csproj.vspscc" />
     <None Remove="ManipulatePages_NetStandard.csproj.vspscc" />
   </ItemGroup>
-
   <ItemGroup>
     <Content Include="InputFiles\BarChart.pdf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -49,21 +43,14 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
-
   <ItemGroup>
     <Folder Include="Properties\" />
   </ItemGroup>
-
   <ItemGroup>
-    <Reference Include="Telerik.Documents.Core">
-      <HintPath>..\..\..\..\..\Binaries\netstandard\Telerik.Documents.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="Telerik.Documents.Fixed">
-      <HintPath>..\..\..\..\..\Binaries\netstandard\Telerik.Documents.Fixed.dll</HintPath>
-    </Reference>
-    <Reference Include="Telerik.Zip">
-      <HintPath>..\..\..\..\..\Binaries\netstandard\Telerik.Zip.dll</HintPath>
-    </Reference>
   </ItemGroup>
-
+  <ItemGroup Label="Telerik NuGet Packages References">
+    <PackageReference Include="Telerik.Documents.Core" Version="2020.2.615" />
+    <PackageReference Include="Telerik.Documents.Fixed" Version="2020.2.615" />
+    <PackageReference Include="Telerik.Zip" Version="2020.2.615" />
+  </ItemGroup>
 </Project>
