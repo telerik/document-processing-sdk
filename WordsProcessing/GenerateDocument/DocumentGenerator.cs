@@ -27,6 +27,7 @@ namespace GenerateDocument
     public class DocumentGenerator
     {
         private static readonly ThemableColor greenColor = new ThemableColor(Color.FromArgb(255, 92, 230, 0));
+        private static readonly ThemableColor yellowColor = new ThemableColor(Color.FromArgb(255, 255, 255, 0));
         private readonly string sampleDataFolder = "SampleData/";
 
         private string selectedExportFormat;
@@ -80,8 +81,10 @@ namespace GenerateDocument
             editor.InsertText("bold, ").FontWeight = FontWeights.Bold;
             editor.InsertText("italic, ").FontStyle = FontStyles.Italic;
             editor.InsertText("underline,").Underline.Pattern = UnderlinePattern.Single;
-            editor.InsertText(" font sizes and ").FontSize = 20;
-            editor.InsertText("colors ").ForegroundColor = greenColor;
+            editor.InsertText(" font sizes and ").FontSize = Telerik.Windows.Documents.Media.Unit.PointToDip(20);
+            Run coloredRun = editor.InsertText("colors ");
+            coloredRun.ForegroundColor = greenColor;
+            coloredRun.Shading.BackgroundColor = yellowColor;
 
             editor.InsertLine("as well as text alignment and indentation. Other options include tables, hyperlinks, inline and floating images. Even more sweetness is added by the built-in styles and themes.");
 
@@ -123,7 +126,7 @@ namespace GenerateDocument
                 editor.InsertImageInline(stream, "jpg", new Size(118, 28));
             }
 #else
-            using (Stream stream = File.OpenRead(sampleDataFolder + "Telerik_logo.png"))
+            using (Stream stream = File.OpenRead(this.sampleDataFolder + "Telerik_logo.png"))
             {
                 editor.InsertImageInline(stream, "png", new Size(118, 28));
             }
