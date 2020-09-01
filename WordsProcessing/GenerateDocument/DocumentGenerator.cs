@@ -149,6 +149,7 @@ namespace GenerateDocument
             Footer footer = editor.Document.Sections.First().Footers.Add();
             Paragraph paragraph = footer.Blocks.AddParagraph();
             paragraph.TextAlignment = Alignment.Right;
+            paragraph.Inlines.AddRun("www.telerik.com");
 
             editor.MoveToParagraphStart(paragraph);
         }
