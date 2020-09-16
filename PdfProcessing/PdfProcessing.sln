@@ -21,9 +21,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModifyFormValues", "ModifyF
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CreatePdfUsingRadFixedDocumentEditor", "CreatePdfUsingRadFixedDocumentEditor\CreatePdfUsingRadFixedDocumentEditor.csproj", "{F40C8846-4C86-4447-971C-D28D13EB786A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModifyBookmarks", "ModifyBookmarks\ModifyBookmarks.csproj", "{BD58EF11-6552-4279-A341-0E200480A201}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DrawHeaderFooter", "DrawHeaderFooter\DrawHeaderFooter.csproj", "{F6F73F62-B6DE-40E4-91AE-4E03F9C7811B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AddWatermark", "AddWatermark\AddWatermark.csproj", "{1273BAEB-EDBC-42B3-A73B-185485129BFF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModifyBookmarks_WPF", "ModifyBookmarks\ModifyBookmarks_WPF.csproj", "{BD58EF11-6552-4279-A341-0E200480A201}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -67,14 +69,18 @@ Global
 		{F40C8846-4C86-4447-971C-D28D13EB786A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F40C8846-4C86-4447-971C-D28D13EB786A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F40C8846-4C86-4447-971C-D28D13EB786A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{BD58EF11-6552-4279-A341-0E200480A201}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{BD58EF11-6552-4279-A341-0E200480A201}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{BD58EF11-6552-4279-A341-0E200480A201}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{BD58EF11-6552-4279-A341-0E200480A201}.Release|Any CPU.Build.0 = Release|Any CPU
 		{F6F73F62-B6DE-40E4-91AE-4E03F9C7811B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{F6F73F62-B6DE-40E4-91AE-4E03F9C7811B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F6F73F62-B6DE-40E4-91AE-4E03F9C7811B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F6F73F62-B6DE-40E4-91AE-4E03F9C7811B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1273BAEB-EDBC-42B3-A73B-185485129BFF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1273BAEB-EDBC-42B3-A73B-185485129BFF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1273BAEB-EDBC-42B3-A73B-185485129BFF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1273BAEB-EDBC-42B3-A73B-185485129BFF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BD58EF11-6552-4279-A341-0E200480A201}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD58EF11-6552-4279-A341-0E200480A201}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD58EF11-6552-4279-A341-0E200480A201}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD58EF11-6552-4279-A341-0E200480A201}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
