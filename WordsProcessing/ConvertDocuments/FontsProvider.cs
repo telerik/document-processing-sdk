@@ -17,14 +17,7 @@ namespace ConvertDocuments
             string fontFolder = Environment.GetFolderPath(Environment.SpecialFolder.Fonts);
             if (fontFamilyName == "Arial" && isBold)
             {
-                using (FileStream fileStream = File.OpenRead(fontFolder + "\\arialbd.ttf"))
-                {
-                    using (MemoryStream memoryStream = new MemoryStream())
-                    {
-                        fileStream.CopyTo(memoryStream);
-                        return memoryStream.ToArray();
-                    }
-                }
+                return this.GetFontDataFromFontFolder("arialbd.ttf");
             }
             else if (fontFamilyName == "Arial")
             {

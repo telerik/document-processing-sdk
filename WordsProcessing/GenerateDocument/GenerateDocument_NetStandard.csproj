@@ -39,10 +39,10 @@
   <ItemGroup>
   </ItemGroup>
   <ItemGroup Label="Telerik NuGet Packages References">
-    <PackageReference Include="Telerik.Documents.Core" Version="2020.2.615" />
-    <PackageReference Include="Telerik.Documents.Fixed" Version="2020.2.615" />
-    <PackageReference Include="Telerik.Documents.Flow" Version="2020.2.615" />
-    <PackageReference Include="Telerik.Documents.Flow.FormatProviders.Pdf" Version="2020.2.615" />
-    <PackageReference Include="Telerik.Zip" Version="2020.2.615" />
+    <PackageReference Include="Telerik.Documents.Core" Version="2020.3.915" />
+    <PackageReference Include="Telerik.Documents.Fixed" Version="2020.3.915" />
+    <PackageReference Include="Telerik.Documents.Flow" Version="2020.3.915" />
+    <PackageReference Include="Telerik.Documents.Flow.FormatProviders.Pdf" Version="2020.3.915" />
+    <PackageReference Include="Telerik.Zip" Version="2020.3.915" />
   </ItemGroup>
 </Project>
