@@ -11,6 +11,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HtmlGenerator_NetStandard",
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MailMerge_NetStandard", "MailMerge\MailMerge_NetStandard.csproj", "{5036B5AE-E422-4DED-A0F1-FC56A3CCF044}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ContentControls_NetStandard", "ContentControls\ContentControls_NetStandard.csproj", "{0E6E81DD-BD06-4FDA-8B68-0AA4E8865F30}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{5036B5AE-E422-4DED-A0F1-FC56A3CCF044}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5036B5AE-E422-4DED-A0F1-FC56A3CCF044}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5036B5AE-E422-4DED-A0F1-FC56A3CCF044}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0E6E81DD-BD06-4FDA-8B68-0AA4E8865F30}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0E6E81DD-BD06-4FDA-8B68-0AA4E8865F30}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0E6E81DD-BD06-4FDA-8B68-0AA4E8865F30}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0E6E81DD-BD06-4FDA-8B68-0AA4E8865F30}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -41,9 +47,9 @@ Global
 		SolutionGuid = {D254DCB0-A6CA-4F77-8A49-131BA4359514}
 	EndGlobalSection
 	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 5
+		SccNumberOfProjects = 6
 		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
-		SccTeamFoundationServer = http://tfs:8082/defaultcollection
+		SccTeamFoundationServer = https://tfsemea.progress.com/defaultcollection
 		SccLocalPath0 = .
 		SccProjectUniqueName1 = ConvertDocuments\\ConvertDocuments_NetStandard.csproj
 		SccProjectName1 = ConvertDocuments
@@ -57,5 +63,8 @@ Global
 		SccProjectUniqueName4 = MailMerge\\MailMerge_NetStandard.csproj
 		SccProjectName4 = MailMerge
 		SccLocalPath4 = MailMerge
+		SccProjectUniqueName5 = ContentControls\\ContentControls_NetStandard.csproj
+		SccProjectName5 = ContentControls
+		SccLocalPath5 = ContentControls
 	EndGlobalSection
 EndGlobal

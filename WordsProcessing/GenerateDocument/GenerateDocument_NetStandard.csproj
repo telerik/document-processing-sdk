@@ -26,10 +26,10 @@
     <None Remove="SampleData\Telerik_logo.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="SampleData\Telerik_develop_experiences.jpg">
+    <Content Include="SampleData\Telerik_develop_experiences.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="SampleData\Telerik_logo.jpg">
+    <Content Include="SampleData\Telerik_logo.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
@@ -37,12 +37,17 @@
     <Folder Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="SixLabors.ImageSharp" Version="1.0.0" />
+    <PackageReference Include="TiffLibrary.ImageSharpAdapter" Version="0.5.252" />
+  </ItemGroup>
+  <ItemGroup>
   </ItemGroup>
   <ItemGroup Label="Telerik NuGet Packages References">
-    <PackageReference Include="Telerik.Documents.Core" Version="2020.3.915" />
-    <PackageReference Include="Telerik.Documents.Fixed" Version="2020.3.915" />
-    <PackageReference Include="Telerik.Documents.Flow" Version="2020.3.915" />
-    <PackageReference Include="Telerik.Documents.Flow.FormatProviders.Pdf" Version="2020.3.915" />
-    <PackageReference Include="Telerik.Zip" Version="2020.3.915" />
+    <PackageReference Include="Telerik.Documents.Core" Version="2021.1.118" />
+    <PackageReference Include="Telerik.Documents.Fixed" Version="2021.1.118" />
+    <PackageReference Include="Telerik.Documents.Flow" Version="2021.1.118" />
+    <PackageReference Include="Telerik.Documents.Flow.FormatProviders.Pdf" Version="2021.1.118" />
+    <PackageReference Include="Telerik.Documents.ImageUtils" Version="2021.1.118" />
+    <PackageReference Include="Telerik.Zip" Version="2021.1.118" />
   </ItemGroup>
 </Project>

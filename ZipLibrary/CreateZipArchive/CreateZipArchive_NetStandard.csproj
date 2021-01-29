@@ -20,6 +20,6 @@
   <ItemGroup>
   </ItemGroup>
   <ItemGroup Label="Telerik NuGet Packages References">
-    <PackageReference Include="Telerik.Zip" Version="2020.3.915" />
+    <PackageReference Include="Telerik.Zip" Version="2021.1.118" />
   </ItemGroup>
 </Project>
