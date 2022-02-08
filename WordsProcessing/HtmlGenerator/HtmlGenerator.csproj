@@ -13,10 +13,10 @@
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <WarningLevel>4</WarningLevel>
-     
-     
-     
-     
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -43,15 +43,6 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="Telerik.Windows.Documents.Core">
-      <HintPath>$(TELERIKWPFDIR)\Binaries\WPF40\Telerik.Windows.Documents.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="Telerik.Windows.Documents.Flow">
-      <HintPath>$(TELERIKWPFDIR)\Binaries\WPF40\Telerik.Windows.Documents.Flow.dll</HintPath>
-    </Reference>
-    <Reference Include="Telerik.Windows.Zip">
-      <HintPath>$(TELERIKWPFDIR)\Binaries\WPF40\Telerik.Windows.Zip.dll</HintPath>
-    </Reference>
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
@@ -82,4 +73,9 @@
   <Target Name="AfterBuild">
   </Target>
   -->
+  <ItemGroup Label="Telerik NuGet Packages References">
+    <PackageReference Include="Telerik.Windows.Documents.Core" Version="2022.1.*" />
+    <PackageReference Include="Telerik.Windows.Documents.Flow" Version="2022.1.*" />
+    <PackageReference Include="Telerik.Windows.Zip" Version="2022.1.*" />
+  </ItemGroup>
 </Project>

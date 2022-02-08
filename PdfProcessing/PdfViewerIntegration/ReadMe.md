@@ -1,4 +1,4 @@
-## Pdf Viewer Integration ##
+##  Pdf Viewer Integration 
 This project demonstrates how to integrate RadPdfProcessing with RadPdfViewer
 
-<keywords: show,preview,combine,combination>
+[//]: <keywords: show,preview,combine,combination>

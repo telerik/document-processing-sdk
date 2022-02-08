@@ -88,5 +88,46 @@ Global
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {8367CD01-3064-4D5D-A3B8-6E7CD36F5B8A}
 	EndGlobalSection
-	 
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 13
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://tfsemea.progress.com/defaultcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = PdfViewerIntegration\\PdfViewerIntegration_WPF.csproj
+		SccProjectName1 = PdfViewerIntegration
+		SccLocalPath1 = PdfViewerIntegration
+		SccProjectUniqueName2 = ExportUIElement\\ExportUIElement_WPF.csproj
+		SccProjectName2 = ExportUIElement
+		SccLocalPath2 = ExportUIElement
+		SccProjectUniqueName3 = ManipulatePages\\ManipulatePages.csproj
+		SccProjectName3 = ManipulatePages
+		SccLocalPath3 = ManipulatePages
+		SccProjectUniqueName4 = PdfStreamWriterPerformance\\PdfStreamWriterPerformance.csproj
+		SccProjectName4 = PdfStreamWriterPerformance
+		SccLocalPath4 = PdfStreamWriterPerformance
+		SccProjectUniqueName5 = CreateDocumentWithImages\\CreateDocumentWithImages.csproj
+		SccProjectName5 = CreateDocumentWithImages
+		SccLocalPath5 = CreateDocumentWithImages
+		SccProjectUniqueName6 = GenerateDocument\\GenerateDocument.csproj
+		SccProjectName6 = GenerateDocument
+		SccLocalPath6 = GenerateDocument
+		SccProjectUniqueName7 = CreateInteractiveForms\\CreateInteractiveForms.csproj
+		SccProjectName7 = CreateInteractiveForms
+		SccLocalPath7 = CreateInteractiveForms
+		SccProjectUniqueName8 = ModifyForms\\ModifyFormValues.csproj
+		SccProjectName8 = ModifyForms
+		SccLocalPath8 = ModifyForms
+		SccProjectUniqueName9 = CreatePdfUsingRadFixedDocumentEditor\\CreatePdfUsingRadFixedDocumentEditor.csproj
+		SccProjectName9 = CreatePdfUsingRadFixedDocumentEditor
+		SccLocalPath9 = CreatePdfUsingRadFixedDocumentEditor
+		SccProjectUniqueName10 = DrawHeaderFooter\\DrawHeaderFooter.csproj
+		SccProjectName10 = DrawHeaderFooter
+		SccLocalPath10 = DrawHeaderFooter
+		SccProjectUniqueName11 = AddWatermark\\AddWatermark.csproj
+		SccProjectName11 = AddWatermark
+		SccLocalPath11 = AddWatermark
+		SccProjectUniqueName12 = ModifyBookmarks\\ModifyBookmarks_WPF.csproj
+		SccProjectName12 = ModifyBookmarks
+		SccLocalPath12 = ModifyBookmarks
+	EndGlobalSection
 EndGlobal

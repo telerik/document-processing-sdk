@@ -4,15 +4,19 @@
     <SccProvider>SAK</SccProvider>
     <SccAuxPath>SAK</SccAuxPath>
     <SccLocalPath>SAK</SccLocalPath>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <OutputType>Exe</OutputType>
+    <DefineConstants>TRACE;NETSTANDARD</DefineConstants>
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationIcon />
     <OutputType>Exe</OutputType>
     <StartupObject />
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DefineConstants>TRACE;NETSTANDARD</DefineConstants>
   </PropertyGroup>
   <ItemGroup>
     <Compile Remove="Properties\AssemblyInfo.cs" />
@@ -27,8 +31,8 @@
   <ItemGroup>
   </ItemGroup>
   <ItemGroup Label="Telerik NuGet Packages References">
-    <PackageReference Include="Telerik.Documents.Core" Version="2021.1.118" />
-    <PackageReference Include="Telerik.Documents.Flow" Version="2021.1.118" />
-    <PackageReference Include="Telerik.Zip" Version="2021.1.118" />
+    <PackageReference Include="Telerik.Documents.Core" Version="2022.1.*" />
+    <PackageReference Include="Telerik.Documents.Flow" Version="2022.1.*" />
+    <PackageReference Include="Telerik.Zip" Version="2022.1.*" />
   </ItemGroup>
 </Project>
