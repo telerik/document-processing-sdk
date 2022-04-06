@@ -77,8 +77,8 @@ namespace DrawHeaderFooter
             footer.Measure();
 
             double footerOffsetX = (page.Size.Width / 2) - (footer.DesiredSize.Width / 2);
-            double fotterOffsetY = page.Size.Height - 50 - footer.DesiredSize.Height;
-            pageEditor.Position.Translate(footerOffsetX, fotterOffsetY);
+            double footerOffsetY = page.Size.Height - 50 - footer.DesiredSize.Height;
+            pageEditor.Position.Translate(footerOffsetX, footerOffsetY);
             pageEditor.DrawBlock(footer);
         }
 
