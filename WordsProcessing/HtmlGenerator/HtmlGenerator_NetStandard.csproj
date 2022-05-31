@@ -8,11 +8,15 @@
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <OutputType>Exe</OutputType>
+    <NoWarn>1701;1702;CA1707</NoWarn>
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationIcon />
     <OutputType>Exe</OutputType>
     <StartupObject />
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <NoWarn>1701;1702;CA1707</NoWarn>
   </PropertyGroup>
   <ItemGroup>
     <Compile Remove="Properties\AssemblyInfo.cs" />
@@ -32,16 +36,15 @@
     <Folder Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="SixLabors.ImageSharp" Version="1.0.0" />
-    <PackageReference Include="TiffLibrary.ImageSharpAdapter" Version="0.5.252" />
+    <PackageReference Include="SixLabors.ImageSharp" Version="2.0.0" />
   </ItemGroup>
   <ItemGroup>
   </ItemGroup>
   <ItemGroup Label="Telerik NuGet Packages References">
-    <PackageReference Include="Telerik.Documents.Core" Version="2022.1.*" />
-    <PackageReference Include="Telerik.Documents.Fixed" Version="2022.1.*" />
-    <PackageReference Include="Telerik.Documents.Flow" Version="2022.1.*" />
-    <PackageReference Include="Telerik.Documents.ImageUtils" Version="2022.1.*" />
-    <PackageReference Include="Telerik.Zip" Version="2022.1.*" />
+    <PackageReference Include="Telerik.Documents.Core" Version="2022.2.*" />
+    <PackageReference Include="Telerik.Documents.Fixed" Version="2022.2.*" />
+    <PackageReference Include="Telerik.Documents.Flow" Version="2022.2.*" />
+    <PackageReference Include="Telerik.Documents.ImageUtils" Version="2022.2.*" />
+    <PackageReference Include="Telerik.Zip" Version="2022.2.*" />
   </ItemGroup>
 </Project>

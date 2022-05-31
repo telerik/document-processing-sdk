@@ -15,10 +15,11 @@ namespace DrawHeaderFooter
 {
     internal class Program
     {
+        private const string ExportedDocument = "ExportedSample.pdf";
+
         public static readonly string RootDirectory = AppDomain.CurrentDomain.BaseDirectory;
         public static readonly string InputDocumentFile = RootDirectory + "InputFiles\\SampleDocument.pdf";
         public static readonly string InputLogoFile = RootDirectory + "InputFiles\\progress-logo.jpg";
-        private static readonly string ExportedDocument = "ExportedSample.pdf";
         private static RadFixedDocument document;
         private static PdfFormatProvider formatProvider = new PdfFormatProvider();
 

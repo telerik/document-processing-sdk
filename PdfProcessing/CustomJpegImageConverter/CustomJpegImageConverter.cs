@@ -1,6 +1,4 @@
 ﻿using ImageMagick;
-using System;
-using System.Linq;
 using Telerik.Windows.Documents.Extensibility;
 using Telerik.Windows.Documents.Fixed.FormatProviders.Pdf.Export;
 

@@ -8,11 +8,15 @@
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <OutputType>Exe</OutputType>
+    <NoWarn>1701;1702;CA1707</NoWarn>
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationIcon />
     <OutputType>Exe</OutputType>
     <StartupObject />
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <NoWarn>1701;1702;CA1707</NoWarn>
   </PropertyGroup>
   <ItemGroup>
     <None Remove="CreateZipArchive_NetStandard.csproj.vspscc" />
@@ -20,6 +24,6 @@
   <ItemGroup>
   </ItemGroup>
   <ItemGroup Label="Telerik NuGet Packages References">
-    <PackageReference Include="Telerik.Zip" Version="2022.1.*" />
+    <PackageReference Include="Telerik.Zip" Version="2022.2.*" />
   </ItemGroup>
 </Project>
