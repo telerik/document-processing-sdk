@@ -1,13 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
-  <PropertyGroup Label="Globals">
-    <SccProjectName>SAK</SccProjectName>
-    <SccProvider>SAK</SccProvider>
-    <SccAuxPath>SAK</SccAuxPath>
-    <SccLocalPath>SAK</SccLocalPath>
-  </PropertyGroup>
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFramework>net5.0</TargetFramework>
+    <TargetFramework>net6.0</TargetFramework>
     <AssemblyName>ContentControls</AssemblyName>
     <RootNamespace>ContentControls</RootNamespace>
   </PropertyGroup>
@@ -33,8 +27,8 @@
   <ItemGroup>
   </ItemGroup>
   <ItemGroup Label="Telerik NuGet Packages References">
-    <PackageReference Include="Telerik.Documents.Core" Version="2022.2.*" />
-    <PackageReference Include="Telerik.Documents.Flow" Version="2022.2.*" />
-    <PackageReference Include="Telerik.Zip" Version="2022.2.*" />
+    <PackageReference Include="Telerik.Documents.Core" Version="2022.3.*" />
+    <PackageReference Include="Telerik.Documents.Flow" Version="2022.3.*" />
+    <PackageReference Include="Telerik.Zip" Version="2022.3.*" />
   </ItemGroup>
 </Project>

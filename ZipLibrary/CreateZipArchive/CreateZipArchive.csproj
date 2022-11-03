@@ -53,6 +53,6 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <ItemGroup Label="Telerik NuGet Packages References">
-    <PackageReference Include="Telerik.Windows.Zip" Version="2022.2.*" />
+    <PackageReference Include="Telerik.Windows.Zip" Version="2022.3.*" />
   </ItemGroup>
 </Project>
