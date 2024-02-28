@@ -100,7 +100,16 @@ namespace GenerateDocument
 
             DrawText(editor, maxWidth);
 
+            EmbedZugferdAddZugferdInvoice(document);
+
             return document;
+        }
+
+        private static void EmbedZugferdAddZugferdInvoice(RadFixedDocument document)
+        {
+            byte[] bytes = File.ReadAllBytes(@"zugferd-invoice.xml"); 
+            //Only a single XML invoice attachment is allowed according to ZUGFeRD standard.
+            document.EmbeddedFiles.AddZugferdInvoice(bytes); 
         }
 
         private static void DrawDescription(FixedContentEditor editor, double maxWidth)
