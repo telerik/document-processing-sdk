@@ -100,7 +100,32 @@ namespace GenerateDocument
 
             DrawText(editor, maxWidth);
 
+            string textFilePath = sampleDataPath + "sample text.txt";
+            string textFileName = "Text file.txt";
+            EmbedFileStream(document, textFilePath, textFileName);
+
+            string imageFilePath = sampleDataPath + "sample image.jpg";
+            string imageFileName = "photo name.jpg";
+            EmbedFileStream(document, textFilePath, textFileName);
+
+            string invoicePath = sampleDataPath + "zugferd-invoice.xml";
+            AddZugferdInvoice(document, invoicePath);
+
             return document;
+        }
+
+        private static void EmbedFileStream(RadFixedDocument document, string filePath, string name)
+        {
+            RadFixedPage page = document.Pages.AddPage(); 
+            byte[] textFile = File.ReadAllBytes(filePath); 
+            document.EmbeddedFiles.Add(name, textFile); 
+        }
+
+        private static void AddZugferdInvoice(RadFixedDocument document, string invoicePath)
+        {
+            byte[] bytes = File.ReadAllBytes(invoicePath); 
+            //Only a single XML invoice attachment is allowed according to ZUGFeRD standard.
+            document.EmbeddedFiles.AddZugferdInvoice(bytes); 
         }
 
         private static void DrawDescription(FixedContentEditor editor, double maxWidth)
