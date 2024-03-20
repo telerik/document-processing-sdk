@@ -1,7 +1,7 @@
 using System.Text;
 using Telerik.Zip;
 
-namespace EncryptAndDecryptZipArhive_NetStandard
+namespace EncryptAndDecryptZipArchive_NetStandard
 {
     internal class Program
     {
