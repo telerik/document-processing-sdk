@@ -19,12 +19,11 @@ namespace EncryptAndDecryptZipArchive_NetStandard
         {
             using (Stream stream = File.Open(zipFileName, FileMode.Create))
             {
-
                 //By default the EncryptionStrenght is 256 bits but it can be explicitly specified (EncryptionStrength.Aes128, EncryptionStrength.Aes192, and EncryptionStrength.Aes256) by passing it to the constructor 
                 PasswordEncryptionSettings aesEncryptionSettings = EncryptionSettings.CreateAesPasswordEncryptionSettings();
 
                 //You can also use the PKWARE encryption algorithm instead of the AES one 
-                PasswordEncryptionSettings pkwareEncryptionSettings = EncryptionSettings.CreatePkzipPasswordEncryptionSettings();
+                //PasswordEncryptionSettings pkwareEncryptionSettings = EncryptionSettings.CreatePkzipPasswordEncryptionSettings();
 
                 aesEncryptionSettings.Password = password;
                 CompressionSettings compressionSettings = null;
@@ -41,6 +40,7 @@ namespace EncryptAndDecryptZipArchive_NetStandard
                 }
             }
         }
+
         private static void DecryptAndExtractZipArchive(string zipFileName, string password, string pathToExtract)
         {
             if (!Directory.Exists(pathToExtract))
@@ -56,9 +56,11 @@ namespace EncryptAndDecryptZipArchive_NetStandard
                 Encoding encoding = null;
                 using (ZipArchive zipArchive = ZipArchive.Read(stream, encoding, compressionSettings, decryptionSettings))
                 {
-                    foreach (var zipArchiveEntry in zipArchive.Entries)
+                    foreach (ZipArchiveEntry zipArchiveEntry in zipArchive.Entries)
                     {
-                        using (Stream fileStream = File.Open($"{pathToExtract}\\{zipArchiveEntry.FullName}", FileMode.Create, FileAccess.Write, FileShare.None))
+                        string path = $"{pathToExtract}\\{zipArchiveEntry.FullName}";
+
+                        using (Stream fileStream = File.Open(path, FileMode.Create, FileAccess.Write, FileShare.None))
                         {
                             using (Stream entryStream = zipArchiveEntry.Open())
                             {
