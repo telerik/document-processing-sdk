@@ -26,8 +26,8 @@
   <ItemGroup>
   </ItemGroup>
   <ItemGroup Label="Telerik NuGet Packages References">
-    <PackageReference Include="Telerik.Documents.Core" Version="2022.3.*" />
-    <PackageReference Include="Telerik.Documents.Flow" Version="2022.3.*" />
-    <PackageReference Include="Telerik.Zip" Version="2022.3.*" />
+    <PackageReference Include="Telerik.Documents.Core" Version="*" />
+    <PackageReference Include="Telerik.Documents.Flow" Version="*" />
+    <PackageReference Include="Telerik.Zip" Version="*" />
   </ItemGroup>
 </Project>
