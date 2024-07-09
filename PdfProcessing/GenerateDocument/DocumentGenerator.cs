@@ -106,7 +106,7 @@ namespace GenerateDocument
 
             string imageFilePath = sampleDataPath + "sample image.jpg";
             string imageFileName = "photo name.jpg";
-            EmbedFileStream(document, textFilePath, textFileName);
+            EmbedFileStream(document, imageFilePath, imageFileName);
 
             string invoicePath = sampleDataPath + "zugferd-invoice.xml";
             AddZugferdInvoice(document, invoicePath);
