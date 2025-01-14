@@ -46,11 +46,6 @@
   <ItemGroup>
     <Folder Include="Properties\" />
   </ItemGroup>
-  <ItemGroup>
-    <PackageReference Include="System.Drawing.Common" Version="6.0.0" />
-  </ItemGroup>
-  <ItemGroup>
-  </ItemGroup>
   <ItemGroup Label="Telerik NuGet Packages References">
     <PackageReference Include="Telerik.Documents.Core" Version="*" />
     <PackageReference Include="Telerik.Documents.Fixed" Version="*" />

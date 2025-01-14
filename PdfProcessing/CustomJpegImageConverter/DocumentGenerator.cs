@@ -40,8 +40,8 @@ namespace CustomJpegImageConverter
             editor.GraphicProperties.IsStroked = false;
             editor.GraphicProperties.FillColor = new RgbColor(200, 200, 200);
             editor.DrawRectangle(new Rect(0, 0, PageSize.Width, PageSize.Height));
-            Margins margins = new Margins();
-            editor.Position.Translate(margins.Left, margins.Top);
+            Thickness thickness = new Thickness(100);
+            editor.Position.Translate(thickness.Left, thickness.Top);
 
             Block block = new Block();
             block.HorizontalAlignment = HorizontalAlignment.Center;
@@ -52,7 +52,7 @@ namespace CustomJpegImageConverter
             Size blockSize = block.Measure(RemainingPageSize);
             editor.DrawBlock(block, RemainingPageSize);
 
-            editor.Position.Translate(margins.Left, blockSize.Height + margins.Top + 20);
+            editor.Position.Translate(thickness.Left, blockSize.Height + thickness.Top + 20);
 
             Block imageBlock = new Block();
             imageBlock.HorizontalAlignment = HorizontalAlignment.Center;
