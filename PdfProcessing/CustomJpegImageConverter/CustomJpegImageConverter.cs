@@ -14,7 +14,7 @@ namespace CustomJpegImageConverter
                 using (MagickImage magickImage = new MagickImage(imageData))
                 {
                     magickImage.Alpha(AlphaOption.Remove);
-                    magickImage.Quality = (int)imageQuality;
+                    magickImage.Quality = (uint)imageQuality;
 
                     jpegImageData = magickImage.ToByteArray(MagickFormat.Jpeg);
                 }
