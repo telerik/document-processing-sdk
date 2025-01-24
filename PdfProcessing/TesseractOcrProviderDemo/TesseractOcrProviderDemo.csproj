@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="packages\Telerik.Licensing.1.4.2\build\Telerik.Licensing.props" Condition="Exists('packages\Telerik.Licensing.1.4.2\build\Telerik.Licensing.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4926B7C9-E2CD-4233-A3C7-B1486FFF6524}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>TesseractOcrProviderDemo</RootNamespace>
+    <AssemblyName>TesseractOcrProviderDemo</AssemblyName>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Telerik.Licensing.Runtime, Version=1.4.2.0, Culture=neutral, PublicKeyToken=98bb5b04e55c09ef, processorArchitecture=MSIL">
+      <HintPath>packages\Telerik.Licensing.1.4.2\lib\net462\Telerik.Licensing.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Documents.Core, Version=2024.4.1106.462, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Trial NET 4.6.2\Telerik.Windows.Documents.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Documents.Fixed, Version=2024.4.1106.462, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Trial NET 4.6.2\Telerik.Windows.Documents.Fixed.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Documents.Fixed.FormatProviders.Ocr">
+      <HintPath>Trial NET 4.6.2\Telerik.Windows.Documents.Fixed.FormatProviders.Ocr.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Documents.TesseractOcr">
+      <HintPath>Trial NET 4.6.2\Telerik.Windows.Documents.TesseractOcr.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Zip, Version=2024.4.1106.462, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Trial NET 4.6.2\Telerik.Windows.Zip.dll</HintPath>
+    </Reference>
+    <Reference Include="Tesseract">
+      <HintPath>Trial NET 4.6.2\Tesseract.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+    <None Include="Trial NET 4.6.2\Nugets\Telerik.Windows.Documents.CMapUtils.Trial.2025.1.123.nupkg" />
+    <None Include="Trial NET 4.6.2\Nugets\Telerik.Windows.Documents.Core.Trial.2025.1.123.nupkg" />
+    <None Include="Trial NET 4.6.2\Nugets\Telerik.Windows.Documents.DrawingML.Trial.2025.1.123.nupkg" />
+    <None Include="Trial NET 4.6.2\Nugets\Telerik.Windows.Documents.Fixed.FormatProviders.Ocr.Trial.2025.1.123.nupkg" />
+    <None Include="Trial NET 4.6.2\Nugets\Telerik.Windows.Documents.Fixed.Trial.2025.1.123.nupkg" />
+    <None Include="Trial NET 4.6.2\Nugets\Telerik.Windows.Documents.Flow.FormatProviders.Doc.Trial.2025.1.123.nupkg" />
+    <None Include="Trial NET 4.6.2\Nugets\Telerik.Windows.Documents.Flow.FormatProviders.Pdf.Trial.2025.1.123.nupkg" />
+    <None Include="Trial NET 4.6.2\Nugets\Telerik.Windows.Documents.Flow.Trial.2025.1.123.nupkg" />
+    <None Include="Trial NET 4.6.2\Nugets\Telerik.Windows.Documents.Spreadsheet.FormatProviders.OpenXml.Trial.2025.1.123.nupkg" />
+    <None Include="Trial NET 4.6.2\Nugets\Telerik.Windows.Documents.Spreadsheet.FormatProviders.Pdf.Trial.2025.1.123.nupkg" />
+    <None Include="Trial NET 4.6.2\Nugets\Telerik.Windows.Documents.Spreadsheet.FormatProviders.Xls.Trial.2025.1.123.nupkg" />
+    <None Include="Trial NET 4.6.2\Nugets\Telerik.Windows.Documents.Spreadsheet.Trial.2025.1.123.nupkg" />
+    <None Include="Trial NET 4.6.2\Nugets\Telerik.Windows.Documents.SpreadsheetStreaming.Trial.2025.1.123.nupkg" />
+    <None Include="Trial NET 4.6.2\Nugets\Telerik.Windows.Documents.TesseractOcr.Trial.2025.1.123.nupkg" />
+    <None Include="Trial NET 4.6.2\Nugets\Telerik.Windows.Documents.TesseractOcr.Trial.2025.1.123\.signature.p7s" />
+    <None Include="Trial NET 4.6.2\Nugets\Telerik.Windows.Documents.TesseractOcr.Trial.2025.1.123\build\Telerik.Windows.Documents.TesseractOcr.targets" />
+    <None Include="Trial NET 4.6.2\Nugets\Telerik.Windows.Documents.TesseractOcr.Trial.2025.1.123\package\services\metadata\core-properties\ef4980226835498cab45209e3361f987.psmdcp" />
+    <None Include="Trial NET 4.6.2\Nugets\Telerik.Windows.Documents.TesseractOcr.Trial.2025.1.123\Telerik.Windows.Documents.TesseractOcr.Trial.nuspec" />
+    <None Include="Trial NET 4.6.2\Nugets\Telerik.Windows.Documents.TesseractOcr.Trial.2025.1.123\_rels\.rels" />
+    <None Include="Trial NET 4.6.2\Nugets\Telerik.Windows.Zip.Extensions.Trial.2025.1.123.nupkg" />
+    <None Include="Trial NET 4.6.2\Nugets\Telerik.Windows.Zip.Trial.2025.1.123.nupkg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="images\image.png" />
+    <Content Include="Trial NET 4.6.2\Nugets\Telerik.Windows.Documents.TesseractOcr.Trial.2025.1.123\images\tdp.png" />
+    <Content Include="Trial NET 4.6.2\Nugets\Telerik.Windows.Documents.TesseractOcr.Trial.2025.1.123\lib\net462\Telerik.Windows.Documents.TesseractOcr.dll" />
+    <Content Include="Trial NET 4.6.2\Nugets\Telerik.Windows.Documents.TesseractOcr.Trial.2025.1.123\lib\net462\Telerik.Windows.Documents.TesseractOcr.xml" />
+    <Content Include="Trial NET 4.6.2\Nugets\Telerik.Windows.Documents.TesseractOcr.Trial.2025.1.123\lib\net462\Tesseract.dll" />
+    <Content Include="Trial NET 4.6.2\Nugets\Telerik.Windows.Documents.TesseractOcr.Trial.2025.1.123\lib\net6.0-windows\Telerik.Windows.Documents.TesseractOcr.dll" />
+    <Content Include="Trial NET 4.6.2\Nugets\Telerik.Windows.Documents.TesseractOcr.Trial.2025.1.123\lib\net6.0-windows\Telerik.Windows.Documents.TesseractOcr.xml" />
+    <Content Include="Trial NET 4.6.2\Nugets\Telerik.Windows.Documents.TesseractOcr.Trial.2025.1.123\LicenseAgreements\EULA.txt" />
+    <Content Include="Trial NET 4.6.2\Nugets\Telerik.Windows.Documents.TesseractOcr.Trial.2025.1.123\LicenseAgreements\ThirdParty\AutoIt.txt" />
+    <Content Include="Trial NET 4.6.2\Nugets\Telerik.Windows.Documents.TesseractOcr.Trial.2025.1.123\LicenseAgreements\ThirdParty\Progress Telerik UI for WPF - notices.txt" />
+    <Content Include="Trial NET 4.6.2\Nugets\Telerik.Windows.Documents.TesseractOcr.Trial.2025.1.123\LicenseAgreements\ThirdParty\SpecFlow.txt" />
+    <Content Include="Trial NET 4.6.2\Nugets\Telerik.Windows.Documents.TesseractOcr.Trial.2025.1.123\runtimes\win-x64\native\leptonica-1.82.0.dll" />
+    <Content Include="Trial NET 4.6.2\Nugets\Telerik.Windows.Documents.TesseractOcr.Trial.2025.1.123\runtimes\win-x64\native\tesseract50.dll" />
+    <Content Include="Trial NET 4.6.2\Nugets\Telerik.Windows.Documents.TesseractOcr.Trial.2025.1.123\runtimes\win-x86\native\leptonica-1.82.0.dll" />
+    <Content Include="Trial NET 4.6.2\Nugets\Telerik.Windows.Documents.TesseractOcr.Trial.2025.1.123\runtimes\win-x86\native\tesseract50.dll" />
+    <Content Include="Trial NET 4.6.2\Nugets\Telerik.Windows.Documents.TesseractOcr.Trial.2025.1.123\[Content_Types].xml" />
+    <Content Include="Trial NET 4.6.2\Telerik.Documents.SpreadsheetStreaming.dll" />
+    <Content Include="Trial NET 4.6.2\Telerik.Documents.SpreadsheetStreaming.pdb" />
+    <Content Include="Trial NET 4.6.2\Telerik.Documents.SpreadsheetStreaming.xml" />
+    <Content Include="Trial NET 4.6.2\Telerik.Windows.Documents.CMapUtils.dll" />
+    <Content Include="Trial NET 4.6.2\Telerik.Windows.Documents.CMapUtils.pdb" />
+    <Content Include="Trial NET 4.6.2\Telerik.Windows.Documents.CMapUtils.xml" />
+    <Content Include="Trial NET 4.6.2\Telerik.Windows.Documents.Core.dll" />
+    <Content Include="Trial NET 4.6.2\Telerik.Windows.Documents.Core.pdb" />
+    <Content Include="Trial NET 4.6.2\Telerik.Windows.Documents.Core.xml" />
+    <Content Include="Trial NET 4.6.2\Telerik.Windows.Documents.DrawingML.dll" />
+    <Content Include="Trial NET 4.6.2\Telerik.Windows.Documents.DrawingML.pdb" />
+    <Content Include="Trial NET 4.6.2\Telerik.Windows.Documents.DrawingML.xml" />
+    <Content Include="Trial NET 4.6.2\Telerik.Windows.Documents.Fixed.dll" />
+    <Content Include="Trial NET 4.6.2\Telerik.Windows.Documents.Fixed.FormatProviders.Ocr.dll" />
+    <Content Include="Trial NET 4.6.2\Telerik.Windows.Documents.Fixed.FormatProviders.Ocr.pdb" />
+    <Content Include="Trial NET 4.6.2\Telerik.Windows.Documents.Fixed.FormatProviders.Ocr.xml" />
+    <Content Include="Trial NET 4.6.2\Telerik.Windows.Documents.Fixed.pdb" />
+    <Content Include="Trial NET 4.6.2\Telerik.Windows.Documents.Fixed.xml" />
+    <Content Include="Trial NET 4.6.2\Telerik.Windows.Documents.Flow.dll" />
+    <Content Include="Trial NET 4.6.2\Telerik.Windows.Documents.Flow.FormatProviders.Doc.dll" />
+    <Content Include="Trial NET 4.6.2\Telerik.Windows.Documents.Flow.FormatProviders.Doc.pdb" />
+    <Content Include="Trial NET 4.6.2\Telerik.Windows.Documents.Flow.FormatProviders.Doc.xml" />
+    <Content Include="Trial NET 4.6.2\Telerik.Windows.Documents.Flow.FormatProviders.Pdf.dll" />
+    <Content Include="Trial NET 4.6.2\Telerik.Windows.Documents.Flow.FormatProviders.Pdf.pdb" />
+    <Content Include="Trial NET 4.6.2\Telerik.Windows.Documents.Flow.FormatProviders.Pdf.xml" />
+    <Content Include="Trial NET 4.6.2\Telerik.Windows.Documents.Flow.pdb" />
+    <Content Include="Trial NET 4.6.2\Telerik.Windows.Documents.Flow.xml" />
+    <Content Include="Trial NET 4.6.2\Telerik.Windows.Documents.Spreadsheet.dll" />
+    <Content Include="Trial NET 4.6.2\Telerik.Windows.Documents.Spreadsheet.FormatProviders.OpenXml.dll" />
+    <Content Include="Trial NET 4.6.2\Telerik.Windows.Documents.Spreadsheet.FormatProviders.OpenXml.pdb" />
+    <Content Include="Trial NET 4.6.2\Telerik.Windows.Documents.Spreadsheet.FormatProviders.OpenXml.xml" />
+    <Content Include="Trial NET 4.6.2\Telerik.Windows.Documents.Spreadsheet.FormatProviders.Pdf.dll" />
+    <Content Include="Trial NET 4.6.2\Telerik.Windows.Documents.Spreadsheet.FormatProviders.Pdf.pdb" />
+    <Content Include="Trial NET 4.6.2\Telerik.Windows.Documents.Spreadsheet.FormatProviders.Pdf.xml" />
+    <Content Include="Trial NET 4.6.2\Telerik.Windows.Documents.Spreadsheet.FormatProviders.Xls.dll" />
+    <Content Include="Trial NET 4.6.2\Telerik.Windows.Documents.Spreadsheet.FormatProviders.Xls.pdb" />
+    <Content Include="Trial NET 4.6.2\Telerik.Windows.Documents.Spreadsheet.FormatProviders.Xls.xml" />
+    <Content Include="Trial NET 4.6.2\Telerik.Windows.Documents.Spreadsheet.pdb" />
+    <Content Include="Trial NET 4.6.2\Telerik.Windows.Documents.Spreadsheet.xml" />
+    <Content Include="Trial NET 4.6.2\Telerik.Windows.Documents.TesseractOcr.dll" />
+    <Content Include="Trial NET 4.6.2\Telerik.Windows.Documents.TesseractOcr.pdb" />
+    <Content Include="Trial NET 4.6.2\Telerik.Windows.Documents.TesseractOcr.xml" />
+    <Content Include="Trial NET 4.6.2\Telerik.Windows.Zip.dll" />
+    <Content Include="Trial NET 4.6.2\Telerik.Windows.Zip.Extensions.dll" />
+    <Content Include="Trial NET 4.6.2\Telerik.Windows.Zip.Extensions.pdb" />
+    <Content Include="Trial NET 4.6.2\Telerik.Windows.Zip.Extensions.xml" />
+    <Content Include="Trial NET 4.6.2\Telerik.Windows.Zip.pdb" />
+    <Content Include="Trial NET 4.6.2\Telerik.Windows.Zip.xml" />
+    <Content Include="Trial NET 4.6.2\Tesseract.dll" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('packages\Telerik.Licensing.1.4.2\build\Telerik.Licensing.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Telerik.Licensing.1.4.2\build\Telerik.Licensing.props'))" />
+    <Error Condition="!Exists('packages\Telerik.Licensing.1.4.2\build\Telerik.Licensing.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Telerik.Licensing.1.4.2\build\Telerik.Licensing.targets'))" />
+  </Target>
+  <Import Project="packages\Telerik.Licensing.1.4.2\build\Telerik.Licensing.targets" Condition="Exists('packages\Telerik.Licensing.1.4.2\build\Telerik.Licensing.targets')" />
+</Project>
