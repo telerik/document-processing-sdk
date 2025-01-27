@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.29306.81
+# Visual Studio Version 17
+VisualStudioVersion = 17.12.35424.110 d17.12
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PdfViewerIntegration_WPF", "PdfViewerIntegration\PdfViewerIntegration_WPF.csproj", "{467F6224-4594-40A9-B5D1-54CB67EFD668}"
 EndProject
@@ -26,6 +26,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AddWatermark", "AddWatermark\AddWatermark.csproj", "{1273BAEB-EDBC-42B3-A73B-185485129BFF}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModifyBookmarks_WPF", "ModifyBookmarks\ModifyBookmarks_WPF.csproj", "{BD58EF11-6552-4279-A341-0E200480A201}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TesseractOcrProviderDemo", "TesseractOcrProviderDemo\TesseractOcrProviderDemo.csproj", "{4926B7C9-E2CD-4233-A3C7-B1486FFF6524}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -81,53 +83,15 @@ Global
 		{BD58EF11-6552-4279-A341-0E200480A201}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BD58EF11-6552-4279-A341-0E200480A201}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BD58EF11-6552-4279-A341-0E200480A201}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4926B7C9-E2CD-4233-A3C7-B1486FFF6524}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4926B7C9-E2CD-4233-A3C7-B1486FFF6524}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4926B7C9-E2CD-4233-A3C7-B1486FFF6524}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4926B7C9-E2CD-4233-A3C7-B1486FFF6524}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {8367CD01-3064-4D5D-A3B8-6E7CD36F5B8A}
-	EndGlobalSection
-	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 13
-		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
-		SccTeamFoundationServer = https://tfsemea.progress.com/defaultcollection
-		SccLocalPath0 = .
-		SccProjectUniqueName1 = PdfViewerIntegration\\PdfViewerIntegration_WPF.csproj
-		SccProjectName1 = PdfViewerIntegration
-		SccLocalPath1 = PdfViewerIntegration
-		SccProjectUniqueName2 = ExportUIElement\\ExportUIElement_WPF.csproj
-		SccProjectName2 = ExportUIElement
-		SccLocalPath2 = ExportUIElement
-		SccProjectUniqueName3 = ManipulatePages\\ManipulatePages.csproj
-		SccProjectName3 = ManipulatePages
-		SccLocalPath3 = ManipulatePages
-		SccProjectUniqueName4 = PdfStreamWriterPerformance\\PdfStreamWriterPerformance.csproj
-		SccProjectName4 = PdfStreamWriterPerformance
-		SccLocalPath4 = PdfStreamWriterPerformance
-		SccProjectUniqueName5 = CreateDocumentWithImages\\CreateDocumentWithImages.csproj
-		SccProjectName5 = CreateDocumentWithImages
-		SccLocalPath5 = CreateDocumentWithImages
-		SccProjectUniqueName6 = GenerateDocument\\GenerateDocument.csproj
-		SccProjectName6 = GenerateDocument
-		SccLocalPath6 = GenerateDocument
-		SccProjectUniqueName7 = CreateInteractiveForms\\CreateInteractiveForms.csproj
-		SccProjectName7 = CreateInteractiveForms
-		SccLocalPath7 = CreateInteractiveForms
-		SccProjectUniqueName8 = ModifyForms\\ModifyFormValues.csproj
-		SccProjectName8 = ModifyForms
-		SccLocalPath8 = ModifyForms
-		SccProjectUniqueName9 = CreatePdfUsingRadFixedDocumentEditor\\CreatePdfUsingRadFixedDocumentEditor.csproj
-		SccProjectName9 = CreatePdfUsingRadFixedDocumentEditor
-		SccLocalPath9 = CreatePdfUsingRadFixedDocumentEditor
-		SccProjectUniqueName10 = DrawHeaderFooter\\DrawHeaderFooter.csproj
-		SccProjectName10 = DrawHeaderFooter
-		SccLocalPath10 = DrawHeaderFooter
-		SccProjectUniqueName11 = AddWatermark\\AddWatermark.csproj
-		SccProjectName11 = AddWatermark
-		SccLocalPath11 = AddWatermark
-		SccProjectUniqueName12 = ModifyBookmarks\\ModifyBookmarks_WPF.csproj
-		SccProjectName12 = ModifyBookmarks
-		SccLocalPath12 = ModifyBookmarks
 	EndGlobalSection
 EndGlobal
