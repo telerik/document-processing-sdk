@@ -53,7 +53,7 @@ namespace GenerateDocument
             using (FileStream stream = File.OpenWrite(resultFile))
             {
                 RadFixedDocument document = CreateDocument();
-                formatProvider.Export(document, stream);
+                formatProvider.Export(document, stream, null);
             }
 
             Console.WriteLine("The document is generated.");
@@ -116,7 +116,6 @@ namespace GenerateDocument
 
         private static void EmbedFileStream(RadFixedDocument document, string filePath, string name)
         {
-            RadFixedPage page = document.Pages.AddPage(); 
             byte[] textFile = File.ReadAllBytes(filePath); 
             document.EmbeddedFiles.Add(name, textFile); 
         }
