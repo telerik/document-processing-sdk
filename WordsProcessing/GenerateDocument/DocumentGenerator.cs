@@ -191,7 +191,7 @@ namespace GenerateDocument
             string path = "Sample document." + selectedFormat;
             using (FileStream stream = File.OpenWrite(path))
             {
-                formatProvider.Export(document, stream);
+                formatProvider.Export(document, stream, TimeSpan.FromSeconds(15));
             }
 
             Console.Write("Document generated.");

@@ -108,7 +108,7 @@ namespace ExportChart
                 {
                     try
                     {
-                        this.Workbook = provider.Import(stream);
+                        this.Workbook = provider.Import(stream, TimeSpan.FromSeconds(15));
                     }
                     catch (Exception)
                     {
@@ -127,7 +127,7 @@ namespace ExportChart
         {
             using (Stream stream = File.OpenRead(DocumentConverter.SampleDocumentFilePath))
             {
-                this.Workbook = new XlsxFormatProvider().Import(stream);
+                this.Workbook = new XlsxFormatProvider().Import(stream, TimeSpan.FromSeconds(15));
             }
         }
 
@@ -142,7 +142,7 @@ namespace ExportChart
             string path = "Sample document.pdf";
             using (var stream = File.Create(path))
             {
-                this.PdfFormatProvider.Export(this.Workbook, stream);
+                this.PdfFormatProvider.Export(this.Workbook, stream, TimeSpan.FromSeconds(15));
             }
 
             Console.WriteLine("Document converted.");

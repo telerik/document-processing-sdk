@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using System;
+using System.Windows;
 using System.Windows.Controls;
 using Microsoft.Win32;
 using Telerik.Windows.Documents.Fixed.FormatProviders.Pdf;
@@ -57,7 +58,7 @@ namespace ExportUIElement
 
                 using (var output = dialog.OpenFile())
                 {
-                    provider.Export(document, output);
+                    provider.Export(document, output, TimeSpan.FromSeconds(15));
                 }
             }
         }

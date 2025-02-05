@@ -111,6 +111,9 @@ UpgradeLog*.XML
 /SpreadStreamProcessing/.vs
 /SpreadProcessing/.vs
 /PdfProcessing/.vs
+/PdfProcessing/AddWatermark/.vs
+/PdfProcessing/CreateDocumentWithImages/.vs
+/PdfProcessing/CreateInteractiveForms/.vs
 /PdfProcessing/CreatePdfUsingRadFixedDocumentEditor/.vs
 /PdfProcessing/DrawHeaderFooter/.vs
 /PdfProcessing/ExportUIElement/.vs
@@ -120,8 +123,16 @@ UpgradeLog*.XML
 /PdfProcessing/ModifyForms/.vs
 /PdfProcessing/PdfStreamWriterPerformance/.vs
 /PdfProcessing/PdfViewerIntegration/.vs
+/SpreadProcessing/ConvertDocuments/.vs
+/SpreadProcessing/CreateModifyExport/.vs
+/SpreadProcessing/ExportChart/.vs
+/SpreadProcessing/GenerateDocuments/.vs
+/SpreadStreamProcessing/AppendWorksheetToExistingWorkbook/.vs
+/SpreadStreamProcessing/GenerateDocument/.vs
 /WordsProcessing/ContentControls/.vs
 /WordsProcessing/ConvertDocuments/.vs
 /WordsProcessing/GenerateDocument/.vs
 /WordsProcessing/HtmlGenerator/.vs
 /WordsProcessing/MailMerge/.vs
+/ZipLibrary/CreateZipArchive/.vs
+/ZipLibrary/ExtractZipArchiveToDirectory/.vs

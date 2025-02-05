@@ -83,7 +83,7 @@ namespace MailMerge
             using (Stream stream = File.OpenWrite(path))
             {
                 DocxFormatProvider formatProvder = new DocxFormatProvider();
-                formatProvder.Export(document, stream);
+                formatProvder.Export(document, stream, TimeSpan.FromSeconds(15));
             }
 
             ProcessStartInfo psi = new ProcessStartInfo()

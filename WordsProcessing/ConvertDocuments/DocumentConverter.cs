@@ -58,7 +58,7 @@ namespace ConvertDocuments
                 {
                     try
                     {
-                        this.document = provider.Import(stream);
+                        this.document = provider.Import(stream, TimeSpan.FromSeconds(15));
                     }
                     catch (Exception)
                     {
@@ -77,7 +77,7 @@ namespace ConvertDocuments
         {
             using (Stream stream = File.OpenRead(DocumentConverter.sampleDocumentFilePath))
             {
-                this.document = new DocxFormatProvider().Import(stream);
+                this.document = new DocxFormatProvider().Import(stream, TimeSpan.FromSeconds(15));
             }
         }
 
@@ -118,7 +118,7 @@ namespace ConvertDocuments
             string path = "Converted." + format;
             using (FileStream stream = File.OpenWrite(path))
             {
-                formatProvider.Export(this.document, stream);
+                formatProvider.Export(this.document, stream, TimeSpan.FromSeconds(15));
             }
 
             Console.WriteLine("Document converted.");
