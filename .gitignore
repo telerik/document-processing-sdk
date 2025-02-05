@@ -111,3 +111,17 @@ UpgradeLog*.XML
 /SpreadStreamProcessing/.vs
 /SpreadProcessing/.vs
 /PdfProcessing/.vs
+/PdfProcessing/CreatePdfUsingRadFixedDocumentEditor/.vs
+/PdfProcessing/DrawHeaderFooter/.vs
+/PdfProcessing/ExportUIElement/.vs
+/PdfProcessing/GenerateDocument/.vs
+/PdfProcessing/ManipulatePages/.vs
+/PdfProcessing/ModifyBookmarks/.vs
+/PdfProcessing/ModifyForms/.vs
+/PdfProcessing/PdfStreamWriterPerformance/.vs
+/PdfProcessing/PdfViewerIntegration/.vs
+/WordsProcessing/ContentControls/.vs
+/WordsProcessing/ConvertDocuments/.vs
+/WordsProcessing/GenerateDocument/.vs
+/WordsProcessing/HtmlGenerator/.vs
+/WordsProcessing/MailMerge/.vs

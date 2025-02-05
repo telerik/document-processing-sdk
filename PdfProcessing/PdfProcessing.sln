@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.12.35424.110 d17.12
+VisualStudioVersion = 17.12.35424.110
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PdfViewerIntegration_WPF", "PdfViewerIntegration\PdfViewerIntegration_WPF.csproj", "{467F6224-4594-40A9-B5D1-54CB67EFD668}"
 EndProject
@@ -26,8 +26,6 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AddWatermark", "AddWatermark\AddWatermark.csproj", "{1273BAEB-EDBC-42B3-A73B-185485129BFF}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModifyBookmarks_WPF", "ModifyBookmarks\ModifyBookmarks_WPF.csproj", "{BD58EF11-6552-4279-A341-0E200480A201}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TesseractOcrProviderDemo", "TesseractOcrProviderDemo\TesseractOcrProviderDemo.csproj", "{4926B7C9-E2CD-4233-A3C7-B1486FFF6524}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -83,10 +81,6 @@ Global
 		{BD58EF11-6552-4279-A341-0E200480A201}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BD58EF11-6552-4279-A341-0E200480A201}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BD58EF11-6552-4279-A341-0E200480A201}.Release|Any CPU.Build.0 = Release|Any CPU
-		{4926B7C9-E2CD-4233-A3C7-B1486FFF6524}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4926B7C9-E2CD-4233-A3C7-B1486FFF6524}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4926B7C9-E2CD-4233-A3C7-B1486FFF6524}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4926B7C9-E2CD-4233-A3C7-B1486FFF6524}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
