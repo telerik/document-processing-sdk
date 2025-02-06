@@ -30,7 +30,7 @@ namespace ConvertDocuments
             string path = "Sample document." + selectedFormat;
             using (FileStream stream = File.OpenWrite(path))
             {
-                formatProvider.Export(workbook, stream);
+                formatProvider.Export(workbook, stream, TimeSpan.FromSeconds(15));
             }
 
             Console.WriteLine("Document converted.");

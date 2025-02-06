@@ -263,7 +263,7 @@ namespace CreateModifyExport
             using (Stream fileStream = this.GetFileStream(fileName))
             {
                 PdfFormatProvider provider = new PdfFormatProvider();
-                provider.Export(this.Workbook, fileStream);
+                provider.Export(this.Workbook, fileStream, TimeSpan.FromSeconds(15));
             }
         }
 
@@ -272,7 +272,7 @@ namespace CreateModifyExport
             using (fileStream)
             {
                 PdfFormatProvider provider = new PdfFormatProvider();
-                provider.Export(this.Workbook, fileStream);
+                provider.Export(this.Workbook, fileStream, TimeSpan.FromSeconds(15));
             }
         }
 

@@ -114,7 +114,7 @@ namespace ConvertDocuments
                 {
                     try
                     {
-                        this.Workbook = provider.Import(stream);
+                        this.Workbook = provider.Import(stream, TimeSpan.FromSeconds(15));
                     }
                     catch (Exception)
                     {
@@ -133,7 +133,7 @@ namespace ConvertDocuments
         {
             using (Stream stream = File.OpenRead(DocumentConverter.SampleDocumentFilePath))
             {
-                this.Workbook = new XlsxFormatProvider().Import(stream);
+                this.Workbook = new XlsxFormatProvider().Import(stream, TimeSpan.FromSeconds(15));
             }
         }
 

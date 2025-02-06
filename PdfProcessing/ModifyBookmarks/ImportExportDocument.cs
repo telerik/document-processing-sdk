@@ -14,7 +14,7 @@ namespace ModifyBookmarks
 
         public static RadFixedDocument ImportDocument()
         {
-            return provider.Import(File.ReadAllBytes(InputFile));
+            return provider.Import(File.ReadAllBytes(InputFile), TimeSpan.FromSeconds(15));
         }
 
         public static void ExportDocument(RadFixedDocument document)
@@ -26,7 +26,7 @@ namespace ModifyBookmarks
                 File.Delete(modifiedFileName);
             }
 
-            File.WriteAllBytes(modifiedFileName, provider.Export(document));
+            File.WriteAllBytes(modifiedFileName, provider.Export(document, TimeSpan.FromSeconds(15)));
             Process.Start(modifiedFileName);
         }
     }

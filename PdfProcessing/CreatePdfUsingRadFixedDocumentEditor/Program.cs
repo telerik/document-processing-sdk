@@ -1,4 +1,5 @@
-﻿using System.Diagnostics;
+﻿using System;
+using System.Diagnostics;
 using System.IO;
 #if NETCOREAPP
 using Telerik.Documents.Core.Fonts;
@@ -40,7 +41,7 @@ namespace CreatePdfUsingRadFixedDocumentEditor
             }
 
             PdfFormatProvider provider = new PdfFormatProvider();
-            File.WriteAllBytes(resultFileName, provider.Export(document));
+            File.WriteAllBytes(resultFileName, provider.Export(document, TimeSpan.FromSeconds(15)));
 
             ProcessStartInfo psi = new ProcessStartInfo()
             {

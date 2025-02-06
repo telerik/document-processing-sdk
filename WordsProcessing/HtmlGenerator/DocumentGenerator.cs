@@ -77,7 +77,7 @@ namespace HtmlGenerator
             string path = "Sample Document.html";
             using (FileStream stream = File.OpenWrite(path))
             {
-                formatProvider.Export(document, stream);
+                formatProvider.Export(document, stream, TimeSpan.FromSeconds(15));
             }
 
             Console.Write("Document generated.");

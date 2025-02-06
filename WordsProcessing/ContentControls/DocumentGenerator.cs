@@ -45,7 +45,7 @@ namespace ContentControls
             using (Stream stream = File.OpenRead(TemplatePath))
             {
                 DocxFormatProvider docxFormatProvider = new DocxFormatProvider();
-                return docxFormatProvider.Import(stream);
+                return docxFormatProvider.Import(stream, TimeSpan.FromSeconds(15));
             }
         }
 
@@ -56,7 +56,7 @@ namespace ContentControls
             string path = "CVTemplate.docx";
             using (FileStream stream = File.OpenWrite(path))
             {
-                formatProvider.Export(document, stream);
+                formatProvider.Export(document, stream, TimeSpan.FromSeconds(15));
             }
 
             Console.WriteLine("Document generated.");

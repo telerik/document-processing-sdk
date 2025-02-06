@@ -1,6 +1,8 @@
-﻿using System.Diagnostics;
+﻿using System;
+using System.Diagnostics;
 using System.Drawing.Printing;
 using System.IO;
+using System.Threading;
 using Telerik.Documents.Primitives;
 using Telerik.Windows.Documents.Fixed.FormatProviders.Pdf;
 using Telerik.Windows.Documents.Fixed.FormatProviders.Pdf.Export;
@@ -49,7 +51,7 @@ namespace CustomJpegImageConverter
             block.InsertText("Image converted from PNG to JPG");
             block.InsertLineBreak();
             block.InsertText(string.Format("when ImageQuality set to {0}", this.imageQuality));
-            Size blockSize = block.Measure(RemainingPageSize);
+            Size blockSize = block.Measure(RemainingPageSize, CancellationToken.None);
             editor.DrawBlock(block, RemainingPageSize);
 
             editor.Position.Translate(thickness.Left, blockSize.Height + thickness.Top + 20);
@@ -72,7 +74,7 @@ namespace CustomJpegImageConverter
             using (Stream stream = File.OpenWrite(resultFileName))
             {
                 provider.ExportSettings.ImageQuality = this.imageQuality;
-                provider.Export(this.document, stream);
+                provider.Export(this.document, stream, TimeSpan.FromSeconds(15));
             }
 
             ProcessStartInfo psi = new ProcessStartInfo()
