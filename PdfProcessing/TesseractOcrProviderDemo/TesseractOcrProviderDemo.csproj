@@ -49,23 +49,23 @@
     </Reference>
     <Reference Include="Telerik.Windows.Documents.Core, Version=2025.1.205.462, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>Trial 4.6.2\Telerik.Windows.Documents.Core.dll</HintPath>
+      <HintPath>AssemblyReferences\Telerik.Windows.Documents.Core.dll</HintPath>
     </Reference>
     <Reference Include="Telerik.Windows.Documents.Fixed, Version=2025.1.205.462, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>Trial 4.6.2\Telerik.Windows.Documents.Fixed.dll</HintPath>
+      <HintPath>AssemblyReferences\Telerik.Windows.Documents.Fixed.dll</HintPath>
     </Reference>
     <Reference Include="Telerik.Windows.Documents.Fixed.FormatProviders.Ocr, Version=2025.1.205.462, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>Trial 4.6.2\Telerik.Windows.Documents.Fixed.FormatProviders.Ocr.dll</HintPath>
+      <HintPath>AssemblyReferences\Telerik.Windows.Documents.Fixed.FormatProviders.Ocr.dll</HintPath>
     </Reference>
     <Reference Include="Telerik.Windows.Documents.TesseractOcr, Version=2025.1.205.462, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>Trial 4.6.2\Telerik.Windows.Documents.TesseractOcr.dll</HintPath>
+      <HintPath>AssemblyReferences\Telerik.Windows.Documents.TesseractOcr.dll</HintPath>
     </Reference>
     <Reference Include="Telerik.Windows.Zip, Version=2025.1.205.462, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>Trial 4.6.2\Telerik.Windows.Zip.dll</HintPath>
+      <HintPath>AssemblyReferences\Telerik.Windows.Zip.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -81,11 +81,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="images\image.png" />
-    <Content Include="lib\Telerik.Windows.Documents.Core.dll" />
-    <Content Include="lib\Telerik.Windows.Documents.Fixed.dll" />
-    <Content Include="lib\Telerik.Windows.Documents.Fixed.FormatProviders.Ocr.dll" />
-    <Content Include="lib\Telerik.Windows.Documents.TesseractOcr.dll" />
-    <Content Include="lib\Telerik.Windows.Zip.dll" />
     <Content Include="x64\leptonica-1.82.0.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -98,6 +93,9 @@
     <Content Include="x86\tesseract50.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="AssemblyReferences\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="packages\Telerik.Licensing.1.6.5\build\Telerik.Licensing.targets" Condition="Exists('packages\Telerik.Licensing.1.6.5\build\Telerik.Licensing.targets')" />
