@@ -17,6 +17,7 @@ TestResults
 [Dd]ebug/
 [Rr]elease/
 x64/
+!PdfProcessing/TesseractOcrProviderDemo/x64
 *_i.c
 *_p.c
 *.ilk

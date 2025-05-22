@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="packages\Telerik.Licensing.1.4.6\build\Telerik.Licensing.props" Condition="Exists('packages\Telerik.Licensing.1.4.6\build\Telerik.Licensing.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -45,32 +44,28 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
-    <Reference Include="Telerik.Licensing.Runtime, Version=1.4.6.0, Culture=neutral, PublicKeyToken=98bb5b04e55c09ef, processorArchitecture=MSIL">
-      <HintPath>packages\Telerik.Licensing.1.4.6\lib\net462\Telerik.Licensing.Runtime.dll</HintPath>
+    <Reference Include="Telerik.Licensing.Runtime, Version=1.6.5.0, Culture=neutral, PublicKeyToken=98bb5b04e55c09ef, processorArchitecture=MSIL">
+      <HintPath>packages\Telerik.Licensing.1.6.5\lib\net462\Telerik.Licensing.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="Telerik.Windows.Documents.Core, Version=2025.1.205.462, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>Trial 4.6.2\Telerik.Windows.Documents.Core.dll</HintPath>
+      <HintPath>AssemblyReferences\Telerik.Windows.Documents.Core.dll</HintPath>
     </Reference>
     <Reference Include="Telerik.Windows.Documents.Fixed, Version=2025.1.205.462, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>Trial 4.6.2\Telerik.Windows.Documents.Fixed.dll</HintPath>
+      <HintPath>AssemblyReferences\Telerik.Windows.Documents.Fixed.dll</HintPath>
     </Reference>
     <Reference Include="Telerik.Windows.Documents.Fixed.FormatProviders.Ocr, Version=2025.1.205.462, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>Trial 4.6.2\Telerik.Windows.Documents.Fixed.FormatProviders.Ocr.dll</HintPath>
+      <HintPath>AssemblyReferences\Telerik.Windows.Documents.Fixed.FormatProviders.Ocr.dll</HintPath>
     </Reference>
     <Reference Include="Telerik.Windows.Documents.TesseractOcr, Version=2025.1.205.462, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>Trial 4.6.2\Telerik.Windows.Documents.TesseractOcr.dll</HintPath>
+      <HintPath>AssemblyReferences\Telerik.Windows.Documents.TesseractOcr.dll</HintPath>
     </Reference>
     <Reference Include="Telerik.Windows.Zip, Version=2025.1.205.462, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>Trial 4.6.2\Telerik.Windows.Zip.dll</HintPath>
-    </Reference>
-    <Reference Include="Tesseract, Version=5.2.0.0, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>Trial 4.6.2\Tesseract.dll</HintPath>
+      <HintPath>AssemblyReferences\Telerik.Windows.Zip.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -80,23 +75,34 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+    <None Include="tessdata\deu.traineddata" />
+    <None Include="tessdata\eng.traineddata" />
+    <None Include="tessdata\spa.traineddata" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="images\image.png" />
-    <Content Include="Trial 4.6.2\Telerik.Windows.Documents.Core.dll" />
-    <Content Include="Trial 4.6.2\Telerik.Windows.Documents.Fixed.dll" />
-    <Content Include="Trial 4.6.2\Telerik.Windows.Documents.Fixed.FormatProviders.Ocr.dll" />
-    <Content Include="Trial 4.6.2\Telerik.Windows.Documents.TesseractOcr.dll" />
-    <Content Include="Trial 4.6.2\Telerik.Windows.Zip.dll" />
-    <Content Include="Trial 4.6.2\Tesseract.dll" />
+    <Content Include="x64\leptonica-1.82.0.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="x64\tesseract50.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="x86\leptonica-1.82.0.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="x86\tesseract50.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="AssemblyReferences\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="packages\Telerik.Licensing.1.6.5\build\Telerik.Licensing.targets" Condition="Exists('packages\Telerik.Licensing.1.6.5\build\Telerik.Licensing.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
-    <Error Condition="!Exists('packages\Telerik.Licensing.1.4.6\build\Telerik.Licensing.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Telerik.Licensing.1.4.6\build\Telerik.Licensing.props'))" />
-    <Error Condition="!Exists('packages\Telerik.Licensing.1.4.6\build\Telerik.Licensing.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Telerik.Licensing.1.4.6\build\Telerik.Licensing.targets'))" />
+    <Error Condition="!Exists('packages\Telerik.Licensing.1.6.5\build\Telerik.Licensing.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Telerik.Licensing.1.6.5\build\Telerik.Licensing.targets'))" />
   </Target>
-  <Import Project="packages\Telerik.Licensing.1.4.6\build\Telerik.Licensing.targets" Condition="Exists('packages\Telerik.Licensing.1.4.6\build\Telerik.Licensing.targets')" />
 </Project>
