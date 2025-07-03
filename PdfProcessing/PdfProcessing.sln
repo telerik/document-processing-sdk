@@ -27,6 +27,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AddWatermark", "AddWatermar
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModifyBookmarks_WPF", "ModifyBookmarks\ModifyBookmarks_WPF.csproj", "{BD58EF11-6552-4279-A341-0E200480A201}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AIConnectorDemo", "AIConnectorDemo\AIConnectorDemo.csproj", "{4AC38EDC-AE27-8F2B-5BCB-8E73F27E33F2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -81,6 +83,10 @@ Global
 		{BD58EF11-6552-4279-A341-0E200480A201}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BD58EF11-6552-4279-A341-0E200480A201}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BD58EF11-6552-4279-A341-0E200480A201}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4AC38EDC-AE27-8F2B-5BCB-8E73F27E33F2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4AC38EDC-AE27-8F2B-5BCB-8E73F27E33F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4AC38EDC-AE27-8F2B-5BCB-8E73F27E33F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4AC38EDC-AE27-8F2B-5BCB-8E73F27E33F2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

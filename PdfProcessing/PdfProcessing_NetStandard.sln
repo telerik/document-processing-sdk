@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.29709.97
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35919.96 d17.13
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CreateDocumentWithImages_NetStandard", "CreateDocumentWithImages\CreateDocumentWithImages_NetStandard.csproj", "{D7CA01E8-E777-4D18-B960-AA0F62040F87}"
 EndProject
@@ -22,6 +22,8 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CustomJpegImageConverter_NetStandard", "CustomJpegImageConverter\CustomJpegImageConverter_NetStandard.csproj", "{D581F103-E267-40E7-87E8-2D6FCD6D883B}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AddWatermark_NetStandard", "AddWatermark\AddWatermark_NetStandard.csproj", "{5E7AB5A2-E716-4FEE-A30B-5E7167C94013}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AIConnectorDemo_NetStandard", "AIConnectorDemo\AIConnectorDemo_NetStandard.csproj", "{C948AB2A-A1D5-DE6C-0C36-8E9A4C475033}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -69,47 +71,15 @@ Global
 		{5E7AB5A2-E716-4FEE-A30B-5E7167C94013}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5E7AB5A2-E716-4FEE-A30B-5E7167C94013}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5E7AB5A2-E716-4FEE-A30B-5E7167C94013}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C948AB2A-A1D5-DE6C-0C36-8E9A4C475033}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C948AB2A-A1D5-DE6C-0C36-8E9A4C475033}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C948AB2A-A1D5-DE6C-0C36-8E9A4C475033}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C948AB2A-A1D5-DE6C-0C36-8E9A4C475033}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {1206FC65-2429-4003-B167-FD0198015602}
-	EndGlobalSection
-	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 11
-		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
-		SccTeamFoundationServer = https://tfsemea.progress.com/defaultcollection
-		SccLocalPath0 = .
-		SccProjectUniqueName1 = CreateDocumentWithImages\\CreateDocumentWithImages_NetStandard.csproj
-		SccProjectName1 = CreateDocumentWithImages
-		SccLocalPath1 = CreateDocumentWithImages
-		SccProjectUniqueName2 = CreateInteractiveForms\\CreateInteractiveForms_NetStandard.csproj
-		SccProjectName2 = CreateInteractiveForms
-		SccLocalPath2 = CreateInteractiveForms
-		SccProjectUniqueName3 = CreatePdfUsingRadFixedDocumentEditor\\CreatePdfUsingRadFixedDocumentEditor_NetStandard.csproj
-		SccProjectName3 = CreatePdfUsingRadFixedDocumentEditor
-		SccLocalPath3 = CreatePdfUsingRadFixedDocumentEditor
-		SccProjectUniqueName4 = GenerateDocument\\GenerateDocument_NetStandard.csproj
-		SccProjectName4 = GenerateDocument
-		SccLocalPath4 = GenerateDocument
-		SccProjectUniqueName5 = ManipulatePages\\ManipulatePages_NetStandard.csproj
-		SccProjectName5 = ManipulatePages
-		SccLocalPath5 = ManipulatePages
-		SccProjectUniqueName6 = ModifyForms\\ModifyFormValues_NetStandard.csproj
-		SccProjectName6 = ModifyForms
-		SccLocalPath6 = ModifyForms
-		SccProjectUniqueName7 = PdfStreamWriterPerformance\\PdfStreamWriterPerformance_NetStandard.csproj
-		SccProjectName7 = PdfStreamWriterPerformance
-		SccLocalPath7 = PdfStreamWriterPerformance
-		SccProjectUniqueName8 = DrawHeaderFooter\\DrawHeaderFooter_NetStandard.csproj
-		SccProjectName8 = DrawHeaderFooter
-		SccLocalPath8 = DrawHeaderFooter
-		SccProjectUniqueName9 = CustomJpegImageConverter\\CustomJpegImageConverter_NetStandard.csproj
-		SccProjectName9 = CustomJpegImageConverter
-		SccLocalPath9 = CustomJpegImageConverter
-		SccProjectUniqueName10 = AddWatermark\\AddWatermark_NetStandard.csproj
-		SccProjectName10 = AddWatermark
-		SccLocalPath10 = AddWatermark
 	EndGlobalSection
 EndGlobal

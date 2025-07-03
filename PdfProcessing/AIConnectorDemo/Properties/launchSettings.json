@@ -1,0 +1,11 @@
+{
+  "profiles": {
+    "AIConnectorDemo": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "AZUREOPENAI_KEY": "key",
+        "AZUREOPENAI_ENDPOINT": "endpoint"
+      }
+    }
+  }
+}
