@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="MergeApp/MergeApp.csproj" Id="6da2d3ed-d142-40b9-978f-9c87f98a6e86" />
+  <Project Path="MergeFunctionApp/MergeFunctionApp.csproj" />
+</Solution>

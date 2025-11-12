@@ -138,3 +138,8 @@ UpgradeLog*.XML
 /ZipLibrary/CreateZipArchive/.vs
 /ZipLibrary/ExtractZipArchiveToDirectory/.vs
 /PdfProcessing/TesseractOcrProviderDemo/.vs
+/PdfProcessing/ExternalSignAWSFunction/.vs
+/CloudIntegration/AWS/ExternalSignFunction/.vs
+/CloudIntegration/AWS/MergeFunction/.vs
+/CloudIntegration/Azure/ExternalSignFunction/.vs
+/CloudIntegration/Azure/MergeFunction/.vs
