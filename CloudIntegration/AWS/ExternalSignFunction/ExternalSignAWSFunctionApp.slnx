@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="ExternalSignAWSFunction/ExternalSignAWSFunction.csproj" />
+  <Project Path="SigningApp/SigningApp.csproj" />
+</Solution>
