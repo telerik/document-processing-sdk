@@ -23,7 +23,7 @@ The solution showcases best practices for:
 ├── MergeFunctionApp/          # Azure Function application
 │   ├── MergeFunction.cs       # HTTP-triggered function implementation
 │   ├── Program.cs     # Function host configuration
-│├── host.json              # Function app settings
+│   ├── host.json              # Function app settings
 │   ├── local.settings.json    # Local development settings
 │   ├── MergeFunctionApp.csproj
 │   └── README.md   # Detailed function documentation
