@@ -259,13 +259,13 @@ The AWS credentials used by this application need:
   "Statement": [
     {
       "Effect": "Allow",
-    "Action": [
+      "Action": [
         "lambda:InvokeFunction"
       ],
       "Resource": "arn:aws:lambda:eu-north-1:YOUR_ACCOUNT_ID:function:MergePdfAwsFunction"
-  },
+    },
     {
- "Effect": "Allow",
+      "Effect": "Allow",
       "Action": [
         "s3:GetObject"
       ],
