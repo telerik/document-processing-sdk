@@ -133,13 +133,13 @@ Resources:
       Handler: MergeAWSFunctionApp::MergeAWSFunctionApp.Function::FunctionHandler
       Runtime: dotnet8
       CodeUri: ./
-    MemorySize: 512
-   Timeout: 30
+      MemorySize: 512
+      Timeout: 30
       Policies:
-     - S3ReadPolicy:
-        BucketName: your-bucket-name
-   - S3WritePolicy:
-     BucketName: your-bucket-name
+        - S3ReadPolicy:
+            BucketName: your-bucket-name
+        - S3WritePolicy:
+            BucketName: your-bucket-name
 ```
 
 Deploy:
