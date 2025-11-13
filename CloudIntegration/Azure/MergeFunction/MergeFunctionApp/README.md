@@ -168,7 +168,7 @@ The function may return error responses in the following scenarios:
      --runtime dotnet-isolated \
      --functions-version 4 \
      --name <function-app-name> \
-   --storage-account <storage-account>
+     --storage-account <storage-account>
    ```
 
 2. **Deploy the function**:
