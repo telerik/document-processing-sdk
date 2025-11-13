@@ -22,7 +22,7 @@ The `host.json` file configures global settings for the Azure Functions host.
     "logging": {
         "applicationInsights": {
             "samplingSettings": {
-       "isEnabled": true,
+                "isEnabled": true,
                 "excludedTypes": "Request"
       },
     "enableLiveMetricsFilters": true
