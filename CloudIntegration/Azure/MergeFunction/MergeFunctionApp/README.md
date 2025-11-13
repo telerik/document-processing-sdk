@@ -8,12 +8,12 @@ The **MergeFunction** is an HTTP-triggered Azure Function that accepts multiple 
 
 ## Features
 
-- ? **HTTP-triggered serverless function** - Accessible via standard HTTP POST requests
-- ? **Multiple PDF support** - Merge 2 or more PDF documents in a single request
-- ? **Multipart form data** - Standard file upload format
-- ? **Anonymous access** - No authentication required (configurable)
-- ? **Automatic content-type handling** - Returns proper PDF MIME type
-- ? **Timeout protection** - 20-second timeout for long-running operations
+- **HTTP-triggered serverless function** - Accessible via standard HTTP POST requests
+- **Multiple PDF support** - Merge 2 or more PDF documents in a single request
+- **Multipart form data** - Standard file upload format
+- **Anonymous access** - No authentication required (configurable)
+- **Automatic content-type handling** - Returns proper PDF MIME type
+- **Timeout protection** - 20-second timeout for long-running operations
 
 ## Prerequisites
 
