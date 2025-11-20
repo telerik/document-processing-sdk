@@ -18,12 +18,12 @@
 		<PackageReference Include="LangChain.Databases.Sqlite" Version="0.17.1-dev.5" />
 		<PackageReference Include="LangChain.Providers.Ollama" Version="0.17.1-dev.20" />
 		<PackageReference Include="Microsoft.Extensions.AI.OpenAI" Version="9.3.0-preview.1.25161.3" />
-		<PackageReference Include="Telerik.Documents.AIConnector" Version="2025.2.520" />
-		<PackageReference Include="Telerik.Documents.Fixed" Version="2025.2.520" />
+		<PackageReference Include="Telerik.Documents.AIConnector" Version="2025.4.1104" />
+		<PackageReference Include="Telerik.Documents.Flow" Version="2025.4.1104" />
 	</ItemGroup>
 
 	<ItemGroup>
-		<None Update="John Grisham.pdf">
+		<None Update="GenAI Document Insights Test Document.docx">
 			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</None>
 	</ItemGroup>

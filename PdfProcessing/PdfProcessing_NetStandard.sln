@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.13.35919.96 d17.13
+VisualStudioVersion = 17.13.35919.96
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CreateDocumentWithImages_NetStandard", "CreateDocumentWithImages\CreateDocumentWithImages_NetStandard.csproj", "{D7CA01E8-E777-4D18-B960-AA0F62040F87}"
 EndProject
@@ -23,7 +23,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CustomJpegImageConverter_Ne
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AddWatermark_NetStandard", "AddWatermark\AddWatermark_NetStandard.csproj", "{5E7AB5A2-E716-4FEE-A30B-5E7167C94013}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AIConnectorDemo_NetStandard", "AIConnectorDemo\AIConnectorDemo_NetStandard.csproj", "{C948AB2A-A1D5-DE6C-0C36-8E9A4C475033}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fixed_AIConnectorDemo_NetStandard", "AIConnectorDemo\Fixed_AIConnectorDemo_NetStandard.csproj", "{C948AB2A-A1D5-DE6C-0C36-8E9A4C475033}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Flow_AIConnectorDemo_NetStandard", "Flow_AIConnectorDemo_NetStandard\Flow_AIConnectorDemo_NetStandard.csproj", "{71148996-208F-4552-9827-51961F56BCF6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Spread_AIConnectorDemo_NetStandard", "Spread_AIConnectorDemo_NetStandard\Spread_AIConnectorDemo_NetStandard.csproj", "{7BA0E7A5-AC38-4525-A9CF-BD471AD2ACB6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -75,6 +79,14 @@ Global
 		{C948AB2A-A1D5-DE6C-0C36-8E9A4C475033}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C948AB2A-A1D5-DE6C-0C36-8E9A4C475033}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C948AB2A-A1D5-DE6C-0C36-8E9A4C475033}.Release|Any CPU.Build.0 = Release|Any CPU
+		{71148996-208F-4552-9827-51961F56BCF6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{71148996-208F-4552-9827-51961F56BCF6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{71148996-208F-4552-9827-51961F56BCF6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{71148996-208F-4552-9827-51961F56BCF6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7BA0E7A5-AC38-4525-A9CF-BD471AD2ACB6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7BA0E7A5-AC38-4525-A9CF-BD471AD2ACB6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7BA0E7A5-AC38-4525-A9CF-BD471AD2ACB6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7BA0E7A5-AC38-4525-A9CF-BD471AD2ACB6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

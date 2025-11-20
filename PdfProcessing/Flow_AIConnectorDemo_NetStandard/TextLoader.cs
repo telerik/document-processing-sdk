@@ -1,6 +1,6 @@
 ﻿using LangChain.DocumentLoaders;
 
-namespace AIConnectorDemo
+namespace FlowAIConnectorDemo
 {
     internal class TextLoader : IDocumentLoader
     {

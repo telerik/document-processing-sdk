@@ -2,6 +2,8 @@
 using Microsoft.Extensions.AI;
 using OpenAI.Chat;
 using System.IO;
+using Telerik.Documents.AI.Core;
+
 #if NETWINDOWS
 using Telerik.Windows.Documents.AIConnector;
 #else
@@ -11,12 +13,17 @@ using Telerik.Windows.Documents.Fixed.FormatProviders.Pdf;
 using Telerik.Windows.Documents.Fixed.Model;
 using Telerik.Windows.Documents.TextRepresentation;
 
-namespace AIConnectorDemo
+namespace FixedAIConnectorDemo
 {
     internal class Program
     {
         static int maxTokenCount = 128000;
+        static int maxNumberOfEmbeddingsSent = 50000;
         static IChatClient iChatClient;
+        static string tokenizationEncoding = "cl100k_base";
+        static string model = "gpt-4o-mini";
+        static string key = Environment.GetEnvironmentVariable("AZUREOPENAI_KEY");
+        static string endpoint = Environment.GetEnvironmentVariable("AZUREOPENAI_ENDPOINT");
 
         static void Main(string[] args)
         {
@@ -28,7 +35,7 @@ namespace AIConnectorDemo
             {
                 PdfFormatProvider pdfFormatProvider = new PdfFormatProvider();
                 RadFixedDocument inputPdf = pdfFormatProvider.Import(input, null);
-                ISimpleTextDocument simpleDocument = inputPdf.ToSimpleTextDocument();
+                SimpleTextDocument simpleDocument = inputPdf.ToSimpleTextDocument(TimeSpan.FromSeconds(10));
 
                 Summarize(simpleDocument);
 
@@ -44,10 +51,6 @@ namespace AIConnectorDemo
 
         private static void CreateChatClient()
         {
-            string key = Environment.GetEnvironmentVariable("AZUREOPENAI_KEY");
-            string endpoint = Environment.GetEnvironmentVariable("AZUREOPENAI_ENDPOINT");
-            string model = "gpt-4o-mini";
-
             AzureOpenAIClient azureClient = new(
                 new Uri(endpoint),
                 new Azure.AzureKeyCredential(key),
@@ -57,10 +60,12 @@ namespace AIConnectorDemo
             iChatClient = new OpenAIChatClient(chatClient);
         }
 
-        private static void Summarize(ISimpleTextDocument simpleDocument)
+        private static void Summarize(SimpleTextDocument simpleDocument)
         {
-            SummarizationProcessor summarizationProcessor = new SummarizationProcessor(iChatClient, maxTokenCount);
-            summarizationProcessor.Settings.PromptAddition = "Summarize the text in a few sentences. Be concise and clear.";
+            string additionalPrompt = "Summarize the text in a few sentences. Be concise and clear.";
+            SummarizationProcessorSettings summarizationProcessorSettings = new SummarizationProcessorSettings(maxTokenCount, additionalPrompt);
+            SummarizationProcessor summarizationProcessor = new SummarizationProcessor(iChatClient, summarizationProcessorSettings);
+
             summarizationProcessor.SummaryResourcesCalculated += SummarizationProcessor_SummaryResourcesCalculated;
 
             string summary = summarizationProcessor.Summarize(simpleDocument).Result;
@@ -73,9 +78,10 @@ namespace AIConnectorDemo
             e.ShouldContinueExecution = true;
         }
 
-        private static void AskQuestion(ISimpleTextDocument simpleDocument)
+        private static void AskQuestion(SimpleTextDocument simpleDocument)
         {
-            CompleteContextQuestionProcessor completeContextQuestionProcessor = new CompleteContextQuestionProcessor(iChatClient, maxTokenCount);
+            CompleteContextProcessorSettings completeContextProcessorSettings = new CompleteContextProcessorSettings(maxTokenCount, model, tokenizationEncoding, false);
+            CompleteContextQuestionProcessor completeContextQuestionProcessor = new CompleteContextQuestionProcessor(iChatClient, completeContextProcessorSettings);
 
             string question = "How many pages is the document and what is it about?";
             string answer = completeContextQuestionProcessor.AnswerQuestion(simpleDocument, question).Result;
@@ -83,13 +89,14 @@ namespace AIConnectorDemo
             Console.WriteLine(answer);
         }
 
-        private static void AskPartialContextQuestion(ISimpleTextDocument simpleDocument)
+        private static void AskPartialContextQuestion(SimpleTextDocument simpleDocument)
         {
+            var settings = EmbeddingSettingsFactory.CreateSettingsForTextDocuments(maxTokenCount, model, tokenizationEncoding, maxNumberOfEmbeddingsSent);
 #if NETWINDOWS
-            PartialContextQuestionProcessor partialContextQuestionProcessor = new PartialContextQuestionProcessor(iChatClient, maxTokenCount, simpleDocument);
+            PartialContextQuestionProcessor partialContextQuestionProcessor = new PartialContextQuestionProcessor(iChatClient, settings, simpleDocument);
 #else
-            IEmbeddingsStorage embeddingsStorage = new OllamaEmbeddingsStorage();
-            PartialContextQuestionProcessor partialContextQuestionProcessor = new PartialContextQuestionProcessor(iChatClient, embeddingsStorage, maxTokenCount, simpleDocument);
+            IEmbedder embedder = new CustomOpenAIEmbedder();
+            PartialContextQuestionProcessor partialContextQuestionProcessor = new PartialContextQuestionProcessor(iChatClient, embedder, settings, simpleDocument);
 #endif
             string question = "What is the last book by John Grisham?";
             string answer = partialContextQuestionProcessor.AnswerQuestion(question).Result;
