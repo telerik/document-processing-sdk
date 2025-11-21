@@ -8,20 +8,19 @@ using Telerik.Documents.AI.Core;
 using Telerik.Windows.Documents.AIConnector;
 #else
 using Telerik.Documents.AIConnector;
+#endif
+using Telerik.Windows.Documents.TextRepresentation;
 using Telerik.Windows.Documents.Spreadsheet.FormatProviders.Json;
 using Telerik.Windows.Documents.Spreadsheet.FormatProviders.OpenXml.Xlsx;
 using Telerik.Windows.Documents.Spreadsheet.Model;
-
-
-#endif
-using Telerik.Windows.Documents.TextRepresentation;
 
 namespace SpreadAIConnectorDemo
 {
     internal class Program
     {
         static int maxTokenCount = 128000;
-        static int maxNumberOfEmbeddingsSent = 50000;
+        static int embeddingTokenSize = 60000;
+        static int totalContextTokenLimit = 60000;
         static IChatClient iChatClient;
         static string tokenizationEncoding = "cl100k_base";
         static string model = "gpt-4o-mini";
@@ -86,7 +85,7 @@ namespace SpreadAIConnectorDemo
             CompleteContextProcessorSettings completeContextProcessorSettings = new CompleteContextProcessorSettings(maxTokenCount, model, tokenizationEncoding, false);
             CompleteContextQuestionProcessor completeContextQuestionProcessor = new CompleteContextQuestionProcessor(iChatClient, completeContextProcessorSettings);
 
-            string question = "How many pages is the document and what is it about?";
+            string question = "What content does the document contain?";
             string answer = completeContextQuestionProcessor.AnswerQuestion(simpleDocument, question).Result;
             Console.WriteLine(question);
             Console.WriteLine(answer);
@@ -94,14 +93,14 @@ namespace SpreadAIConnectorDemo
 
         private static void AskPartialContextQuestion(SimpleTextDocument simpleDocument)
         {
-            var settings = EmbeddingSettingsFactory.CreateSettingsForTextDocuments(maxTokenCount, model, tokenizationEncoding, maxNumberOfEmbeddingsSent);
+            IEmbeddingSettings settings = EmbeddingSettingsFactory.CreateSettingsForSpreadDocuments(maxTokenCount, model, tokenizationEncoding, embeddingTokenSize, false, totalContextTokenLimit);
 #if NETWINDOWS
             PartialContextQuestionProcessor partialContextQuestionProcessor = new PartialContextQuestionProcessor(iChatClient, settings, simpleDocument);
 #else
             IEmbedder embedder = new CustomOpenAIEmbedder();
             PartialContextQuestionProcessor partialContextQuestionProcessor = new PartialContextQuestionProcessor(iChatClient, embedder, settings, simpleDocument);
 #endif
-            string question = "Who are the key authors listed in the document?";
+            string question = "What are the main conclusions of the document?";
             string answer = partialContextQuestionProcessor.AnswerQuestion(question).Result;
             Console.WriteLine(question);
             Console.WriteLine(answer);

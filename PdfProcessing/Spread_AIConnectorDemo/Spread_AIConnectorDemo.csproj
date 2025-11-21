@@ -13,19 +13,20 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-	  <Compile Remove="OllamaEmbeddingsStorage.cs" />
+	  <Compile Remove="CustomOpenAIEmbedder.cs" />
 	  <Compile Remove="TextLoader.cs" />
 	</ItemGroup>
 	
 	<ItemGroup>
 		<PackageReference Include="Azure.AI.OpenAI" Version="2.2.0-beta.2" />
 		<PackageReference Include="Microsoft.Extensions.AI.OpenAI" Version="9.3.0-preview.1.25161.3" />
-		<PackageReference Include="Telerik.Windows.Documents.AIConnector" Version="2025.2.520" />
-		<PackageReference Include="Telerik.Windows.Documents.Fixed" Version="2025.2.520" />
+		<PackageReference Include="Telerik.Windows.Documents.AIConnector" Version="2025.4.1104" />
+		<PackageReference Include="Telerik.Windows.Documents.Spreadsheet.FormatProviders.Json" Version="2025.4.1104" />
+		<PackageReference Include="Telerik.Windows.Documents.Spreadsheet.FormatProviders.OpenXml" Version="2025.4.1104" />
 	</ItemGroup>
 
 	<ItemGroup>
-		<None Update="John Grisham.pdf">
+		<None Update="GenAI Document Insights Test Document.xlsx">
 			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</None>
 	</ItemGroup>
