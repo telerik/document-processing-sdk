@@ -1,0 +1,29 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Resources\JohnDoe.crt" />
+    <None Remove="Resources\SampleDocument.pdf" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Resources\JohnDoe.crt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\SampleDocument.pdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AWSSDK.Lambda" Version="*" />
+    <PackageReference Include="Telerik.Documents.Fixed" Version="*" />
+  </ItemGroup>
+
+</Project>
