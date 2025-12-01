@@ -9,18 +9,16 @@ using Telerik.Windows.Documents.AIConnector;
 #else
 using Telerik.Documents.AIConnector;
 #endif
+using Telerik.Windows.Documents.Fixed.FormatProviders.Pdf;
+using Telerik.Windows.Documents.Fixed.Model;
 using Telerik.Windows.Documents.TextRepresentation;
-using Telerik.Windows.Documents.Spreadsheet.FormatProviders.Json;
-using Telerik.Windows.Documents.Spreadsheet.FormatProviders.OpenXml.Xlsx;
-using Telerik.Windows.Documents.Spreadsheet.Model;
 
-namespace SpreadAIConnectorDemo
+namespace FixedAIConnectorDemo
 {
     internal class Program
     {
         static int maxTokenCount = 128000;
-        static int embeddingTokenSize = 60000;
-        static int totalContextTokenLimit = 60000;
+        static int maxNumberOfEmbeddingsSent = 50000;
         static IChatClient iChatClient;
         static string tokenizationEncoding = "cl100k_base";
         static string model = "gpt-4o-mini";
@@ -29,15 +27,13 @@ namespace SpreadAIConnectorDemo
 
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
-
             CreateChatClient();
 
-            using (Stream input = File.OpenRead("GenAI Document Insights Test Document.xlsx"))
+            using (Stream input = File.OpenRead("John Grisham.pdf"))
             {
-                XlsxFormatProvider xlsxFormatProvider = new XlsxFormatProvider();
-                Workbook inputXlsx = xlsxFormatProvider.Import(input, null);
-                SimpleTextDocument simpleDocument = inputXlsx.ToSimpleTextDocument(TimeSpan.FromSeconds(10));
+                PdfFormatProvider pdfFormatProvider = new PdfFormatProvider();
+                RadFixedDocument inputPdf = pdfFormatProvider.Import(input, null);
+                SimpleTextDocument simpleDocument = inputPdf.ToSimpleTextDocument(TimeSpan.FromSeconds(10));
 
                 Summarize(simpleDocument);
 
@@ -59,7 +55,7 @@ namespace SpreadAIConnectorDemo
                 new AzureOpenAIClientOptions());
             ChatClient chatClient = azureClient.GetChatClient(model);
 
-            iChatClient = new OpenAIChatClient(chatClient); 
+            iChatClient = new OpenAIChatClient(chatClient);
         }
 
         private static void Summarize(SimpleTextDocument simpleDocument)
@@ -85,7 +81,7 @@ namespace SpreadAIConnectorDemo
             CompleteContextProcessorSettings completeContextProcessorSettings = new CompleteContextProcessorSettings(maxTokenCount, model, tokenizationEncoding, false);
             CompleteContextQuestionProcessor completeContextQuestionProcessor = new CompleteContextQuestionProcessor(iChatClient, completeContextProcessorSettings);
 
-            string question = "What content does the document contain?";
+            string question = "How many pages is the document and what is it about?";
             string answer = completeContextQuestionProcessor.AnswerQuestion(simpleDocument, question).Result;
             Console.WriteLine(question);
             Console.WriteLine(answer);
@@ -93,14 +89,14 @@ namespace SpreadAIConnectorDemo
 
         private static void AskPartialContextQuestion(SimpleTextDocument simpleDocument)
         {
-            IEmbeddingSettings settings = EmbeddingSettingsFactory.CreateSettingsForSpreadDocuments(maxTokenCount, model, tokenizationEncoding, embeddingTokenSize, false, totalContextTokenLimit);
+            var settings = EmbeddingSettingsFactory.CreateSettingsForTextDocuments(maxTokenCount, model, tokenizationEncoding, maxNumberOfEmbeddingsSent);
 #if NETWINDOWS
             PartialContextQuestionProcessor partialContextQuestionProcessor = new PartialContextQuestionProcessor(iChatClient, settings, simpleDocument);
 #else
             IEmbedder embedder = new CustomOpenAIEmbedder();
             PartialContextQuestionProcessor partialContextQuestionProcessor = new PartialContextQuestionProcessor(iChatClient, embedder, settings, simpleDocument);
 #endif
-            string question = "What are the main conclusions of the document?";
+            string question = "What is the last book by John Grisham?";
             string answer = partialContextQuestionProcessor.AnswerQuestion(question).Result;
             Console.WriteLine(question);
             Console.WriteLine(answer);

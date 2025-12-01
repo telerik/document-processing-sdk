@@ -9,11 +9,11 @@ using Telerik.Windows.Documents.AIConnector;
 #else
 using Telerik.Documents.AIConnector;
 #endif
-using Telerik.Windows.Documents.Fixed.FormatProviders.Pdf;
-using Telerik.Windows.Documents.Fixed.Model;
+using Telerik.Windows.Documents.Flow.FormatProviders.Docx;
+using Telerik.Windows.Documents.Flow.Model;
 using Telerik.Windows.Documents.TextRepresentation;
 
-namespace FixedAIConnectorDemo
+namespace FlowAIConnectorDemo
 {
     internal class Program
     {
@@ -27,15 +27,13 @@ namespace FixedAIConnectorDemo
 
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
-
             CreateChatClient();
 
-            using (Stream input = File.OpenRead("John Grisham.pdf"))
+            using (Stream input = File.OpenRead("GenAI Document Insights Test Document.docx"))
             {
-                PdfFormatProvider pdfFormatProvider = new PdfFormatProvider();
-                RadFixedDocument inputPdf = pdfFormatProvider.Import(input, null);
-                SimpleTextDocument simpleDocument = inputPdf.ToSimpleTextDocument(TimeSpan.FromSeconds(10));
+                DocxFormatProvider docxFormatProvider = new DocxFormatProvider();
+                RadFlowDocument inputDocx = docxFormatProvider.Import(input, null);
+                SimpleTextDocument simpleDocument = inputDocx.ToSimpleTextDocument(TimeSpan.FromSeconds(10));
 
                 Summarize(simpleDocument);
 
@@ -57,7 +55,7 @@ namespace FixedAIConnectorDemo
                 new AzureOpenAIClientOptions());
             ChatClient chatClient = azureClient.GetChatClient(model);
 
-            iChatClient = new OpenAIChatClient(chatClient);
+            iChatClient = new OpenAIChatClient(chatClient); 
         }
 
         private static void Summarize(SimpleTextDocument simpleDocument)
@@ -98,7 +96,7 @@ namespace FixedAIConnectorDemo
             IEmbedder embedder = new CustomOpenAIEmbedder();
             PartialContextQuestionProcessor partialContextQuestionProcessor = new PartialContextQuestionProcessor(iChatClient, embedder, settings, simpleDocument);
 #endif
-            string question = "What is the last book by John Grisham?";
+            string question = "Who are the key authors listed in the document?";
             string answer = partialContextQuestionProcessor.AnswerQuestion(question).Result;
             Console.WriteLine(question);
             Console.WriteLine(answer);
