@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.29709.97
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36603.0 d17.14
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConvertDocuments_NetStandard", "ConvertDocuments\ConvertDocuments_NetStandard.csproj", "{AF2C14E7-B3FD-4B1B-8B49-148B63BC7F3D}"
 EndProject
@@ -12,6 +12,8 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MailMerge_NetStandard", "MailMerge\MailMerge_NetStandard.csproj", "{5036B5AE-E422-4DED-A0F1-FC56A3CCF044}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ContentControls_NetStandard", "ContentControls\ContentControls_NetStandard.csproj", "{0E6E81DD-BD06-4FDA-8B68-0AA4E8865F30}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AIConnectorDemo_NetStandard", "AIConnectorDemo\AIConnectorDemo_NetStandard.csproj", "{C948AB2A-A1D5-DE6C-0C36-8E9A4C475033}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,32 +41,15 @@ Global
 		{0E6E81DD-BD06-4FDA-8B68-0AA4E8865F30}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0E6E81DD-BD06-4FDA-8B68-0AA4E8865F30}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0E6E81DD-BD06-4FDA-8B68-0AA4E8865F30}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C948AB2A-A1D5-DE6C-0C36-8E9A4C475033}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C948AB2A-A1D5-DE6C-0C36-8E9A4C475033}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C948AB2A-A1D5-DE6C-0C36-8E9A4C475033}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C948AB2A-A1D5-DE6C-0C36-8E9A4C475033}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D254DCB0-A6CA-4F77-8A49-131BA4359514}
-	EndGlobalSection
-	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 6
-		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
-		SccTeamFoundationServer = https://tfsemea.progress.com/defaultcollection
-		SccLocalPath0 = .
-		SccProjectUniqueName1 = ConvertDocuments\\ConvertDocuments_NetStandard.csproj
-		SccProjectName1 = ConvertDocuments
-		SccLocalPath1 = ConvertDocuments
-		SccProjectUniqueName2 = GenerateDocument\\GenerateDocument_NetStandard.csproj
-		SccProjectName2 = GenerateDocument
-		SccLocalPath2 = GenerateDocument
-		SccProjectUniqueName3 = HtmlGenerator\\HtmlGenerator_NetStandard.csproj
-		SccProjectName3 = HtmlGenerator
-		SccLocalPath3 = HtmlGenerator
-		SccProjectUniqueName4 = MailMerge\\MailMerge_NetStandard.csproj
-		SccProjectName4 = MailMerge
-		SccLocalPath4 = MailMerge
-		SccProjectUniqueName5 = ContentControls\\ContentControls_NetStandard.csproj
-		SccProjectName5 = ContentControls
-		SccLocalPath5 = ContentControls
 	EndGlobalSection
 EndGlobal
