@@ -3,7 +3,7 @@ using System.Text;
 using System.Text.Json;
 using Telerik.Documents.AI.Core;
 
-namespace FlowAIConnectorDemo
+namespace AIConnectorDemo
 {
     public class CustomOpenAIEmbedder : IEmbedder
     {

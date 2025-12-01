@@ -4,7 +4,7 @@ using System.Text;
 using System.Text.Json;
 using Telerik.Documents.AI.Core;
 
-namespace FixedAIConnectorDemo
+namespace AIConnectorDemo
 {
     public class CustomOpenAIEmbedder : IEmbedder
     {

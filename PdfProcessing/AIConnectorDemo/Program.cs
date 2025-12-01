@@ -13,7 +13,7 @@ using Telerik.Windows.Documents.Fixed.FormatProviders.Pdf;
 using Telerik.Windows.Documents.Fixed.Model;
 using Telerik.Windows.Documents.TextRepresentation;
 
-namespace FixedAIConnectorDemo
+namespace AIConnectorDemo
 {
     internal class Program
     {

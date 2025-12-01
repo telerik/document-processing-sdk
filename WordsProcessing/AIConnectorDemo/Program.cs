@@ -13,7 +13,7 @@ using Telerik.Windows.Documents.Flow.FormatProviders.Docx;
 using Telerik.Windows.Documents.Flow.Model;
 using Telerik.Windows.Documents.TextRepresentation;
 
-namespace FlowAIConnectorDemo
+namespace AIConnectorDemo
 {
     internal class Program
     {

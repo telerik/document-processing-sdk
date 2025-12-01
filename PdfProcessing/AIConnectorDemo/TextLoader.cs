@@ -1,6 +1,6 @@
 ﻿using LangChain.DocumentLoaders;
 
-namespace FixedAIConnectorDemo
+namespace AIConnectorDemo
 {
     internal class TextLoader : IDocumentLoader
     {
