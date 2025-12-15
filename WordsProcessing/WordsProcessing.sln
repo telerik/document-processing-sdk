@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.26923.0
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36603.0 d17.14
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GenerateDocument", "GenerateDocument\GenerateDocument.csproj", "{6BD0AD6A-35D5-4194-9C8A-438E27942792}"
 EndProject
@@ -12,6 +12,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConvertDocuments", "ConvertDocuments\ConvertDocuments.csproj", "{C21FB8BA-8A42-4C06-A870-74A4C0743796}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContentControls", "ContentControls\ContentControls.csproj", "{576D340B-8809-4256-809C-575B1907283C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AIConnectorDemo", "AIConnectorDemo\AIConnectorDemo.csproj", "{4AC38EDC-AE27-8F2B-5BCB-8E73F27E33F2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,32 +41,15 @@ Global
 		{576D340B-8809-4256-809C-575B1907283C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{576D340B-8809-4256-809C-575B1907283C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{576D340B-8809-4256-809C-575B1907283C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4AC38EDC-AE27-8F2B-5BCB-8E73F27E33F2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4AC38EDC-AE27-8F2B-5BCB-8E73F27E33F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4AC38EDC-AE27-8F2B-5BCB-8E73F27E33F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4AC38EDC-AE27-8F2B-5BCB-8E73F27E33F2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {74049E11-3060-446D-BA19-C820938235B3}
-	EndGlobalSection
-	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 6
-		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
-		SccTeamFoundationServer = https://tfsemea.progress.com/defaultcollection
-		SccLocalPath0 = .
-		SccProjectUniqueName1 = GenerateDocument\\GenerateDocument.csproj
-		SccProjectName1 = GenerateDocument
-		SccLocalPath1 = GenerateDocument
-		SccProjectUniqueName2 = HtmlGenerator\\HtmlGenerator.csproj
-		SccProjectName2 = HtmlGenerator
-		SccLocalPath2 = HtmlGenerator
-		SccProjectUniqueName3 = MailMerge\\MailMerge.csproj
-		SccProjectName3 = MailMerge
-		SccLocalPath3 = MailMerge
-		SccProjectUniqueName4 = ConvertDocuments\\ConvertDocuments.csproj
-		SccProjectName4 = ConvertDocuments
-		SccLocalPath4 = ConvertDocuments
-		SccProjectUniqueName5 = ContentControls\\ContentControls.csproj
-		SccProjectName5 = ContentControls
-		SccLocalPath5 = ContentControls
 	EndGlobalSection
 EndGlobal
