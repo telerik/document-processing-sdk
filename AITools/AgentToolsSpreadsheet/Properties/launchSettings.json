@@ -1,0 +1,15 @@
+{
+  "profiles": {
+    "AgentToolsSpreadsheet": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "AZUREOPENAI_KEY": "YOUR_AZURE_OPENAI_KEY_HERE",
+        "AZUREOPENAI_ENDPOINT": "https://dpl-ai-foundry.cognitiveservices.azure.com/",
+        "AZUREEMBEDDINGOPENAI_KEY": "YOUR_AZURE_EMBEDDING_OPENAI_KEY_HERE",
+        "AZUREEMBEDDINGOPENAI_ENDPOINT": "https://open-ai-playground-progress.openai.azure.com/",
+        "AZUREEMBEDDINGOPENAI_DEPLOYMENT": "text-embedding-3-large-2",
+        "AZUREEMBEDDINGOPENAI_APIVERSION": "2023-05-15"
+      }
+    }
+  }
+}
