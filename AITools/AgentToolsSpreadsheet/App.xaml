@@ -1,0 +1,37 @@
+﻿<Application x:Class="CentaurSpreadsheetDemo_NetCore.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:CentaurSpreadsheetDemo_NetCore"
+             xmlns:dialogs="clr-namespace:Telerik.Windows.Controls.Spreadsheet.Dialogs;assembly=Telerik.Windows.Controls.Spreadsheet"
+             xmlns:System="clr-namespace:System;assembly=mscorlib"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <ResourceDictionary>
+			<!--Uncomment these immediate next lines for NoXaml-->
+			<!--<ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Telerik.Windows.Themes.Office_Black;component/Themes/System.Windows.xaml" />
+                <ResourceDictionary Source="/Telerik.Windows.Themes.Office_Black;component/Themes/Telerik.Windows.Controls.xaml" />
+                <ResourceDictionary Source="/Telerik.Windows.Themes.Office_Black;component/Themes/Telerik.Windows.Controls.Input.xaml" />
+                <ResourceDictionary Source="/Telerik.Windows.Themes.Office_Black;component/Themes/Telerik.Windows.Controls.Navigation.xaml" />
+                <ResourceDictionary Source="/Telerik.Windows.Themes.Office_Black;component/Themes/Telerik.Windows.Controls.GridView.xaml" />
+                <ResourceDictionary Source="/Telerik.Windows.Themes.Office_Black;component/Themes/Telerik.Windows.Controls.Chart.xaml" />
+                <ResourceDictionary Source="/Telerik.Windows.Themes.Office_Black;component/Themes/Telerik.Windows.Controls.RibbonView.xaml" />
+                <ResourceDictionary Source="/Telerik.Windows.Themes.Office_Black;component/Themes/Telerik.Windows.Controls.Spreadsheet.xaml" />
+                <ResourceDictionary Source="/Telerik.Windows.Themes.Office_Black;component/Themes/Telerik.Windows.Controls.SpreadsheetUI.xaml" />
+            </ResourceDictionary.MergedDictionaries>-->
+            
+            <!--When you want to test long-localized strings, uncomment the following lines:-->
+            <!--<Style x:Key="BaseWidthResetStyle" TargetType="FrameworkElement">
+                <Setter Property="Width" Value="Auto" />
+            </Style>
+
+            <Style TargetType="dialogs:AlignmentTabContent" BasedOn="{StaticResource BaseWidthResetStyle}"/>
+            <Style TargetType="dialogs:BorderTabContent" BasedOn="{StaticResource BaseWidthResetStyle}"/>
+            <Style TargetType="dialogs:FontTabContent" BasedOn="{StaticResource BaseWidthResetStyle}"/>
+            <Style TargetType="dialogs:NumberTabContent" BasedOn="{StaticResource BaseWidthResetStyle}"/>
+            <Style TargetType="dialogs:FillTabContent" BasedOn="{StaticResource BaseWidthResetStyle}"/>-->
+
+            <System:String x:Key="Telerik.Windows.Controls.Key">CentaurSpreadsheetDemo</System:String>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>
