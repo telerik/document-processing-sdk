@@ -1,0 +1,43 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<OutputType>WinExe</OutputType>
+		<TargetFramework>net8.0-windows</TargetFramework>
+		<Nullable>enable</Nullable>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<UseWPF>true</UseWPF>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Telerik.Licensing" Version="*" />
+		<!-- Telerik UI for WPF -->
+		<PackageReference Include="Telerik.Windows.Controls.for.Wpf.Xaml" Version="*" />
+		<PackageReference Include="Telerik.Windows.Controls.Data.for.Wpf.Xaml" Version="*" />
+		<PackageReference Include="Telerik.Windows.Controls.GridView.for.Wpf.Xaml" Version="*" />
+		<PackageReference Include="Telerik.Windows.Controls.Input.for.Wpf.Xaml" Version="*" />
+		<PackageReference Include="Telerik.Windows.Controls.Navigation.for.Wpf.Xaml" Version="*" />
+		<PackageReference Include="Telerik.Windows.Controls.RibbonView.for.Wpf.Xaml" Version="*" />
+		<PackageReference Include="Telerik.Windows.Controls.ConversationalUI.for.Wpf.Xaml" Version="*" />
+		<PackageReference Include="Telerik.Windows.Controls.Spreadsheet.for.Wpf.Xaml" Version="*" />
+		<PackageReference Include="Telerik.Windows.Controls.SpreadsheetUI.for.Wpf.Xaml" Version="*" />
+		<PackageReference Include="Telerik.Windows.Data.for.Wpf.Xaml" Version="*" />
+
+		<!-- Telerik Document Processing -->
+		<PackageReference Include="Telerik.Windows.Documents.Spreadsheet" Version="*" />
+		<PackageReference Include="Telerik.Windows.Documents.Spreadsheet.FormatProviders.OpenXml" Version="*" />
+		<PackageReference Include="Telerik.Windows.Documents.Spreadsheet.FormatProviders.Pdf" Version="*" />
+		<PackageReference Include="Telerik.Windows.Documents.Spreadsheet.FormatProviders.Xls" Version="*" />
+		<PackageReference Include="Telerik.Documents.AI.AgentTools.Spreadsheet" Version="2026.1.206" />
+
+		<!--Microsoft AI-->
+		<PackageReference Include="Azure.AI.OpenAI" Version="2.8.0-beta.1" />
+		<PackageReference Include="Microsoft.Agents.AI.OpenAI" Version="1.0.0-preview.260121.1" />
+	</ItemGroup>
+
+
+	<ItemGroup>
+	  <None Update="Electric_Vehicle_Population_Data.xlsx">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </None>
+	</ItemGroup>
+</Project>
