@@ -1,0 +1,12 @@
+{
+  "profiles": {
+    "AgentToolsEditSpreadsheet": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "AZUREOPENAI_KEY": "your-key-here",
+        "AZUREOPENAI_ENDPOINT": "https://your-endpoint-here.openai.azure.com/",
+        "AZUREOPENAI_MODEL": "gpt-4.1-mini"
+      }
+    }
+  }
+}
