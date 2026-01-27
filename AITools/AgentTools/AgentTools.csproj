@@ -1,0 +1,104 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<OutputType>Exe</OutputType>
+		<TargetFramework>net10.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+		<UserSecretsId>2e520490-5ec7-435b-8308-162bcf3b11f3</UserSecretsId>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<None Update="appsettings.json">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Azure.AI.OpenAI" Version="2.8.0-beta.1" />
+		<PackageReference Include="Microsoft.Agents.AI.OpenAI" Version="1.0.0-preview.251219.1" />
+		<PackageReference Include="Microsoft.Extensions.Hosting" Version="9.0.0" />
+
+		<PackageReference Include="Telerik.Licensing.Lib" Version="*" />
+		<PackageReference Include="Telerik.Licensing" Version="*" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Reference Include="Telerik.Documents.AI.AgentTools.Conversion">
+			<HintPath>C:\Repos\DocumentProcessing\Binaries\netstandard20\Telerik.Documents.AI.AgentTools.Conversion.dll</HintPath>
+		</Reference>
+		<Reference Include="Telerik.Documents.AI.AgentTools.Fixed">
+			<HintPath>C:\Repos\DocumentProcessing\Binaries\netstandard20\Telerik.Documents.AI.AgentTools.Fixed.dll</HintPath>
+		</Reference>
+		<Reference Include="Telerik.Documents.AI.AgentTools.Spreadsheet">
+			<HintPath>C:\Repos\DocumentProcessing\Binaries\netstandard20\Telerik.Documents.AI.AgentTools.Spreadsheet.dll</HintPath>
+		</Reference>
+		<Reference Include="Telerik.Documents.AI.Tools.Core">
+			<HintPath>C:\Repos\DocumentProcessing\Binaries\netstandard20\Telerik.Documents.AI.Tools.Core.dll</HintPath>
+		</Reference>
+		<Reference Include="Telerik.Documents.AI.Tools.Fixed.Core">
+			<HintPath>C:\Repos\DocumentProcessing\Binaries\netstandard20\Telerik.Documents.AI.Tools.Fixed.Core.dll</HintPath>
+		</Reference>
+		<Reference Include="Telerik.Documents.AI.Tools.Flow.Core">
+			<HintPath>C:\Repos\DocumentProcessing\Binaries\netstandard20\Telerik.Documents.AI.Tools.Flow.Core.dll</HintPath>
+		</Reference>
+		<Reference Include="Telerik.Documents.AI.Tools.Conversion.Core">
+			<HintPath>C:\Repos\DocumentProcessing\Binaries\netstandard20\Telerik.Documents.AI.Tools.Conversion.Core.dll</HintPath>
+		</Reference>
+		<Reference Include="Telerik.Documents.AI.Tools.Spreadsheet.Core">
+			<HintPath>C:\Repos\DocumentProcessing\Binaries\netstandard20\Telerik.Documents.AI.Tools.Spreadsheet.Core.dll</HintPath>
+		</Reference>
+		<Reference Include="Telerik.Documents.CMapUtils">
+			<HintPath>..\..\..\DocumentProcessing\Binaries\netstandard20\Telerik.Documents.CMapUtils.dll</HintPath>
+		</Reference>
+		<Reference Include="Telerik.Documents.Core">
+			<HintPath>..\..\..\DocumentProcessing\Binaries\netstandard20\Telerik.Documents.Core.dll</HintPath>
+		</Reference>
+		<Reference Include="Telerik.Documents.DrawingML">
+			<HintPath>..\..\..\DocumentProcessing\Binaries\netstandard20\Telerik.Documents.DrawingML.dll</HintPath>
+		</Reference>
+		<Reference Include="Telerik.Documents.Fixed">
+			<HintPath>..\..\..\DocumentProcessing\Binaries\netstandard20\Telerik.Documents.Fixed.dll</HintPath>
+		</Reference>
+		<Reference Include="Telerik.Documents.Fixed.FormatProviders.Image.Skia">
+			<HintPath>..\..\..\DocumentProcessing\Binaries\netstandard20\Telerik.Documents.Fixed.FormatProviders.Image.Skia.dll</HintPath>
+		</Reference>
+		<Reference Include="Telerik.Documents.Fixed.FormatProviders.Ocr">
+			<HintPath>..\..\..\DocumentProcessing\Binaries\netstandard20\Telerik.Documents.Fixed.FormatProviders.Ocr.dll</HintPath>
+		</Reference>
+		<Reference Include="Telerik.Documents.Flow">
+			<HintPath>..\..\..\DocumentProcessing\Binaries\netstandard20\Telerik.Documents.Flow.dll</HintPath>
+		</Reference>
+		<Reference Include="Telerik.Documents.Flow.FormatProviders.Doc">
+			<HintPath>..\..\..\DocumentProcessing\Binaries\netstandard20\Telerik.Documents.Flow.FormatProviders.Doc.dll</HintPath>
+		</Reference>
+		<Reference Include="Telerik.Documents.Flow.FormatProviders.Pdf">
+			<HintPath>..\..\..\DocumentProcessing\Binaries\netstandard20\Telerik.Documents.Flow.FormatProviders.Pdf.dll</HintPath>
+		</Reference>
+		<Reference Include="Telerik.Documents.ImageUtils">
+			<HintPath>..\..\..\DocumentProcessing\Binaries\netstandard20\Telerik.Documents.ImageUtils.dll</HintPath>
+		</Reference>
+		<Reference Include="Telerik.Documents.Spreadsheet">
+			<HintPath>..\..\..\DocumentProcessing\Binaries\netstandard20\Telerik.Documents.Spreadsheet.dll</HintPath>
+		</Reference>
+		<Reference Include="Telerik.Documents.Spreadsheet.FormatProviders.Json">
+			<HintPath>..\..\..\DocumentProcessing\Binaries\netstandard20\Telerik.Documents.Spreadsheet.FormatProviders.Json.dll</HintPath>
+		</Reference>
+		<Reference Include="Telerik.Documents.Spreadsheet.FormatProviders.OpenXml">
+			<HintPath>..\..\..\DocumentProcessing\Binaries\netstandard20\Telerik.Documents.Spreadsheet.FormatProviders.OpenXml.dll</HintPath>
+		</Reference>
+		<Reference Include="Telerik.Documents.Spreadsheet.FormatProviders.Pdf">
+			<HintPath>..\..\..\DocumentProcessing\Binaries\netstandard20\Telerik.Documents.Spreadsheet.FormatProviders.Pdf.dll</HintPath>
+		</Reference>
+		<Reference Include="Telerik.Documents.Spreadsheet.FormatProviders.Xls">
+			<HintPath>..\..\..\DocumentProcessing\Binaries\netstandard20\Telerik.Documents.Spreadsheet.FormatProviders.Xls.dll</HintPath>
+		</Reference>
+		<Reference Include="Telerik.Documents.TextMeasurer.Skia">
+			<HintPath>..\..\..\DocumentProcessing\Binaries\netstandard20\Telerik.Documents.TextMeasurer.Skia.dll</HintPath>
+		</Reference>
+		<Reference Include="Telerik.Text.Skia">
+			<HintPath>..\..\..\DocumentProcessing\Binaries\netstandard20\Telerik.Text.Skia.dll</HintPath>
+		</Reference>
+	</ItemGroup>
+
+</Project>
