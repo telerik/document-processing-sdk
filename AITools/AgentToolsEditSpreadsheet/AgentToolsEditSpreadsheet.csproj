@@ -1,0 +1,97 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<OutputType>WinExe</OutputType>
+		<TargetFramework>net8.0-windows</TargetFramework>
+		<Nullable>enable</Nullable>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<UseWPF>true</UseWPF>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Telerik.Licensing" Version="*" />
+		<PackageReference Include="Telerik.Licensing.Lib" Version="*" PrivateAssets="none" />
+		<!-- Telerik UI for WPF -->
+		<!--<PackageReference Include="Telerik.Windows.Controls.for.Wpf.Xaml" Version="*" />
+		<PackageReference Include="Telerik.Windows.Controls.Data.for.Wpf.Xaml" Version="*" />
+		<PackageReference Include="Telerik.Windows.Controls.GridView.for.Wpf.Xaml" Version="*" />
+		<PackageReference Include="Telerik.Windows.Controls.Input.for.Wpf.Xaml" Version="*" />
+		<PackageReference Include="Telerik.Windows.Controls.Navigation.for.Wpf.Xaml" Version="*" />
+		<PackageReference Include="Telerik.Windows.Controls.RibbonView.for.Wpf.Xaml" Version="*" />
+		<PackageReference Include="Telerik.Windows.Controls.ConversationalUI.for.Wpf.Xaml" Version="*" />
+		<PackageReference Include="Telerik.Windows.Controls.Spreadsheet.for.Wpf.Xaml" Version="*" />
+		<PackageReference Include="Telerik.Windows.Controls.SpreadsheetUI.for.Wpf.Xaml" Version="*" />
+		<PackageReference Include="Telerik.Windows.Data.for.Wpf.Xaml" Version="*" />-->
+
+		<Reference Include="Telerik.Windows.Controls">
+			<HintPath>..\..\..\WPF_Scrum_Git\Binaries\WPF80\Dev\Telerik.Windows.Controls.dll</HintPath>
+		</Reference>
+		<Reference Include="Telerik.Windows.Controls.Data">
+			<HintPath>..\..\..\WPF_Scrum_Git\Binaries\WPF80\Dev\Telerik.Windows.Controls.Data.dll</HintPath>
+		</Reference>
+		<Reference Include="Telerik.Windows.Controls.Input">
+			<HintPath>..\..\..\WPF_Scrum_Git\Binaries\WPF80\Dev\Telerik.Windows.Controls.Input.dll</HintPath>
+		</Reference>
+		<Reference Include="Telerik.Windows.Controls.Navigation">
+			<HintPath>..\..\..\WPF_Scrum_Git\Binaries\WPF80\Dev\Telerik.Windows.Controls.Navigation.dll</HintPath>
+		</Reference>
+		<Reference Include="Telerik.Windows.Controls.RibbonView">
+			<HintPath>..\..\..\WPF_Scrum_Git\Binaries\WPF80\Dev\Telerik.Windows.Controls.RibbonView.dll</HintPath>
+		</Reference>
+		<Reference Include="Telerik.Windows.Controls.ConversationalUI">
+			<HintPath>..\..\..\WPF_Scrum_Git\Binaries\WPF80\Dev\Telerik.Windows.Controls.ConversationalUI.dll</HintPath>
+		</Reference>
+		<Reference Include="Telerik.Windows.Controls.Spreadsheet">
+			<HintPath>..\..\..\WPF_Scrum_Git\Binaries\WPF80\Dev\Telerik.Windows.Controls.Spreadsheet.dll</HintPath>
+		</Reference>
+		<Reference Include="Telerik.Windows.Controls.SpreadsheetUI">
+			<HintPath>..\..\..\WPF_Scrum_Git\Binaries\WPF80\Dev\Telerik.Windows.Controls.SpreadsheetUI.dll</HintPath>
+		</Reference>
+		<Reference Include="Telerik.Windows.Documents.Core">
+		  <HintPath>..\..\..\WPF_Scrum_Git\Binaries\WPF80\Dev\Telerik.Windows.Documents.Core.dll</HintPath>
+		</Reference>
+		<Reference Include="Telerik.Windows.GridView">
+			<HintPath>..\..\..\WPF_Scrum_Git\Binaries\WPF80\Dev\Telerik.Windows.Controls.GridView.dll</HintPath>
+		</Reference>
+
+		<!-- Telerik Document Processing -->
+		<!--<PackageReference Include="Telerik.Windows.Documents.Spreadsheet" Version="*" />
+		<PackageReference Include="Telerik.Windows.Documents.Spreadsheet.FormatProviders.OpenXml" Version="*" />
+		<PackageReference Include="Telerik.Windows.Documents.Spreadsheet.FormatProviders.Pdf" Version="*" />
+		<PackageReference Include="Telerik.Windows.Documents.Spreadsheet.FormatProviders.Xls" Version="*" />-->
+
+		<Reference Include="Telerik.Windows.Documents.Spreadsheet">
+			<HintPath>..\..\..\DocumentProcessing\Binaries\net8.0-windows\Telerik.Windows.Documents.Spreadsheet.dll</HintPath>
+		</Reference>
+		<Reference Include="Telerik.Windows.Documents.Spreadsheet.FormatProviders.OpenXml">
+			<HintPath>..\..\..\DocumentProcessing\Binaries\net8.0-windows\Telerik.Windows.Documents.Spreadsheet.FormatProviders.OpenXml.dll</HintPath>
+		</Reference>
+		<Reference Include="Telerik.Windows.Documents.Spreadsheet.FormatProviders.Pdf">
+			<HintPath>..\..\..\DocumentProcessing\Binaries\net8.0-windows\Telerik.Windows.Documents.Spreadsheet.FormatProviders.Pdf.dll</HintPath>
+		</Reference>
+
+		<!--Microsoft AI-->
+		<PackageReference Include="Azure.AI.OpenAI" Version="2.8.0-beta.1" />
+		<!--<PackageReference Include="Microsoft.Extensions.AI.OpenAI" Version="10.2.0-preview.1.26063.2" />-->
+		<PackageReference Include="Microsoft.Agents.AI.OpenAI" Version="1.0.0-preview.260121.1" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<!-- Telerik AI DLL References -->
+		<Reference Include="Telerik.Documents.AI.AgentTools.Spreadsheet">
+			<HintPath>..\..\..\DocumentProcessing\Binaries\net8.0-windows\Telerik.Documents.AI.AgentTools.Spreadsheet.dll</HintPath>
+		</Reference>
+		<Reference Include="Telerik.Documents.AI.Tools.Core">
+			<HintPath>..\..\..\DocumentProcessing\Binaries\net8.0-windows\Telerik.Documents.AI.Tools.Core.dll</HintPath>
+		</Reference>
+		<Reference Include="Telerik.Documents.AI.Tools.Spreadsheet.Core">
+			<HintPath>..\..\..\DocumentProcessing\Binaries\net8.0-windows\Telerik.Documents.AI.Tools.Spreadsheet.Core.dll</HintPath>
+		</Reference>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <None Update="Electric_Vehicle_Population_Data.xlsx">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </None>
+	</ItemGroup>
+</Project>
