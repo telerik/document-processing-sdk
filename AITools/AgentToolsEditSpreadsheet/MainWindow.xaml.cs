@@ -1,11 +1,15 @@
-﻿using Azure.AI.OpenAI;
+﻿using Azure;
+using Azure.AI.OpenAI;
 using Microsoft.Agents.AI;
 using Microsoft.Extensions.AI;
 using System.ClientModel;
+using System.Diagnostics;
 using System.IO;
+using System.Text;
 using System.Windows;
 using Telerik.Documents.AI.AgentTools.Spreadsheet;
 using Telerik.Documents.AI.Tools.Spreadsheet.Core;
+using Telerik.Licensing.Status;
 using Telerik.Windows.Controls;
 using Telerik.Windows.Controls.ConversationalUI;
 using Telerik.Windows.Documents.Spreadsheet.FormatProviders.OpenXml.Xlsx;
@@ -25,6 +29,8 @@ namespace AgentToolsInSpreadsheet
         private string? lastUserMessage;
         private List<AITool>? toolRegistry;
         private ChatClientAgent? agent;
+        
+        bool isDiagnostic = true;
 
         #endregion
 
@@ -295,7 +301,8 @@ namespace AgentToolsInSpreadsheet
                 AgentResponse agentResponse = await this.agent.RunAsync(messages);
 
                 // Extract the response text from the agent's messages
-                string response = string.Join("\n", agentResponse.Messages
+                string response = this.isDiagnostic ? this.GetFullMessage(agentResponse) :
+                    string.Join("\n", agentResponse.Messages
                     .Where(m => m.Role == ChatRole.Assistant)
                     .Select(m => m.Text)
                     .Where(t => !string.IsNullOrWhiteSpace(t)));
@@ -323,6 +330,60 @@ namespace AgentToolsInSpreadsheet
                     this.AddAIMessage($"Error: {ex.Message}");
                 });
             }
+        }
+
+        private string GetFullMessage(AgentResponse response)
+        {
+            StringBuilder outputLog = new StringBuilder();
+
+            foreach (ChatMessage message in response.Messages)
+            {
+                foreach (AIContent content in message.Contents)
+                {
+                    if (content is TextContent textContent)
+                    {
+                        if (!string.IsNullOrEmpty(textContent.Text))
+                        {
+                            string logEntry = $"\n{message.Role}: {textContent.Text}";
+                            outputLog.AppendLine(logEntry);
+                        }
+                    }
+                    else if (content is UsageContent usageContent)
+                    {
+                        string logEntry = $"Input tokens count: {usageContent.Details.InputTokenCount} Output tokens count: {usageContent.Details.OutputTokenCount}: Total tokens count: {usageContent.Details.TotalTokenCount}";
+                        Debug.WriteLine(logEntry);
+                        Console.WriteLine(logEntry);
+                        outputLog.AppendLine(logEntry);
+                    }
+                    else if (content is FunctionCallContent functionCallContent)
+                    {
+                        StringBuilder sb = new StringBuilder();
+                        sb.AppendLine($"\nFunction call received:");
+                        sb.Append("Function name: ");
+                        sb.AppendLine(functionCallContent.Name);
+                        sb.Append("Parameters: ");
+
+                        foreach (KeyValuePair<string, object> arg in functionCallContent.Arguments)
+                        {
+                            sb.AppendLine($"{arg.Key}: {arg.Value}");
+                        }
+
+                        string logEntry = sb.ToString();
+                        Debug.WriteLine(logEntry);
+                        Console.WriteLine(logEntry);
+                        outputLog.AppendLine(logEntry);
+                    }
+                    else if (content is FunctionResultContent functionResultContent)
+                    {
+                        string logEntry = $"\nFunction result received: {functionResultContent.Result}";
+                        Debug.WriteLine(logEntry);
+                        Console.WriteLine(logEntry);
+                        outputLog.AppendLine(logEntry);
+                    }
+                }
+            }
+
+            return outputLog.ToString();
         }
 
         private void AddAIMessage(string message)

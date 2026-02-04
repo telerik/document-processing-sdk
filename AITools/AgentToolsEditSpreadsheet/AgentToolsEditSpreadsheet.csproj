@@ -77,7 +77,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<!-- Telerik AI DLL References -->
+		 <!--Telerik AI DLL References--> 
 		<Reference Include="Telerik.Documents.AI.AgentTools.Spreadsheet">
 			<HintPath>..\..\..\DocumentProcessing\Binaries\net8.0-windows\Telerik.Documents.AI.AgentTools.Spreadsheet.dll</HintPath>
 		</Reference>
