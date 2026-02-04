@@ -107,32 +107,31 @@
                              InputBoxWatermarkContent="Ask AI about your spreadsheet..."
                              AdditionalContentTemplate="{StaticResource SpreadsheetSuggestionsTemplate}"/>
             </Border>
-            <Border x:Name="typingIndicator"
-                    Grid.Row="0"
-                    Background="#F0F0F0"
-                    CornerRadius="8"
-                    Padding="12,8"
-                    Margin="10,0,10,80"
-                    HorizontalAlignment="Left"
-                    VerticalAlignment="Bottom"
-                    Visibility="Collapsed">
-                <StackPanel Orientation="Horizontal">
-                    <TextBlock Text="AI is thinking" FontStyle="Italic" Foreground="#646464" VerticalAlignment="Center"/>
-                    <TextBlock Text="..." FontStyle="Italic" Foreground="#646464" Margin="0,0,0,0" VerticalAlignment="Center">
-                        <TextBlock.Triggers>
-                            <EventTrigger RoutedEvent="TextBlock.Loaded">
-                                <BeginStoryboard>
-                                    <Storyboard RepeatBehavior="Forever">
-                                        <DoubleAnimation Storyboard.TargetProperty="Opacity" 
-                                                         From="1" To="0.3" Duration="0:0:0.8" 
-                                                         AutoReverse="True"/>
-                                    </Storyboard>
-                                </BeginStoryboard>
-                            </EventTrigger>
-                        </TextBlock.Triggers>
-                    </TextBlock>
+            <Grid Margin="16 0 0 235" VerticalAlignment="Bottom" x:Name="typingIndicator" Visibility="Collapsed">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <Grid.Triggers>
+                    <EventTrigger RoutedEvent="Grid.Loaded">
+                        <BeginStoryboard>
+                            <Storyboard Name="waitingAnimation" RepeatBehavior="Forever">
+                                <DoubleAnimation Storyboard.TargetName="Dot1" BeginTime="0:0:0.1" Storyboard.TargetProperty="Opacity" From=".3" To="0.7" AutoReverse="True" Duration="0:0:0.5"/>
+                                <DoubleAnimation Storyboard.TargetName="Dot2" BeginTime="0:0:0.2" Storyboard.TargetProperty="Opacity" From=".3" To="0.7" AutoReverse="True" Duration="0:0:0.5"/>
+                                <DoubleAnimation Storyboard.TargetName="Dot3" BeginTime="0:0:0.3" Storyboard.TargetProperty="Opacity" From=".3" To="0.7" AutoReverse="True" Duration="0:0:0.5"/>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                </Grid.Triggers>
+
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="5 0">
+                    <Ellipse Name="Dot1" Fill="#FF000000" Opacity=".3" Width="8" Height="8"/>
+                    <Ellipse Name="Dot2" Fill="#FF000000" Opacity=".3" Width="8" Height="8" Margin="4 0 0 0"/>
+                    <Ellipse Name="Dot3" Fill="#FF000000" Opacity=".3" Width="8" Height="8" Margin="4 0 0 0"/>
                 </StackPanel>
-            </Border>
+                <TextBlock Grid.Row="1" Grid.Column="1" Text="AI is thinking" Opacity="0.8" Margin="5 2 5 0"/>
+            </Grid>
         </Grid>
     </Grid>
 </Window>
