@@ -18,6 +18,7 @@
 		<PackageReference Include="Azure.AI.OpenAI" Version="2.8.0-beta.1" />
 		<PackageReference Include="Microsoft.Agents.AI.OpenAI" Version="1.0.0-preview.251219.1" />
 		<PackageReference Include="Microsoft.Extensions.Hosting" Version="9.0.0" />
+		<PackageReference Include="SkiaSharp" Version="3.119.1" />
 
 		<PackageReference Include="Telerik.Licensing.Lib" Version="*" />
 		<PackageReference Include="Telerik.Licensing" Version="*" />
