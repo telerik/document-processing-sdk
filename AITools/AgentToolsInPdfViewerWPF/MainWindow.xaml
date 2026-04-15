@@ -1,0 +1,104 @@
+﻿<Window x:Class="AgentToolsInPdfViewerWPF.MainWindow"
+                xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+                Title="PdfProcessing Agent Tools" Height="650" Width="1100">
+        <Grid>
+                <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" MinWidth="400" />
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="445" MinWidth="445" MaxWidth="610" />
+                </Grid.ColumnDefinitions>
+
+                <telerik:RadPdfViewer x:Name="pdfViewer" Grid.Column="0" 
+                                         Mode="Pan" />
+
+                <GridSplitter Grid.Column="1" Width="5" HorizontalAlignment="Center"
+                              VerticalAlignment="Stretch" Background="Gray" />
+
+                <!--<telerik:RadChat x:Name="chat" Grid.Column="2" />-->
+        <!-- Chat panel -->
+        <Grid Grid.Column="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <Grid.Resources>
+                <!-- Custom Suggestions Template for PDF -->
+                <DataTemplate x:Key="PdfSuggestionsTemplate">
+                    <telerik:RadExpander x:Name="PART_radExpander"
+                                  VerticalContentAlignment="Top"
+                                  IsExpanded="True"
+                                  Margin="0,10,0,10">
+                        <telerik:RadExpander.Header>
+                            <TextBlock Text="PDF Suggestions" AutomationProperties.Name="AI Prompt Suggestions" />
+                        </telerik:RadExpander.Header>
+                        <telerik:RadExpander.Content>
+                            <StackPanel Orientation="Vertical">
+                                <telerik:RadButton Content="Describe this document" 
+                                            Click="SuggestionButton_Click"
+                                            Tag="Describe this document"
+                                            Margin="5" 
+                                            HorizontalContentAlignment="Left" 
+                                            HorizontalAlignment="Left"/>
+                                <telerik:RadButton Content="Create a document with sample text and an image" 
+                                            Click="SuggestionButton_Click"
+                                            Tag="Create a document with sample text and an image"
+                                            Margin="5" 
+                                            HorizontalContentAlignment="Left" 
+                                            HorizontalAlignment="Left"/>
+                                <telerik:RadButton Content="Create a document with a title Invoice and a sample table" 
+                                            Click="SuggestionButton_Click"
+                                            Tag="Create a document with a title Invoice and a sample table"
+                                            Margin="5" 
+                                            HorizontalContentAlignment="Left" 
+                                            HorizontalAlignment="Left"/>
+                            </StackPanel>
+                        </telerik:RadExpander.Content>
+                    </telerik:RadExpander>
+                </DataTemplate>
+            </Grid.Resources>
+
+            <Border Grid.Row="0" BorderThickness="1 1 1 0" 
+             Margin="7 68 0 0"
+             Padding="7 0 7 6"
+             Background="White"
+             BorderBrush="#FFECECEC"
+             CornerRadius="8 8 8 0">
+                <telerik:RadChat x:Name="chat" 
+                      Background="Transparent"
+                      InputBoxWatermarkContent="Ask AI about your PDF..."
+                      AdditionalContentTemplate="{StaticResource PdfSuggestionsTemplate}"/>
+            </Border>
+            <Border x:Name="typingIndicator"
+             Grid.Row="0"
+             Background="#F0F0F0"
+             CornerRadius="8"
+             Padding="12,8"
+             Margin="15,0,10,280"
+             HorizontalAlignment="Left"
+             VerticalAlignment="Bottom"
+             Visibility="Collapsed">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="AI is thinking" FontStyle="Italic" Foreground="#646464" VerticalAlignment="Center"/>
+                    <TextBlock Text="..." FontStyle="Italic" Foreground="#646464" Margin="0,0,0,0" VerticalAlignment="Center">
+                        <TextBlock.Triggers>
+                            <EventTrigger RoutedEvent="TextBlock.Loaded">
+                                <BeginStoryboard>
+                                    <Storyboard RepeatBehavior="Forever">
+                                        <DoubleAnimation Storyboard.TargetProperty="Opacity" 
+                                                  From="1" To="0.3" Duration="0:0:0.8" 
+                                                  AutoReverse="True"/>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger>
+                        </TextBlock.Triggers>
+                    </TextBlock>
+                </StackPanel>
+            </Border>
+        </Grid>
+
+
+    </Grid>
+</Window>
