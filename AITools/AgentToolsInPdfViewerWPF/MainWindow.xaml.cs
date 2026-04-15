@@ -273,7 +273,7 @@ IMPORTANT RULES:
 
             string? key = Environment.GetEnvironmentVariable("AZUREOPENAI_KEY");
             string? endpoint = Environment.GetEnvironmentVariable("AZUREOPENAI_ENDPOINT");
-            string model = "gpt-4.1-mini";
+            string model = Environment.GetEnvironmentVariable("AZUREOPENAI_MODEL");
 
             if (string.IsNullOrEmpty(key) || string.IsNullOrEmpty(endpoint))
             {
