@@ -54,9 +54,11 @@ namespace AgentToolsInPdfViewerWPF
         {
             RadFixedDocument newDocument = new RadFixedDocument();
 
-            string paperTypeString = args != null && args.Length > 0 ? args[0] : "A4";
-            PaperTypes paperType = (PaperTypes)Enum.Parse(typeof(PaperTypes), paperTypeString);
-
+            string paperTypeString = args != null && args.Length > 0 ? args[0] : "A4"; 
+            if (!Enum.TryParse<PaperTypes>(paperTypeString, true, out PaperTypes paperType))
+            {
+                paperType = PaperTypes.A4;
+            }
             using (RadFixedDocumentEditor editor = new RadFixedDocumentEditor(newDocument))
             {
                 editor.SectionProperties.PageSize = PaperTypeConverter.ToSize(paperType);

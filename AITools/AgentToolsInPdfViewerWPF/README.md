@@ -6,7 +6,7 @@ A WPF application that integrates AI-powered PDF analysis using Azure OpenAI and
 
 ### Prerequisites
 
-- .NET 8 SDK
+- .NET 10 SDK
 - Visual Studio 2022 or later
 - Azure OpenAI account with API access
 

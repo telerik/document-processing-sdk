@@ -68,7 +68,6 @@
              CornerRadius="8 8 8 0">
                 <telerik:RadChat x:Name="chat" 
                       Background="Transparent"
-                      CurrentAuthor="{Binding CurrentAuthor, RelativeSource={RelativeSource AncestorType=UserControl}}"
                       InputBoxWatermarkContent="Ask AI about your PDF..."
                       AdditionalContentTemplate="{StaticResource PdfSuggestionsTemplate}"/>
             </Border>

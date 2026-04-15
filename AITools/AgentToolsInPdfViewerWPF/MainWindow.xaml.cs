@@ -80,17 +80,11 @@ IMPORTANT RULES:
             this.InitializeNewChat(recreateTools: true);
           
             this.pdfViewer.Focus();
-            this.pdfViewer.DocumentChanged += PdfViewer_DocumentChanged;
         }
 
         #endregion
 
-        #region Event Handlers
-
-        private void PdfViewer_DocumentChanged(object sender, DocumentChangedEventArgs e)
-        {
-            this.InitializeNewChat(recreateTools: true);
-        }
+        #region Event Handler
 
         private async void chat_SendMessage(object? sender, SendMessageEventArgs e)
         {
@@ -254,7 +248,7 @@ IMPORTANT RULES:
             this.chat.SuggestedActionReported += this.chat_SuggestedActionReported;
 
             // Add welcome message
-            this.AddAIMessage("Hello! I'm your AI assistant for spreadsheet analysis. I can help you understand your data, create formulas, generate charts, and answer questions about your spreadsheet. What would you like to know?");
+            this.AddAIMessage("Hello! I'm your AI assistant for Pdf analysis and editing. I can help you understand your data, create formulas, generate charts, and answer questions about your spreadsheet. What would you like to know?");
         }
 
         private void InitializeNewChat(bool recreateTools)
@@ -273,11 +267,11 @@ IMPORTANT RULES:
 
             string? key = Environment.GetEnvironmentVariable("AZUREOPENAI_KEY");
             string? endpoint = Environment.GetEnvironmentVariable("AZUREOPENAI_ENDPOINT");
-            string model = Environment.GetEnvironmentVariable("AZUREOPENAI_MODEL");
+            string? model = Environment.GetEnvironmentVariable("AZUREOPENAI_MODEL");
 
-            if (string.IsNullOrEmpty(key) || string.IsNullOrEmpty(endpoint))
+            if (string.IsNullOrEmpty(key) || string.IsNullOrEmpty(endpoint) || string.IsNullOrEmpty(model))
             {
-                this.AddAIMessage("⚠️ Azure OpenAI credentials not found. Please set AZUREOPENAI_KEY and AZUREOPENAI_ENDPOINT environment variables.");
+                this.AddAIMessage("⚠️ Azure OpenAI configuration not found. Please set AZUREOPENAI_KEY, AZUREOPENAI_ENDPOINT, and AZUREOPENAI_MODEL environment variables.");
                 return;
             }
 
@@ -373,8 +367,6 @@ IMPORTANT RULES:
                         this.AddAIMessage("I couldn't generate a response. Please try again.");
                     }
                 });
-
-                List<object> segments = ExtractResponseSegments(agentResponse);
 
                 bool documentChanged = HasDocumentModifyingToolCall(agentResponse);
                 if (documentChanged)
