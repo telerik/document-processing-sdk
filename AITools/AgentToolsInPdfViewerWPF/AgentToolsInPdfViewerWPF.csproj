@@ -6,6 +6,8 @@
     <TargetFramework>net10.0-windows</TargetFramework>
     <UseWPF>true</UseWPF>
     <RootNamespace>AgentToolsInPdfViewerWPF</RootNamespace>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
     <EnableDefaultItems>False</EnableDefaultItems>
   </PropertyGroup>
 
