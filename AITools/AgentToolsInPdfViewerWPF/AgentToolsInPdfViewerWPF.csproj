@@ -1,0 +1,52 @@
+﻿
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net10.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <RootNamespace>AgentToolsInPdfViewerWPF</RootNamespace>
+    <EnableDefaultItems>False</EnableDefaultItems>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Azure.AI.OpenAI" Version="2.9.0-beta.1" />
+    <PackageReference Include="Microsoft.Agents.AI.OpenAI" Version="1.0.0" />
+    <PackageReference Include="Telerik.Documents.AI.AgentTools.Conversion" Version="2026.1.402" />
+    <PackageReference Include="Telerik.Documents.AI.AgentTools.Fixed" Version="2026.1.402" />
+    <PackageReference Include="Telerik.Documents.AI.Tools.Conversion.Core" Version="2026.1.402" />
+    <PackageReference Include="Telerik.Documents.AI.Tools.Core" Version="2026.1.402" />
+    <PackageReference Include="Telerik.Documents.AI.Tools.Fixed.Core" Version="2026.1.402" />
+    <PackageReference Include="Telerik.Windows.Controls.ConversationalUI.for.Wpf.Xaml" Version="2026.1.211" />
+    <PackageReference Include="Telerik.Windows.Controls.FixedDocumentViewers.for.Wpf.Xaml" Version="2026.1.211" />
+    <PackageReference Include="Telerik.Windows.Documents.Core" Version="2026.1.402" />
+    <PackageReference Include="Telerik.Windows.Documents.Fixed" Version="2026.1.402" />
+  </ItemGroup>
+  
+  <ItemGroup>
+  <ApplicationDefinition Include="App.xaml">
+    <Generator>MSBuild:Compile</Generator>
+    <SubType>Designer</SubType>
+  </ApplicationDefinition>
+  <Page Include="MainWindow.xaml">
+    <Generator>MSBuild:Compile</Generator>
+    <SubType>Designer</SubType>
+  </Page>
+  <Compile Include="App.xaml.cs">
+    <DependentUpon>App.xaml</DependentUpon>
+    <SubType>Code</SubType>
+  </Compile>
+  <Compile Include="MainWindow.xaml.cs">
+    <DependentUpon>MainWindow.xaml</DependentUpon>
+    <SubType>Code</SubType>
+  </Compile>
+  <Compile Include="SingleFixedDocumentRepository.cs" />
+</ItemGroup>
+  
+  <ItemGroup>
+    <None Include="GenAI Document Insights Test Document.pdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>
