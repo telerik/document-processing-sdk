@@ -13,8 +13,8 @@ namespace CloneAndPopulateRepeatingSectionContentControls
             DocxFormatProvider provider = new DocxFormatProvider();
             var (employees, _, _) = MockDataGenerator.GenerateMockData();
             List<Employee> allEmployees = employees;
-            int EmployeeId = 2;
-            Employee employee = allEmployees.FirstOrDefault(e => e.EmployeeId == EmployeeId);
+            int employeeId = 2;
+            Employee employee = allEmployees.FirstOrDefault(e => e.EmployeeId == employeeId);
             RadFlowDocument document;
             using (Stream stream = File.OpenRead("SampleDocContentControls.docx"))
             {
