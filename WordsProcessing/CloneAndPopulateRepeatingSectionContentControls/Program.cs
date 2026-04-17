@@ -23,7 +23,7 @@ namespace CloneAndPopulateRepeatingSectionContentControls
 
             PopulateTemplate(document, employee);
             string outputFilePath = "Sample.docx";
-            using (Stream output = File.OpenWrite(outputFilePath))
+            using (Stream output = File.Create(outputFilePath))
             {
                 provider.Export(document, output, TimeSpan.FromSeconds(10));
             }
