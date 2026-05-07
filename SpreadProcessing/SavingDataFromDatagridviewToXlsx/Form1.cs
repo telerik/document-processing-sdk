@@ -89,7 +89,16 @@ namespace SavingDataFromDatagridviewToXlsx
                 try
                 {
                     ExportGridToXlsx(sfd.FileName);
-                    if (MessageBox.Show("Export complete. Open file?", "Export", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Export failed:\n{ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                if (MessageBox.Show("Export complete. Open file?", "Export", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
+                {
+                    try
                     {
                         System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo
                         {
@@ -97,10 +106,10 @@ namespace SavingDataFromDatagridviewToXlsx
                             UseShellExecute = true
                         });
                     }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show($"Export failed:\n{ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show($"Could not open file:\n{ex.Message}", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
                 }
             }
         }
@@ -164,7 +173,7 @@ namespace SavingDataFromDatagridviewToXlsx
 
                         string header = _grid.Columns[c].HeaderText?.ToLowerInvariant() ?? string.Empty;
 
-                        if (header.Contains("price") || header.Contains("amount") || header.Contains("unit"))
+                        if (header.Contains("price") || header.Contains("amount"))
                         {
                             cell.SetValue(d);
                             cell.SetFormat(new CellValueFormat("$#,##0.00"));
@@ -218,7 +227,7 @@ namespace SavingDataFromDatagridviewToXlsx
             var xlsx = new XlsxFormatProvider();
             using (var fs = new FileStream(filePath, FileMode.Create, FileAccess.Write))
             {
-                xlsx.Export(workbook, fs, TimeSpan.FromSeconds(10));
+                xlsx.Export(workbook, fs, TimeSpan.FromSeconds(15));
             }
         }
     }
