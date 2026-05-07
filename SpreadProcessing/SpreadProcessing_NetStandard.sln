@@ -9,6 +9,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CreateModifyExport_NetStand
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GenerateDocuments_NetStandard", "GenerateDocuments\GenerateDocuments_NetStandard.csproj", "{F5053683-C64C-4953-AA57-CDB1884D03E8}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SpreadprocessingInsertImageCellRangeAspectRatio", "SpreadprocessingInsertImageCellRangeAspectRatio", "{F6F2E2BF-1A1F-4083-B7FB-AB2BDFDA59E8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpreadprocessingInsertImageCellRangeAspectRatio_NetStandard", "SpreadprocessingInsertImageCellRangeAspectRatio\SpreadprocessingInsertImageCellRangeAspectRatio_NetStandard.csproj", "{F126B02D-FBD6-4B1A-8C8C-358F7854408A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -58,6 +62,9 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{F126B02D-FBD6-4B1A-8C8C-358F7854408A} = {F6F2E2BF-1A1F-4083-B7FB-AB2BDFDA59E8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F95E757E-6C72-4172-A4BF-C84937129D41}
