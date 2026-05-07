@@ -1,7 +1,6 @@
-// Auto-generated from: Inserting an Image in a Specified Worksheet Cell Range With SpreadProcessing While Preserving Aspect Ratio
-// Source: spreadprocessing-insert-image-cell-range-aspect-ratio
 
 using System;
+using System.Diagnostics;
 using System.IO;
 using Telerik.Windows.Documents.Media;
 using Telerik.Windows.Documents.Spreadsheet.Model;
@@ -38,7 +37,7 @@ namespace SpreadprocessingInsertImageCellRangeAspectRatio
             }
 
             // Create the image
-            ImageSource imageSource = new ImageSource(File.ReadAllBytes("image.jpeg"), "jpeg");
+            ImageSource imageSource = new ImageSource(File.ReadAllBytes("image.png"), "png");
 
             FloatingImage image = new FloatingImage(worksheet, new CellIndex(startRow, startColumn), 0, 0);
             image.ImageSource = imageSource;
@@ -67,6 +66,17 @@ namespace SpreadprocessingInsertImageCellRangeAspectRatio
             worksheet.Images.Add(image);
 
             Console.WriteLine("Image inserted successfully.");
+
+            string outputFilePath = "SampleFile.xlsx";
+
+            Telerik.Windows.Documents.Spreadsheet.FormatProviders.OpenXml.Xlsx.XlsxFormatProvider formatProvider = new Telerik.Windows.Documents.Spreadsheet.FormatProviders.OpenXml.Xlsx.XlsxFormatProvider();
+
+            using (Stream output = new FileStream(outputFilePath, FileMode.Create))
+            {
+                formatProvider.Export(workbook, output, TimeSpan.FromSeconds(10));
+            }
+
+            Process.Start(new ProcessStartInfo() { FileName = outputFilePath, UseShellExecute = true });
         }
     }
 }

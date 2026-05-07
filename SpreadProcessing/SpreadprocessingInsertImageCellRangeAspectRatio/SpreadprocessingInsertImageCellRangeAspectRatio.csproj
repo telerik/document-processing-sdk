@@ -10,6 +10,13 @@
   <ItemGroup>
     <PackageReference Include="Telerik.Documents.Core" Version="*" />
     <PackageReference Include="Telerik.Documents.Spreadsheet" Version="*" />
+    <PackageReference Include="Telerik.Documents.Spreadsheet.FormatProviders.OpenXml" Version="2026.1.402" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="image.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>
