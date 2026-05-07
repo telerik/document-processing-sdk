@@ -1,6 +1,3 @@
-// Auto-generated from: Exporting Data from DataGridView Control to Excel File
-// Source: saving-data-from-datagridview-to-xlsx-file-in-csharp
-
 using System;
 using System.Windows.Forms;
 
