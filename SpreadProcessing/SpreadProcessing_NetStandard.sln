@@ -81,19 +81,4 @@ Global
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F95E757E-6C72-4172-A4BF-C84937129D41}
 	EndGlobalSection
-	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 4
-		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
-		SccTeamFoundationServer = http://tfs:8082/defaultcollection
-		SccLocalPath0 = .
-		SccProjectUniqueName1 = ConvertDocuments\\ConvertDocuments_NetStandard.csproj
-		SccProjectName1 = ConvertDocuments
-		SccLocalPath1 = ConvertDocuments
-		SccProjectUniqueName2 = CreateModifyExport\\CreateModifyExport_NetStandard.csproj
-		SccProjectName2 = CreateModifyExport
-		SccLocalPath2 = CreateModifyExport
-		SccProjectUniqueName3 = GenerateDocuments\\GenerateDocuments_NetStandard.csproj
-		SccProjectName3 = GenerateDocuments
-		SccLocalPath3 = GenerateDocuments
-	EndGlobalSection
 EndGlobal
