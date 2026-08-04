@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using Telerik.Windows.Documents.Spreadsheet.FormatProviders;
-using Telerik.Windows.Documents.Spreadsheet.FormatProviders.OpenXml.Xlsx;
-using Telerik.Windows.Documents.Spreadsheet.FormatProviders.TextBased.Csv;
-using Telerik.Windows.Documents.Spreadsheet.FormatProviders.TextBased.Txt;
-using Telerik.Windows.Documents.Spreadsheet.Model;
+using Telerik.Documents.Spreadsheet.FormatProviders;
+using Telerik.Documents.Spreadsheet.FormatProviders.OpenXml.Xlsx;
+using Telerik.Documents.Spreadsheet.FormatProviders.TextBased.Csv;
+using Telerik.Documents.Spreadsheet.FormatProviders.TextBased.Txt;
+using Telerik.Documents.Spreadsheet.Model;
 
 namespace ConvertDocuments
 {

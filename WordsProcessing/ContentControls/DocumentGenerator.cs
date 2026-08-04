@@ -7,16 +7,16 @@ using Telerik.Documents.Primitives;
 #else
 using System.Windows;
 #endif
-using Telerik.Windows.Documents.Common.FormatProviders;
-using Telerik.Windows.Documents.Flow.FormatProviders.Docx;
-using Telerik.Windows.Documents.Flow.Model;
-using Telerik.Windows.Documents.Flow.Model.Collections;
-using Telerik.Windows.Documents.Flow.Model.Editing;
-using Telerik.Windows.Documents.Flow.Model.Lists;
-using Telerik.Windows.Documents.Flow.Model.Shapes;
-using Telerik.Windows.Documents.Flow.Model.StructuredDocumentTags;
-using Telerik.Windows.Documents.Flow.Model.Styles;
-using Telerik.Windows.Documents.Media;
+using Telerik.Documents.Common.FormatProviders;
+using Telerik.Documents.Flow.FormatProviders.Docx;
+using Telerik.Documents.Flow.Model;
+using Telerik.Documents.Flow.Model.Collections;
+using Telerik.Documents.Flow.Model.Editing;
+using Telerik.Documents.Flow.Model.Lists;
+using Telerik.Documents.Flow.Model.Shapes;
+using Telerik.Documents.Flow.Model.StructuredDocumentTags;
+using Telerik.Documents.Flow.Model.Styles;
+using Telerik.Documents.Media;
 
 namespace ContentControls
 {

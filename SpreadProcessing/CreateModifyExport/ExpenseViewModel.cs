@@ -8,14 +8,14 @@ using System.Windows.Controls;
 #endif
 using System.Windows.Media;
 using Telerik.Windows.Controls;
-using Telerik.Windows.Documents.Model;
-using Telerik.Windows.Documents.Spreadsheet.FormatProviders.Pdf;
-using Telerik.Windows.Documents.Spreadsheet.Model;
-using Telerik.Windows.Documents.Spreadsheet.Model.Filtering;
-using Telerik.Windows.Documents.Spreadsheet.Model.Shapes;
-using Telerik.Windows.Documents.Spreadsheet.PropertySystem;
-using Telerik.Windows.Documents.Spreadsheet.Theming;
-using Telerik.Windows.Documents.Spreadsheet.Utilities;
+using Telerik.Documents.Model;
+using Telerik.Documents.Spreadsheet.FormatProviders.Pdf;
+using Telerik.Documents.Spreadsheet.Model;
+using Telerik.Documents.Spreadsheet.Model.Filtering;
+using Telerik.Documents.Spreadsheet.Model.Shapes;
+using Telerik.Documents.Spreadsheet.PropertySystem;
+using Telerik.Documents.Spreadsheet.Theming;
+using Telerik.Documents.Spreadsheet.Utilities;
 
 namespace CreateModifyExport
 {
@@ -234,7 +234,7 @@ namespace CreateModifyExport
 
             using (Stream stream = GetResourceStream("Resources/MyCompanyLogo.jpg"))
             {
-                image.ImageSource = new Telerik.Windows.Documents.Media.ImageSource(stream, "jpg");
+                image.ImageSource = new Telerik.Documents.Media.ImageSource(stream, "jpg");
             }
 
             image.Width = 65;

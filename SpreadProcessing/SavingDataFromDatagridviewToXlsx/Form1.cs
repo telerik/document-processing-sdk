@@ -8,10 +8,10 @@ using System.IO;
 using System.Windows.Forms;
 using Telerik.Documents.Common.Model;
 using Telerik.Documents.Media;
-using Telerik.Windows.Documents.Model;
-using Telerik.Windows.Documents.Spreadsheet.FormatProviders.OpenXml.Xlsx;
-using Telerik.Windows.Documents.Spreadsheet.Model;
-using Telerik.Windows.Documents.Spreadsheet.Model.Printing;
+using Telerik.Documents.Model;
+using Telerik.Documents.Spreadsheet.FormatProviders.OpenXml.Xlsx;
+using Telerik.Documents.Spreadsheet.Model;
+using Telerik.Documents.Spreadsheet.Model.Printing;
 
 namespace SavingDataFromDatagridviewToXlsx
 {

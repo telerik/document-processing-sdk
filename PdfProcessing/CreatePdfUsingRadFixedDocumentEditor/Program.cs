@@ -4,17 +4,17 @@ using System.IO;
 #if NETCOREAPP
 using Telerik.Documents.Core.Fonts;
 using Telerik.Documents.Primitives;
-using Telerik.Windows.Documents.Extensibility;
+using Telerik.Documents.Extensibility;
 #else
 using System.Windows.Media;
 using System.Windows;
 #endif
-using Telerik.Windows.Documents.Fixed.FormatProviders.Pdf;
-using Telerik.Windows.Documents.Fixed.Model;
-using Telerik.Windows.Documents.Fixed.Model.Editing;
-using Telerik.Windows.Documents.Fixed.Model.Editing.Tables;
-using Telerik.Windows.Documents.Fixed.Model.Fonts;
-using Editing = Telerik.Windows.Documents.Fixed.Model.Editing;
+using Telerik.Documents.Fixed.FormatProviders.Pdf;
+using Telerik.Documents.Fixed.Model;
+using Telerik.Documents.Fixed.Model.Editing;
+using Telerik.Documents.Fixed.Model.Editing.Tables;
+using Telerik.Documents.Fixed.Model.Fonts;
+using Editing = Telerik.Documents.Fixed.Model.Editing;
 
 namespace CreatePdfUsingRadFixedDocumentEditor
 {
@@ -95,7 +95,7 @@ namespace CreatePdfUsingRadFixedDocumentEditor
                 editor.InsertRun("This paragraphs contains inline images like this one:");
                 using (Stream sampleImage = ContentGenerator.GetSampleImageStream())
                 {
-                    var imageSource = new Telerik.Windows.Documents.Fixed.Model.Resources.ImageSource(sampleImage);
+                    var imageSource = new Telerik.Documents.Fixed.Model.Resources.ImageSource(sampleImage);
                     editor.InsertImageInline(imageSource, new Size(40, 40));
                     editor.InsertRun(", this one:");
                     editor.InsertImageInline(imageSource, new Size(100, 100));

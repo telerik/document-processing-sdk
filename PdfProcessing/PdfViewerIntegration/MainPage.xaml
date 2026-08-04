@@ -4,7 +4,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
-    xmlns:fixed="clr-namespace:Telerik.Windows.Documents.Fixed;assembly=Telerik.Windows.Controls.FixedDocumentViewers"
+    xmlns:fixed="clr-namespace:Telerik.Documents.Fixed;assembly=Telerik.Windows.Controls.FixedDocumentViewers"
     mc:Ignorable="d"
     d:DesignHeight="300" d:DesignWidth="400">
     <Grid>

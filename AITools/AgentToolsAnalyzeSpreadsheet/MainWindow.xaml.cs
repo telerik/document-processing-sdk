@@ -8,7 +8,7 @@ using Telerik.Documents.AI.AgentTools.Spreadsheet;
 using Telerik.Documents.AI.Tools.Spreadsheet.Core;
 using Telerik.Windows.Controls;
 using Telerik.Windows.Controls.ConversationalUI;
-using Telerik.Windows.Documents.Spreadsheet.FormatProviders.OpenXml.Xlsx;
+using Telerik.Documents.Spreadsheet.FormatProviders.OpenXml.Xlsx;
 using ChatMessage = Microsoft.Extensions.AI.ChatMessage;
 
 namespace AgentToolsInSpreadsheet

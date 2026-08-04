@@ -8,10 +8,10 @@ using System.Windows.Controls;
 using System.Windows.Media;
 using Telerik.Windows.Controls;
 using Telerik.Windows.Controls.Spreadsheet;
-using Telerik.Windows.Documents.Fixed.Model.Fonts;
-using Telerik.Windows.Documents.Spreadsheet.FormatProviders.Pdf;
-using Telerik.Windows.Documents.Spreadsheet.Model;
-using Telerik.Windows.Documents.Spreadsheet.Model.Protection;
+using Telerik.Documents.Fixed.Model.Fonts;
+using Telerik.Documents.Spreadsheet.FormatProviders.Pdf;
+using Telerik.Documents.Spreadsheet.Model;
+using Telerik.Documents.Spreadsheet.Model.Protection;
 
 namespace RegisterAndExportPdfFonts
 {

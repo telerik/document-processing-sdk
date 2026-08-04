@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.IO;
 using Telerik.Documents.AI.Tools.Core;
 using Telerik.Documents.AI.Tools.Fixed.Core;
-using Telerik.Windows.Documents.Fixed.FormatProviders.Pdf;
-using Telerik.Windows.Documents.Fixed.Model;
-using Telerik.Windows.Documents.Fixed.Model.Editing;
-using Telerik.Windows.Documents.Model;
+using Telerik.Documents.Fixed.FormatProviders.Pdf;
+using Telerik.Documents.Fixed.Model;
+using Telerik.Documents.Fixed.Model.Editing;
+using Telerik.Documents.Model;
 using DocumentInfo = Telerik.Documents.AI.Tools.Core.DocumentInfo;
 
 namespace AgentToolsInPdfViewerWPF

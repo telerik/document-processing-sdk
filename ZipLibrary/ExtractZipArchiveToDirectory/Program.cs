@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Diagnostics;
 using System.IO;
-using Telerik.Windows.Zip.Extensions;
+using Telerik.Zip.Extensions;
 
 namespace ExtractZipArchiveToDirectory_NetStandard
 {
