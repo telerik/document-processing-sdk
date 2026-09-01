@@ -1,3 +1,4 @@
+using System.IO;
 using System.Text;
 using Telerik.Zip;
 

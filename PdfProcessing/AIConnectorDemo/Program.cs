@@ -4,14 +4,10 @@ using OpenAI.Chat;
 using System.IO;
 using Telerik.Documents.AI.Core;
 
-#if NETWINDOWS
-using Telerik.Windows.Documents.AIConnector;
-#else
 using Telerik.Documents.AIConnector;
-#endif
-using Telerik.Windows.Documents.Fixed.FormatProviders.Pdf;
-using Telerik.Windows.Documents.Fixed.Model;
-using Telerik.Windows.Documents.TextRepresentation;
+using Telerik.Documents.Fixed.FormatProviders.Pdf;
+using Telerik.Documents.Fixed.Model;
+using Telerik.Documents.TextRepresentation;
 
 namespace AIConnectorDemo
 {

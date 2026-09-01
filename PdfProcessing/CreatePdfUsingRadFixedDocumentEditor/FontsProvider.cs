@@ -1,8 +1,8 @@
 ﻿using System;
 using System.IO;
 using Telerik.Documents.Core.Fonts;
-using Telerik.Windows.Documents.Core.Fonts;
-using Telerik.Windows.Documents.Extensibility;
+using Telerik.Documents.Core.Fonts;
+using Telerik.Documents.Extensibility;
 
 namespace CreatePdfUsingRadFixedDocumentEditor
 {

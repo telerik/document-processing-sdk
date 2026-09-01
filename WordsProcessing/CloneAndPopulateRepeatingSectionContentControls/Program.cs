@@ -1,8 +1,8 @@
 ﻿using System.Diagnostics;
-using Telerik.Windows.Documents.Flow.FormatProviders.Docx;
-using Telerik.Windows.Documents.Flow.Model;
-using Telerik.Windows.Documents.Flow.Model.Editing;
-using Telerik.Windows.Documents.Flow.Model.StructuredDocumentTags;
+using Telerik.Documents.Flow.FormatProviders.Docx;
+using Telerik.Documents.Flow.Model;
+using Telerik.Documents.Flow.Model.Editing;
+using Telerik.Documents.Flow.Model.StructuredDocumentTags;
 
 namespace CloneAndPopulateRepeatingSectionContentControls
 {

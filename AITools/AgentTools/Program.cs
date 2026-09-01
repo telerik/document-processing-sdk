@@ -16,7 +16,7 @@ using Telerik.Documents.AI.Tools.Fixed.Core;
 using Telerik.Documents.AI.Tools.Flow.Core;
 using Telerik.Documents.AI.Tools.Spreadsheet.Core;
 using Telerik.Documents.ImageUtils;
-using Telerik.Windows.Documents.Extensibility;
+using Telerik.Documents.Extensibility;
 
 namespace TestApp
 {

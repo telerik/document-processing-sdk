@@ -6,8 +6,8 @@ using SixLabors.ImageSharp.Processing;
 
 using System;
 using System.IO;
-using Telerik.Windows.Documents.Extensibility;
-using Telerik.Windows.Documents.Fixed.FormatProviders.Pdf.Export;
+using Telerik.Documents.Extensibility;
+using Telerik.Documents.Fixed.FormatProviders.Pdf.Export;
 
 namespace CustomJpegImageConverter
 {

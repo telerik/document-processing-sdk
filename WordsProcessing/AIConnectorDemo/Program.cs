@@ -3,15 +3,10 @@ using Microsoft.Extensions.AI;
 using OpenAI.Chat;
 using System.IO;
 using Telerik.Documents.AI.Core;
-
-#if NETWINDOWS
-using Telerik.Windows.Documents.AIConnector;
-#else
 using Telerik.Documents.AIConnector;
-#endif
-using Telerik.Windows.Documents.Flow.FormatProviders.Docx;
-using Telerik.Windows.Documents.Flow.Model;
-using Telerik.Windows.Documents.TextRepresentation;
+using Telerik.Documents.Flow.FormatProviders.Docx;
+using Telerik.Documents.Flow.Model;
+using Telerik.Documents.TextRepresentation;
 
 namespace AIConnectorDemo
 {

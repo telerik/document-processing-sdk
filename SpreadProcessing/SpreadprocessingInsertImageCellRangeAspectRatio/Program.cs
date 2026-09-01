@@ -2,9 +2,9 @@
 using System;
 using System.Diagnostics;
 using System.IO;
-using Telerik.Windows.Documents.Media;
-using Telerik.Windows.Documents.Spreadsheet.Model;
-using Telerik.Windows.Documents.Spreadsheet.Model.Shapes;
+using Telerik.Documents.Media;
+using Telerik.Documents.Spreadsheet.Model;
+using Telerik.Documents.Spreadsheet.Model.Shapes;
 
 namespace SpreadprocessingInsertImageCellRangeAspectRatio
 {
@@ -69,7 +69,7 @@ namespace SpreadprocessingInsertImageCellRangeAspectRatio
 
             string outputFilePath = "SampleFile.xlsx";
 
-            Telerik.Windows.Documents.Spreadsheet.FormatProviders.OpenXml.Xlsx.XlsxFormatProvider formatProvider = new Telerik.Windows.Documents.Spreadsheet.FormatProviders.OpenXml.Xlsx.XlsxFormatProvider();
+            Telerik.Documents.Spreadsheet.FormatProviders.OpenXml.Xlsx.XlsxFormatProvider formatProvider = new Telerik.Documents.Spreadsheet.FormatProviders.OpenXml.Xlsx.XlsxFormatProvider();
 
             using (Stream output = new FileStream(outputFilePath, FileMode.Create))
             {

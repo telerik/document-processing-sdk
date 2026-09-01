@@ -14,15 +14,15 @@
   <ItemGroup>
     <PackageReference Include="Azure.AI.OpenAI" Version="2.9.0-beta.1" />
     <PackageReference Include="Microsoft.Agents.AI.OpenAI" Version="1.0.0" />
-    <PackageReference Include="Telerik.Documents.AI.AgentTools.Conversion" Version="2026.1.402" />
-    <PackageReference Include="Telerik.Documents.AI.AgentTools.Fixed" Version="2026.1.402" />
-    <PackageReference Include="Telerik.Documents.AI.Tools.Conversion.Core" Version="2026.1.402" />
-    <PackageReference Include="Telerik.Documents.AI.Tools.Core" Version="2026.1.402" />
-    <PackageReference Include="Telerik.Documents.AI.Tools.Fixed.Core" Version="2026.1.402" />
-    <PackageReference Include="Telerik.Windows.Controls.ConversationalUI.for.Wpf.Xaml" Version="2026.1.211" />
-    <PackageReference Include="Telerik.Windows.Controls.FixedDocumentViewers.for.Wpf.Xaml" Version="2026.1.211" />
-    <PackageReference Include="Telerik.Windows.Documents.Core" Version="2026.1.402" />
-    <PackageReference Include="Telerik.Windows.Documents.Fixed" Version="2026.1.402" />
+    <PackageReference Include="Telerik.Documents.AI.AgentTools.Conversion" Version="*" />
+    <PackageReference Include="Telerik.Documents.AI.AgentTools.Fixed" Version="*" />
+    <PackageReference Include="Telerik.Documents.AI.Tools.Conversion.Core" Version="*" />
+    <PackageReference Include="Telerik.Documents.AI.Tools.Core" Version="*" />
+    <PackageReference Include="Telerik.Documents.AI.Tools.Fixed.Core" Version="*" />
+    <PackageReference Include="Telerik.Windows.Controls.ConversationalUI.for.Wpf.Xaml" Version="*" />
+    <PackageReference Include="Telerik.Windows.Controls.FixedDocumentViewers.for.Wpf.Xaml" Version="*" />
+    <PackageReference Include="Telerik.Windows.Documents.Core" Version="*" />
+    <PackageReference Include="Telerik.Windows.Documents.Fixed" Version="*" />
   </ItemGroup>
   
   <ItemGroup>

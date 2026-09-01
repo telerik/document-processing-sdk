@@ -1,6 +1,6 @@
 ﻿using System;
 #if NETCOREAPP
-using Telerik.Windows.Documents.Extensibility;
+using Telerik.Documents.Extensibility;
 using Telerik.Documents.ImageUtils;
 #endif
 

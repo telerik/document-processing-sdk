@@ -6,11 +6,11 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Telerik.Windows.Documents.Fixed.FormatProviders.Ocr;
-using Telerik.Windows.Documents.Fixed.FormatProviders.Pdf;
-using Telerik.Windows.Documents.Fixed.Model;
-using Telerik.Windows.Documents.Ocr;
-using Telerik.Windows.Documents.TesseractOcr;
+using Telerik.Documents.Fixed.FormatProviders.Ocr;
+using Telerik.Documents.Fixed.FormatProviders.Pdf;
+using Telerik.Documents.Fixed.Model;
+using Telerik.Documents.Ocr;
+using Telerik.Documents.TesseractOcr;
 
 namespace TesseractOcrProviderDemo
 {

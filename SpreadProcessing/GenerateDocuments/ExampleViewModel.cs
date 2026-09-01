@@ -6,8 +6,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using GenerateDocuments.SampleData;
 using Telerik.Windows.Controls;
-using Telerik.Windows.Documents.Spreadsheet.Model;
-using Telerik.Windows.Documents.Spreadsheet.Utilities;
+using Telerik.Documents.Spreadsheet.Model;
+using Telerik.Documents.Spreadsheet.Utilities;
 
 namespace GenerateDocuments
 {

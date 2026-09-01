@@ -1,14 +1,14 @@
 using System.Diagnostics;
 using Telerik.Documents.Fixed.Model.DigitalSignatures;
 using Telerik.Documents.Primitives;
-using Telerik.Windows.Documents.Fixed.FormatProviders.Pdf;
-using Telerik.Windows.Documents.Fixed.Model;
-using Telerik.Windows.Documents.Fixed.Model.Annotations;
-using Telerik.Windows.Documents.Fixed.Model.DigitalSignatures;
-using Telerik.Windows.Documents.Fixed.Model.Editing;
-using Telerik.Windows.Documents.Fixed.Model.InteractiveForms;
-using Telerik.Windows.Documents.Fixed.Model.Objects;
-using Telerik.Windows.Documents.Fixed.Model.Resources;
+using Telerik.Documents.Fixed.FormatProviders.Pdf;
+using Telerik.Documents.Fixed.Model;
+using Telerik.Documents.Fixed.Model.Annotations;
+using Telerik.Documents.Fixed.Model.DigitalSignatures;
+using Telerik.Documents.Fixed.Model.Editing;
+using Telerik.Documents.Fixed.Model.InteractiveForms;
+using Telerik.Documents.Fixed.Model.Objects;
+using Telerik.Documents.Fixed.Model.Resources;
 
 PdfFormatProvider provider = new PdfFormatProvider();
 RadFixedDocument document = ImportDocument(provider);

@@ -1,10 +1,6 @@
 ﻿using System.Diagnostics;
 using System.IO;
-#if NETCOREAPP
 using Telerik.Zip;
-#else
-using Telerik.Windows.Zip;
-#endif
 
 namespace CreateZipArchive_NetStandard
 {
