@@ -27,7 +27,7 @@
 		<PackageReference Include="Telerik.Windows.Documents.Spreadsheet.FormatProviders.OpenXml" Version="*" />
 		<PackageReference Include="Telerik.Windows.Documents.Spreadsheet.FormatProviders.Pdf" Version="*" />
 		<PackageReference Include="Telerik.Windows.Documents.Spreadsheet.FormatProviders.Xls" Version="*" />
-		<PackageReference Include="Telerik.Documents.AI.AgentTools.Spreadsheet" Version="2026.1.206" />
+		<PackageReference Include="Telerik.Documents.AI.AgentTools.Spreadsheet" Version="*" />
 
 		<!--Microsoft AI-->
 		<PackageReference Include="Azure.AI.OpenAI" Version="2.8.0-beta.1" />
