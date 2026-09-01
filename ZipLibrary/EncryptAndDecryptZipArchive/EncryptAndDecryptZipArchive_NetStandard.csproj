@@ -15,6 +15,6 @@
     <None Remove="EncryptAndDecryptZipArchive_NetStandard.csproj.vspscc" />
   </ItemGroup>
   <ItemGroup Label="Telerik NuGet Packages References">
-    <PackageReference Include="Telerik.Zip" Version="2024.1.*" />
+    <PackageReference Include="Telerik.Zip" Version="*" />
   </ItemGroup>
 </Project>

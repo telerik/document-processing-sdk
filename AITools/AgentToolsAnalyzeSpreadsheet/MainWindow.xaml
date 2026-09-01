@@ -11,9 +11,9 @@
         xmlns:spreadsheet="clr-namespace:Telerik.Windows.Controls.Spreadsheet;assembly=Telerik.Windows.Controls.Spreadsheet"
         xmlns:worksheet="clr-namespace:Telerik.Windows.Controls.Spreadsheet.Worksheets;assembly=Telerik.Windows.Controls.Spreadsheet"
         xmlns:spreadsheetRibbon="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls.SpreadsheetUI"
-        xmlns:xlsx="clr-namespace:Telerik.Documents.Spreadsheet.FormatProviders.OpenXml.Xlsx;assembly=Telerik.Documents.Spreadsheet.FormatProviders.OpenXml"
-        xmlns:csv="clr-namespace:Telerik.Documents.Spreadsheet.FormatProviders.TextBased.Csv;assembly=Telerik.Documents.Spreadsheet"
-        xmlns:txt="clr-namespace:Telerik.Documents.Spreadsheet.FormatProviders.TextBased.Txt;assembly=Telerik.Documents.Spreadsheet"
+        xmlns:xlsx="clr-namespace:Telerik.Documents.Spreadsheet.FormatProviders.OpenXml.Xlsx;assembly=Telerik.Windows.Documents.Spreadsheet.FormatProviders.OpenXml"
+        xmlns:csv="clr-namespace:Telerik.Documents.Spreadsheet.FormatProviders.TextBased.Csv;assembly=Telerik.Windows.Documents.Spreadsheet"
+        xmlns:txt="clr-namespace:Telerik.Documents.Spreadsheet.FormatProviders.TextBased.Txt;assembly=Telerik.Windows.Documents.Spreadsheet"
         Background="#F3F3F3"
         Title="MainWindow" Height="1000" Width="1600">
 

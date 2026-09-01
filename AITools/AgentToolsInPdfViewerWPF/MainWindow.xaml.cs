@@ -13,7 +13,7 @@ using Telerik.Documents.AI.Tools.Fixed.Core;
 using Telerik.Windows.Controls;
 using Telerik.Windows.Controls.ConversationalUI;
 using Telerik.Documents.Fixed;
-using Telerik.Documents.Fixed.FormatProviders.Pdf; 
+using Telerik.Windows.Documents.Fixed.FormatProviders.Pdf; 
 
 namespace AgentToolsInPdfViewerWPF
 {

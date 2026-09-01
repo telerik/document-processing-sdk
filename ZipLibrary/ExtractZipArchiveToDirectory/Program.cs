@@ -22,7 +22,7 @@ namespace ExtractZipArchiveToDirectory_NetStandard
                 Directory.Delete(destinationFolder, recursive: true);
             }
 
-            ZipFile.ExtractToDirectory(zipFilePath, destinationFolder);
+            ZipFile.ExtractToDirectory(zipFilePath, destinationFolder, TimeSpan.FromSeconds(30));
 
             Console.WriteLine("Listing files in: " + destinationFolder);
             foreach (string fileName in Directory.EnumerateFiles(destinationFolder))
