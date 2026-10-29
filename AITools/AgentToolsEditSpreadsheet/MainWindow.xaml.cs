@@ -3,6 +3,7 @@ using Microsoft.Agents.AI;
 using Microsoft.Extensions.AI;
 using System.ClientModel;
 using System.IO;
+using System.Text.Json;
 using System.Windows;
 using Telerik.Documents.AI.AgentTools.Spreadsheet;
 using Telerik.Documents.AI.Tools.Spreadsheet.Core;
@@ -295,25 +296,11 @@ namespace AgentToolsInSpreadsheet
                 List<ChatMessage> messages = [userChatMessage];
                 AgentResponse agentResponse = await this.agent.RunAsync(messages);
 
-                // Extract the response text from the agent's messages
-                string response = string.Join("\n", agentResponse.Messages
-                    .Where(m => m.Role == ChatRole.Assistant)
-                    .Select(m => m.Text)
-                    .Where(t => !string.IsNullOrWhiteSpace(t)));
-
                 // Display the response
                 await Application.Current.Dispatcher.InvokeAsync(() =>
                 {
                     this.typingIndicator.Visibility = Visibility.Collapsed;
-
-                    if (!string.IsNullOrWhiteSpace(response))
-                    {
-                        this.AddAIMessage(response);
-                    }
-                    else
-                    {
-                        this.AddAIMessage("I couldn't generate a response. Please try again.");
-                    }
+                    ReceiveResponseAndAddAIMessage(agentResponse);
                 });
             }
             catch (Exception ex)
@@ -323,6 +310,103 @@ namespace AgentToolsInSpreadsheet
                     this.typingIndicator.Visibility = Visibility.Collapsed;
                     this.AddAIMessage($"Error: {ex.Message}");
                 });
+            }
+        }
+
+        private void ReceiveResponseAndAddAIMessage(AgentResponse agentResponse)
+        {
+            bool hasResponse = false;
+            Dictionary<string, string> toolNames = new();
+            const int maxToolResultLength = 1000;
+
+            foreach (ChatMessage responseMessage in agentResponse.Messages)
+            {
+                if (responseMessage.Role != ChatRole.Assistant && responseMessage.Role != ChatRole.Tool)
+                {
+                    continue;
+                }
+
+                foreach (AIContent content in responseMessage.Contents)
+                {
+                    if (content is FunctionCallContent toolCall)
+                    {
+                        toolNames[toolCall.CallId] = toolCall.Name;
+                        CardMessage toolMessage = new(this.assistantAuthor!)
+                        {
+                            Title = "Tool called",
+                            SubTitle = toolCall.Name,
+                            Text = toolCall.Arguments is { Count: > 0 }
+                                ? JsonSerializer.Serialize(toolCall.Arguments, new JsonSerializerOptions { WriteIndented = true })
+                                : "No arguments"
+                        };
+
+                        this.radChat.AddMessage(toolMessage);
+                        hasResponse = true;
+                    }
+                    else if (content is FunctionResultContent toolResult)
+                    {
+                        string resultText = FormatToolResult(toolResult.Result);
+
+                        if (resultText.Length > maxToolResultLength)
+                        {
+                            resultText = resultText[..maxToolResultLength] + "\n... [truncated]";
+                        }
+
+                        CardMessage resultMessage = new(this.assistantAuthor!)
+                        {
+                            Title = "Tool result",
+                            SubTitle = toolNames.TryGetValue(toolResult.CallId, out string? toolName) ? toolName : "Tool response",
+                            Text = resultText
+                        };
+
+                        this.radChat.AddMessage(resultMessage);
+                        hasResponse = true;
+                    }
+                    else if (responseMessage.Role == ChatRole.Assistant && content is TextContent text && !string.IsNullOrWhiteSpace(text.Text))
+                    {
+                        this.AddAIMessage(text.Text);
+                        hasResponse = true;
+                    }
+                }
+            }
+
+            if (!hasResponse)
+            {
+                this.AddAIMessage("I couldn't generate a response. Please try again.");
+            }
+        }
+
+        private static string FormatToolResult(object? result)
+        {
+            if (result == null)
+            {
+                return "No result returned";
+            }
+
+            string resultText = result is string text ? text : JsonSerializer.Serialize(result);
+
+            try
+            {
+                using JsonDocument document = JsonDocument.Parse(resultText);
+                JsonElement root = document.RootElement;
+
+                if (root.ValueKind == JsonValueKind.Object
+                    && root.TryGetProperty("message", out JsonElement message)
+                    && message.ValueKind == JsonValueKind.String)
+                {
+                    return message.GetString()!;
+                }
+
+                if (root.ValueKind == JsonValueKind.String)
+                {
+                    return root.GetString()!;
+                }
+
+                return JsonSerializer.Serialize(root, new JsonSerializerOptions { WriteIndented = true });
+            }
+            catch (JsonException)
+            {
+                return resultText;
             }
         }
 
