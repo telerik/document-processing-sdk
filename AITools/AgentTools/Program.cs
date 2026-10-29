@@ -56,9 +56,9 @@ namespace TestApp
     internal class App
     {
 
-        const string ResourcesDir = @"..\..\..\Resources";
-        const string OutputDir = ResourcesDir + @"\output";
-        const string InputDir = ResourcesDir + @"\input";
+        static readonly string ResourcesDir = Path.GetFullPath(Path.Combine(AppContext.BaseDirectory, "..", "..", "..", "Resources"));
+        static readonly string OutputDir = Path.Combine(ResourcesDir, "output");
+        static readonly string InputDir = Path.Combine(ResourcesDir, "input");
 
         private readonly IGreetingService _greetingService;
         private readonly IWorkbookRepository workbookRepository;
@@ -79,6 +79,7 @@ namespace TestApp
 
         public async Task RunAsync()
         {
+            Directory.CreateDirectory(OutputDir);
             var message = _greetingService.GetGreeting();
             Console.WriteLine(message);
             await this.TestAllAIScenarios();
@@ -179,14 +180,14 @@ namespace TestApp
             SpreadProcessingReadAgentTools readToolsWrapper = new SpreadProcessingReadAgentTools(this.workbookRepository);
             SpreadProcessingWriteAgentTools writeToolsWrapper = new SpreadProcessingWriteAgentTools(this.workbookRepository);
             SpreadProcessingWorksheetAgentTools worksheetAgentToolsWrapper = new SpreadProcessingWorksheetAgentTools(this.workbookRepository);
-            SpreadProcessingFileManagementAgentTools fileManagementAgentTools = new SpreadProcessingFileManagementAgentTools(this.workbookRepository, OutputDir);
+            SpreadProcessingFileManagementAgentTools fileManagementAgentTools = new SpreadProcessingFileManagementAgentTools(this.workbookRepository, ResourcesDir);
 
-            MergeDocumentsAgentTool mergeTool = new MergeDocumentsAgentTool(documentRepositoryRegistry, OutputDir);
-            ConvertDocumentsAgentTool convertTool = new ConvertDocumentsAgentTool(documentRepositoryRegistry, OutputDir);
+            MergeDocumentsAgentTool mergeTool = new MergeDocumentsAgentTool(documentRepositoryRegistry, ResourcesDir);
+            ConvertDocumentsAgentTool convertTool = new ConvertDocumentsAgentTool(documentRepositoryRegistry, ResourcesDir);
 
             FixedDocumentFormAgentTools fixedDocumentFormAgentTools = new FixedDocumentFormAgentTools(this.fixedDocumentRepository);
-            FixedDocumentContentAgentTools fixedContentTools = new FixedDocumentContentAgentTools(this.fixedDocumentRepository, OutputDir);
-            FixedFileManagementAgentTools fixedFileManagementTools = new FixedFileManagementAgentTools(this.fixedDocumentRepository, OutputDir);
+            FixedDocumentContentAgentTools fixedContentTools = new FixedDocumentContentAgentTools(this.fixedDocumentRepository, ResourcesDir);
+            FixedFileManagementAgentTools fixedFileManagementTools = new FixedFileManagementAgentTools(this.fixedDocumentRepository, ResourcesDir);
 
             List<AITool> tools = new List<AITool>(readToolsWrapper.GetTools());
             tools.AddRange(writeToolsWrapper.GetTools());
@@ -309,6 +310,7 @@ namespace TestApp
             if (!string.IsNullOrEmpty(outputFileName))
             {
                 string logFilePath = Path.Combine(OutputDir, $"{outputFileName}.txt");
+                //File.Create(logFilePath);
                 File.WriteAllText(logFilePath, outputLog.ToString());
                 Debug.WriteLine($"\n=== Results saved to: {logFilePath} ===");
             }

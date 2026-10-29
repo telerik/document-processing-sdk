@@ -9,6 +9,7 @@
 	</PropertyGroup>
 
 	<ItemGroup>
+		<PackageReference Include="Microsoft.Web.WebView2" Version="1.0.4314.35" />
 		<PackageReference Include="Telerik.Licensing" Version="*" />
 		<!-- Telerik UI for WPF -->
 		<PackageReference Include="Telerik.Windows.Controls.for.Wpf.Xaml" Version="*" />
