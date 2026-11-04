@@ -1,7 +1,6 @@
 ﻿using System;
 using System.IO;
 using Telerik.Documents.Core.Fonts;
-using Telerik.Documents.Core.Fonts;
 using Telerik.Documents.Extensibility;
 
 namespace GenerateDocument
