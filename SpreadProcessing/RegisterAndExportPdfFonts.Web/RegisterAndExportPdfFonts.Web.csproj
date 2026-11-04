@@ -121,7 +121,4 @@
   <Target Name="AfterBuild">
   </Target>
   -->
-  <ItemGroup Label="Telerik NuGet Packages References">
-    <PackageReference Include="" Version="2022.3.*" />
-  </ItemGroup>
 </Project>
