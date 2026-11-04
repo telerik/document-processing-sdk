@@ -31,7 +31,7 @@ namespace CustomJpegImageConverter
                     // Handle transparency for PNG
                     if (imageFormat is PngFormat && image.PixelType.BitsPerPixel == 32)
                     {
-                        var background = new Image<Rgba32>(image.Width, image.Height, Color.White);
+                        var background = new Image<Rgba32>(image.Width, image.Height, new Rgba32(255, 255, 255, 255));
                         background.Mutate(ctx => ctx.DrawImage(image, 1f));
 
                         image.Dispose(); // Dispose original
